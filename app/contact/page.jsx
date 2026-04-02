@@ -1,0 +1,312 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { Facebook, Globe2, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
+import { useI18n } from "../providers";
+
+export default function ContactPage() {
+  const { t } = useI18n();
+  const phone = t("contact.phone");
+  const website = t("contact.website");
+  const email = t("contact.email");
+  const address = t("contact.address");
+  const socials = t("contact.socials") || {};
+
+  const [formValues, setFormValues] = useState({ name: "", email: "", phone: "", message: "" });
+  const [consentChecked, setConsentChecked] = useState(false);
+  const [formStatus, setFormStatus] = useState(null);
+  const [mapAttempt, setMapAttempt] = useState(0);
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (mapLoaded || mapAttempt >= 2) return;
+    const timer = setTimeout(() => {
+      setMapAttempt((prev) => prev + 1);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [mapAttempt, mapLoaded]);
+
+  const contactItems = [
+    { label: t("contact.phoneLabel"), value: phone, Icon: Phone },
+    { label: t("contact.websiteLabel"), value: website, Icon: Globe2 },
+    { label: t("contact.emailLabel"), value: email, Icon: Mail },
+    { label: t("contact.addressLabel"), value: address, Icon: MapPin },
+  ];
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!consentChecked) {
+      setFormStatus({ type: "error", message: t("contact.form.consentError") });
+      return;
+    }
+    setFormStatus({ type: "pending", message: t("contact.form.sending") });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formValues),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setFormStatus({ type: "success", message: t("contact.form.success") });
+      setFormValues({ name: "", email: "", phone: "", message: "" });
+      setConsentChecked(false);
+    } catch (error) {
+      setFormStatus({ type: "error", message: t("contact.form.error") });
+    }
+  };
+
+  return (
+    <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/35 blur-3xl" />
+        <div className="absolute left-[-8%] bottom-[-12%] h-72 w-72 rounded-full bg-[#aa995a]/25 blur-3xl" />
+      </div>
+
+      <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-start">
+        <div className="space-y-6">
+
+
+          <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
+            {t("contact.badge")}
+          </span>
+          <h1 className="text-4xl font-bold text-slate-900 sm:text-5xl">
+            {t("contact.title")}
+
+          </h1>
+          <p className="max-w-4xl  text-base leading-relaxed text-slate-700">
+            {t("contact.description")}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href={`tel:${phone}`}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
+            >
+              <Phone size={16} />
+              {t("contact.callCta")}
+            </Link>
+            <button
+              type="button"
+              onClick={scrollToForm}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
+            >
+              <Mail size={16} />
+              {t("contact.emailCta")}
+            </button>
+          </div>
+        </div>
+
+
+
+        <div className="relative space-y-4">
+          <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200/70">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {contactItems.map(({ label, value, Icon }) => (
+                <div
+                  key={label}
+                  className="flex items-start gap-3 rounded-xl border border-transparent px-3 py-2"
+                >
+                  <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
+                    <Icon size={18} strokeWidth={2} aria-hidden />
+                  </span>
+                  <div className="space-y-0.5">
+                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
+                    <p className="text-sm font-semibold text-slate-900">{value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              {socials.instagram && (
+                <Link
+                  href={socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-800 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                >
+                  <Instagram size={16} />
+                  Instagram
+                </Link>
+              )}
+              {socials.facebook && (
+                <Link
+                  href={socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-800 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                >
+                  <Facebook size={16} />
+                  Facebook
+                </Link>
+              )}
+              {socials.tiktok && (
+                <Link
+                  href={socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-800 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                >
+                  <Music2 size={16} />
+                  TikTok
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <div
+            ref={formRef}
+            className="mt-15 mb-15 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-lg shadow-slate-200/70 scroll-mt-24 md:scroll-mt-28"
+          >
+            <h2 className="text-xl font-semibold text-slate-900">{t("contact.form.title")}</h2>
+            <p className="mt-1 text-sm text-slate-600">{t("contact.form.subtitle")}</p>
+
+            <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="space-y-2 text-sm font-semibold text-slate-800">
+                  {/* {t("contact.form.name")} */}
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder={t("contact.form.name")}
+                    value={formValues.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+                  />
+                </label>
+                <label className="space-y-2 text-sm font-semibold text-slate-800">
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder={t("contact.form.email")}
+                    value={formValues.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+                  />
+                </label>
+              </div>
+              <label className="mb-5 space-y-2 text-sm font-semibold text-slate-800">
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder={t("contact.form.phone")}
+                  value={formValues.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+                />
+              </label>
+
+              <textarea
+                name="message"
+                placeholder={t("contact.form.message")}
+                value={formValues.message}
+                onChange={handleChange}
+                required
+                rows={6}
+                className="mt-5 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+              />
+              {/* </label> */}
+
+              <div className="flex items-start gap-3 text-xs text-slate-700">
+                <input
+                  type="checkbox"
+                  checked={consentChecked}
+                  onChange={(event) => {
+                    setConsentChecked(event.target.checked);
+                    if (formStatus?.type === "error") {
+                      setFormStatus(null);
+                    }
+                  }}
+                  className="mt-1  pt-1 h-4 w-4 rounded border-slate-300 text-[#9f8a3f] focus:ring-[#cdb360]"
+                  style={{ accentColor: "#cdb360" }}
+                />
+                <p className="leading-relaxed mt--1">
+                  {t("contact.form.consent.prefix")}{" "}
+                  <a
+                    href="/gdpr"
+                    className="font-semibold text-[#817e32] underline-offset-4 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("contact.form.consent.gdpr")}
+                  </a>{" "}
+                  {t("contact.form.consent.and")}{" "}
+                  <a
+                    href="/terms-and-conditions"
+                    className="font-semibold text-[#817e32] underline-offset-4 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("contact.form.consent.terms")}
+                  </a>{" "}
+                  {t("contact.form.consent.suffix")}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
+                >
+                  <Send size={16} />
+                  {t("contact.form.submit")}
+                </button>
+                {formStatus && (
+                  <p
+                    className={`text-sm ${formStatus.type === "success"
+                      ? "text-green-700"
+                      : formStatus.type === "error"
+                        ? "text-red-700"
+                        : "text-slate-700"
+                      }`}
+                  >
+                    {formStatus.message}
+                  </p>
+                )}
+              </div>
+            </form>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg shadow-slate-200">
+            <iframe
+              key={`map-${mapAttempt}`}
+              title={t("contact.mapTitle")}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.4374125507807!2d23.579772277409482!3d46.75627397112452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490d4232b292bb%3A0xf80d7c264dc03c9c!2sSynaptica%20Cluj!5e0!3m2!1sen!2sro!4v1767811850763!5m2!1sen!2sro"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[260px] w-full"
+              onLoad={() => setMapLoaded(true)}
+              onError={() => setMapAttempt((prev) => (prev < 2 ? prev + 1 : prev))}
+            />
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  );
+}

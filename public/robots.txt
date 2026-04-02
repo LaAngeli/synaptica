@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /gdpr
+Disallow: /terms-and-conditions
+Disallow: /politica-cookie
+
+Sitemap: https://synaptica-cluj.ro/sitemap.xml
