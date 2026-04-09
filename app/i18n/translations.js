@@ -112,6 +112,14 @@ export const translations = {
           buttonName: "View pricing"
         },
         {
+          title: "Conditions",
+          href: "/conditions",
+          description:
+            "Discover the main conditions and challenges that can be addressed through neurofeedback and brainmapping, together with modern approaches for emotional balance, mental clarity, and optimal performance.",
+          accent: "from-[#cdb360]/35 to-[#9f8a3f]/15",
+          buttonName: "See conditions"
+        },
+        {
           title: "Contact",
           href: "/contact",
           description: "Schedule an evaluation or talk with us about the best solution for your needs. We offer personalized guidance, advanced technology, and genuine care.",
@@ -316,12 +324,13 @@ export const translations = {
       emailCta: "Write to us",
       phoneLabel: "Phone",
       phone: "0755062039",
-      websiteLabel: "Website",
-      website: "synaptica-cluj.ro",
       emailLabel: "Email",
       email: "contact@synaptica-cluj.ro",
       addressLabel: "Address",
       address: "Str. Robert Koch Nr. 7, Cluj-Napoca 400347",
+      scheduleLabel: "Opening hours",
+      scheduleLine1: "Monday – Friday: 10:00–18:00",
+      scheduleLine2: "Saturday and Sunday: closed",
       socials: {
         instagram: "https://www.instagram.com/synapticacluj/",
         facebook: "https://www.facebook.com/synapticacluj/",
@@ -650,6 +659,14 @@ export const translations = {
           buttonName: "Vezi prețurile"
         },
         {
+          title: "Afectiuni",
+          href: "/conditions",
+          description:
+            "Descoperă principalele afecțiuni și dificultăți care pot fi abordate prin neurofeedback și brainmapping, alături de soluții moderne pentru echilibru emoțional, claritate mentală și performanță optimă.",
+          accent: "from-[#cdb360]/35 to-[#9f8a3f]/15",
+          buttonName: "Vezi afectiunile"
+        },
+        {
           title: "Contact",
           href: "/contact",
           description: "Programează o evaluare sau discută cu noi despre cea mai potrivită soluție pentru nevoile tale. Oferim ghidare personalizată, tehnologie avansată și grijă autentică.",
@@ -858,12 +875,13 @@ export const translations = {
       emailCta: "Scrie-ne",
       phoneLabel: "Telefon",
       phone: "0755062039",
-      websiteLabel: "Website",
-      website: "synaptica-cluj.ro",
       emailLabel: "Email",
       email: "contact@synaptica-cluj.ro",
       addressLabel: "Adresă",
       address: "Str. Robert Koch Nr. 7, Cluj-Napoca 400347",
+      scheduleLabel: "Orar",
+      scheduleLine1: "Luni – Vineri: 10:00–18:00",
+      scheduleLine2: "Sâmbătă și duminică: închis",
       socials: {
         instagram: "https://www.instagram.com/synapticacluj/",
         facebook: "https://www.facebook.com/synapticacluj/",

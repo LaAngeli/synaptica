@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Facebook, Globe2, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
 import { useI18n } from "../providers";
 
 export default function ContactPage() {
   const { t } = useI18n();
   const phone = t("contact.phone");
-  const website = t("contact.website");
   const email = t("contact.email");
   const address = t("contact.address");
   const socials = t("contact.socials") || {};
@@ -28,11 +27,16 @@ export default function ContactPage() {
     return () => clearTimeout(timer);
   }, [mapAttempt, mapLoaded]);
 
-  const contactItems = [
-    { label: t("contact.phoneLabel"), value: phone, Icon: Phone },
-    { label: t("contact.websiteLabel"), value: website, Icon: Globe2 },
-    { label: t("contact.emailLabel"), value: email, Icon: Mail },
-    { label: t("contact.addressLabel"), value: address, Icon: MapPin },
+  const contactBlocks = [
+    { key: "phone", label: t("contact.phoneLabel"), Icon: Phone, value: phone },
+    { key: "email", label: t("contact.emailLabel"), Icon: Mail, value: email },
+    { key: "address", label: t("contact.addressLabel"), Icon: MapPin, value: address },
+    {
+      key: "schedule",
+      label: t("contact.scheduleLabel"),
+      Icon: Clock,
+      lines: [t("contact.scheduleLine1"), t("contact.scheduleLine2")],
+    },
   ];
 
   const handleChange = (event) => {
@@ -118,24 +122,31 @@ export default function ContactPage() {
 
         <div className="relative space-y-4">
           <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200/70">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {contactItems.map(({ label, value, Icon }) => (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-5">
+              {contactBlocks.map(({ key, label, Icon, value, lines }) => (
                 <div
-                  key={label}
-                  className="flex items-start gap-3 rounded-xl border border-transparent px-3 py-2"
+                  key={key}
+                  className="flex min-w-0 items-start gap-3 rounded-xl border border-slate-100/80 bg-white/50 px-3 py-2.5 sm:py-2"
                 >
                   <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
                     <Icon size={18} strokeWidth={2} aria-hidden />
                   </span>
-                  <div className="space-y-0.5">
+                  <div className="min-w-0 space-y-0.5">
                     <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
-                    <p className="text-sm font-semibold text-slate-900">{value}</p>
+                    {lines ? (
+                      <div className="space-y-1">
+                        <p className="text-sm font-semibold leading-snug text-slate-900">{lines[0]}</p>
+                        <p className="text-xs font-medium leading-snug text-slate-600">{lines[1]}</p>
+                      </div>
+                    ) : (
+                      <p className="break-words text-sm font-semibold text-slate-900">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-2 border-t border-slate-200/80 pt-5 sm:gap-3">
               {socials.instagram && (
                 <Link
                   href={socials.instagram}
