@@ -358,6 +358,7 @@ export const translations = {
         conditions: "Conditions",
         contact: "Contact",
         rights: "All rights reserved.",
+        maintainedBy: "Maintained by",
       },
     },
     legal: {
@@ -372,6 +373,7 @@ export const translations = {
         conditions: "Conditions",
         contact: "Contact",
         rights: "All rights reserved.",
+        maintainedBy: "Maintained by",
       },
       gdpr: {
         badge: "GDPR",
@@ -899,6 +901,7 @@ export const translations = {
         conditions: "Afectiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
+        maintainedBy: "Maintained by",
       },
     },
     legal: {
@@ -913,6 +916,7 @@ export const translations = {
         conditions: "Afectiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
+        maintainedBy: "Maintained by",
       },
       gdpr: {
         badge: "GDPR",

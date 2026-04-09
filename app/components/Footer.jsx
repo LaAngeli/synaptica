@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           <div className="relative flex flex-col gap-10 lg:flex-row lg:items-stretch lg:justify-between">
-            <div className="space-y-0 text-sm lg:max-w-xl">
+            <div className="space-y-0 text-left text-sm lg:max-w-xl">
               <div className=" flex">
                 <p className="font-semibold text-[#7f733c]">{t("contact.phoneLabel")}:&nbsp;</p>
                 <p className=" text-[#7f733c] ">{t("contact.phone")}</p>
@@ -69,9 +69,9 @@ export default function Footer() {
                 ))}
               </div>
 
-              <div className="mt-6 space-y-1">
+              <div className="mt-6 space-y-1 text-center lg:text-left">
                 <p className="font-semibold text-[#7f733c]">{t("legal.links.useful")}</p>
-                <div className="flex flex-wrap items-center gap-2 text-sm ">
+                <div className="flex flex-wrap items-center justify-center gap-2 text-sm lg:justify-start">
                   {usefulLinks.map((link, idx) => (
                     <span key={link.href} className="flex items-center gap-2">
                       <Link href={link.href} className="text-[#7f733c] underline hover:text-[#9f8a3f]">
@@ -84,14 +84,14 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="relative flex w-full max-w-sm flex-col items-end justify-end gap-2 text-right text-sm text-slate-800 lg:mt-0 lg:min-h-full">
-              <div className="flex items-center gap-3 text-[#7f733c]">
+            <div className="relative flex w-full max-w-sm flex-col items-center justify-end gap-2 text-center text-sm text-slate-800 lg:mt-0 lg:min-h-full lg:items-end lg:text-right">
+              <div className="-translate-y-2 flex items-center justify-center gap-3 text-[#7f733c] lg:translate-y-0 lg:justify-end">
                 {socials.instagram && (
                   <Link
                     href={socials.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                    className="inline-flex items-center justify-center rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
                   >
                     <Instagram size={18} />
                   </Link>
@@ -101,7 +101,7 @@ export default function Footer() {
                     href={socials.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                    className="inline-flex items-center justify-center rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
                   >
                     <Facebook size={18} />
                   </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
                     href={socials.tiktok}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                    className="inline-flex items-center justify-center rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
                   >
                     <Music2 size={18} />
                   </Link>
@@ -120,8 +120,19 @@ export default function Footer() {
               <p className="text-sm text-[#7f733c]">
                 © 2026 - Synaptica Cluj. {t("legal.links.rights")}
               </p>
-              <p className="text-xs text-[#7f733c]/80 max-w-xs">
-                Serenity Zen SRL · CUI 51778830 · Adresa: Str. Porii 132 G Et. 3 Ap. 18, Floresti 407280 · Jud. Cluj
+              <p className="max-w-xs text-xs text-[#7f733c]/80">
+                Serenity Zen SRL · CUI 51778830 · 
+              </p>
+              <p className="max-w-xs text-xs text-[#7f733c]/90">
+                {t("legal.links.maintainedBy")}{" "}
+                <Link
+                  href="https://advista.marketing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#817e32] underline decoration-[#cdb360]/70 underline-offset-2 transition-colors hover:text-[#9f8a3f]"
+                >
+                  AdVista
+                </Link>
               </p>
             </div>
           </div>
