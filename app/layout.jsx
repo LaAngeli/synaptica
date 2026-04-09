@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import { I18nProvider } from "./providers";
+import { rootMetadataBase } from "../lib/seo";
+import { buildSiteJsonLd } from "../lib/schema-jsonld";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Synaptica Cluj – Brainmapping si Neurofeedback",
-  description:
-    "Synaptica Cluj ofera brainmapping EEG, neurofeedback si antrenamente cerebrale personalizate pentru echilibru mental, claritate cognitiva si performanta sustenabila, cu programe adaptate nevoilor fiecarui client.",
+  ...rootMetadataBase,
   icons: {
     icon: "/synaptica_logo.png",
     shortcut: "/synaptica_logo.png",
@@ -28,27 +28,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const siteStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Synaptica Cluj",
-    url: "https://synaptica-cluj.ro",
-    description:
-      "Synaptica Cluj ofera brainmapping EEG, neurofeedback si antrenamente cerebrale personalizate pentru echilibru mental, claritate cognitiva si performanta sustenabila, cu programe adaptate nevoilor fiecarui client.",
-    inLanguage: ["ro", "en"],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://synaptica-cluj.ro/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
-    hasPart: [
-      { "@type": "SiteNavigationElement", name: "Home", url: "https://synaptica-cluj.ro/" },
-      { "@type": "SiteNavigationElement", name: "Servicii", url: "https://synaptica-cluj.ro/services" },
-      { "@type": "SiteNavigationElement", name: "Preturi", url: "https://synaptica-cluj.ro/pricing" },
-      { "@type": "SiteNavigationElement", name: "Afectiuni", url: "https://synaptica-cluj.ro/conditions" },
-      { "@type": "SiteNavigationElement", name: "Contact", url: "https://synaptica-cluj.ro/contact" },
-    ],
-  };
+  const siteStructuredData = buildSiteJsonLd();
 
   return (
     <html lang="ro">
@@ -70,7 +50,7 @@ export default function RootLayout({ children }) {
           </Script>
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData).replace(/</g, "\\u003c") }}
           />
           <div className="relative min-h-screen text-slate-900">
             <div className="pointer-events-none fixed inset-0 -z-10 opacity-80">
