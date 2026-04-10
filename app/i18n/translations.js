@@ -372,6 +372,7 @@ export const translations = {
     },
     legal: {
       links: {
+        legalInfo: "Legal information",
         gdpr: "GDPR",
         terms: "Terms & Conditions",
         cookies: "Cookie Policy",
@@ -911,7 +912,7 @@ export const translations = {
       links: {
         gdpr: "GDPR",
         terms: "Termeni și Condiții",
-        cookies: "Politica de utilizare a cookie-urilor",
+        cookies: "Politica de Confidențialitate",
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
@@ -924,9 +925,10 @@ export const translations = {
     },
     legal: {
       links: {
+        legalInfo: "Informații legale",
         gdpr: "GDPR",
         terms: "Termeni și Condiții",
-        cookies: "Politica de utilizare a cookie-urilor",
+        cookies: "Politica de Confidențialitate",
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
@@ -993,7 +995,7 @@ export const translations = {
           {
             title: "8. Cookie-uri",
             body:
-              "Site-ul nostru utilizează cookie-uri pentru funcționalitate, analiză și experiență personalizată. Pentru detalii, consultați Politica de utilizare a cookie-urilor.",
+              "Site-ul nostru utilizează cookie-uri pentru funcționalitate, analiză și experiență personalizată. Pentru detalii, consultați Politica de Confidențialitate.",
           },
           {
             title: "9. Modificări",
@@ -1068,7 +1070,7 @@ export const translations = {
         banner: {
           title: "Folosim cookie-uri",
           description:
-            "Folosim cookie-uri pentru funcționalitate, analiză și o experiență personalizată. Continuarea navigării înseamnă acordul tău cu Politica de utilizare a cookie-urilor.",
+            "Folosim cookie-uri pentru funcționalitate, analiză și o experiență personalizată. Continuarea navigării înseamnă acordul tău cu Politica de Confidențialitate.",
           link: "Vezi Politica de cookie-uri",
           accept: "Accept cookie-urile",
         },

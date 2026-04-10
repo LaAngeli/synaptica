@@ -59,14 +59,18 @@ export default function Footer() {
                 <span className="min-w-0 text-[#7f733c]">{t("contact.address")}</span>
               </div>
 
-              <div className="mt-2">
-                {companyLinks.map((link) => (
-                  <div key={link.href}>
-                    <Link href={link.href} className="text-[#7f733c] underline hover:text-[#9f8a3f]">
-                      {t(link.labelKey)}
-                    </Link>
-                  </div>
-                ))}
+              <div className="mt-6 space-y-1 text-center lg:text-left">
+                <p className="font-semibold text-[#7f733c]">{t("legal.links.legalInfo")}</p>
+                <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm lg:justify-start">
+                  {companyLinks.map((link, idx) => (
+                    <span key={link.href} className="inline-flex flex-wrap items-center gap-2">
+                      <Link href={link.href} className="text-[#7f733c] underline hover:text-[#9f8a3f]">
+                        {t(link.labelKey)}
+                      </Link>
+                      {idx < companyLinks.length - 1 && <span className="text-[#7f733c]" aria-hidden>|</span>}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="mt-6 space-y-1 text-center lg:text-left">
