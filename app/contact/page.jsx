@@ -2,8 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
 import { useI18n } from "../providers";
+
+const NAME_ALLOWED_CHARS = /[^\p{L}\s]/gu;
+const RECAPTCHA_ACTION = "contact_submit";
+const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 export default function ContactPage() {
   const { t } = useI18n();
@@ -13,6 +18,8 @@ export default function ContactPage() {
   const socials = t("contact.socials") || {};
 
   const [formValues, setFormValues] = useState({ name: "", email: "", phone: "", message: "" });
+  const [honeypotValue, setHoneypotValue] = useState("");
+  const [csrfToken, setCsrfToken] = useState("");
   const [consentChecked, setConsentChecked] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
   const [mapAttempt, setMapAttempt] = useState(0);
@@ -26,6 +33,32 @@ export default function ContactPage() {
     }, 4000);
     return () => clearTimeout(timer);
   }, [mapAttempt, mapLoaded]);
+
+  useEffect(() => {
+    const loadCsrfToken = async () => {
+      try {
+        const response = await fetch("/api/contact/csrf", {
+          method: "GET",
+          credentials: "same-origin",
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to initialize secure form.");
+        }
+
+        const body = await response.json();
+        if (!body?.csrfToken) {
+          throw new Error("Missing CSRF token.");
+        }
+
+        setCsrfToken(body.csrfToken);
+      } catch (error) {
+        setFormStatus({ type: "error", message: t("contact.form.error") });
+      }
+    };
+
+    loadCsrfToken();
+  }, [t]);
 
   const contactBlocks = [
     { key: "phone", label: t("contact.phoneLabel"), Icon: Phone, value: phone },
@@ -41,7 +74,21 @@ export default function ContactPage() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormValues((prev) => ({ ...prev, [name]: value }));
+    let nextValue = value;
+
+    if (name === "name") {
+      nextValue = value.replace(NAME_ALLOWED_CHARS, "").replace(/\s+/g, " ").slice(0, 25);
+    }
+
+    if (name === "phone") {
+      nextValue = value.replace(/\D/g, "").slice(0, 13);
+    }
+
+    if (name === "message") {
+      nextValue = value.slice(0, 750);
+    }
+
+    setFormValues((prev) => ({ ...prev, [name]: nextValue }));
   };
 
   const scrollToForm = () => {
@@ -52,6 +99,17 @@ export default function ContactPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!recaptchaSiteKey) {
+      setFormStatus({ type: "error", message: "reCAPTCHA nu este configurat." });
+      return;
+    }
+
+    if (!csrfToken) {
+      setFormStatus({ type: "error", message: t("contact.form.error") });
+      return;
+    }
+
     if (!consentChecked) {
       setFormStatus({ type: "error", message: t("contact.form.consentError") });
       return;
@@ -59,26 +117,61 @@ export default function ContactPage() {
     setFormStatus({ type: "pending", message: t("contact.form.sending") });
 
     try {
+      if (!window?.grecaptcha?.enterprise) {
+        throw new Error("reCAPTCHA nu este disponibil momentan.");
+      }
+
+      const recaptchaToken = await new Promise((resolve, reject) => {
+        window.grecaptcha.enterprise.ready(async () => {
+          try {
+            const token = await window.grecaptcha.enterprise.execute(recaptchaSiteKey, {
+              action: RECAPTCHA_ACTION,
+            });
+            resolve(token);
+          } catch (error) {
+            reject(new Error("Validarea reCAPTCHA a eșuat."));
+          }
+        });
+      });
+
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues),
+        headers: {
+          "Content-Type": "application/json",
+          "x-csrf-token": csrfToken,
+        },
+        credentials: "same-origin",
+        body: JSON.stringify({
+          ...formValues,
+          website: honeypotValue,
+          recaptchaToken,
+          recaptchaAction: RECAPTCHA_ACTION,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error("Request failed");
+        const responseBody = await response.json().catch(() => ({}));
+        throw new Error(responseBody?.error || t("contact.form.error"));
       }
 
       setFormStatus({ type: "success", message: t("contact.form.success") });
       setFormValues({ name: "", email: "", phone: "", message: "" });
+      setHoneypotValue("");
       setConsentChecked(false);
     } catch (error) {
-      setFormStatus({ type: "error", message: t("contact.form.error") });
+      setFormStatus({ type: "error", message: error.message || t("contact.form.error") });
     }
   };
 
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
+    <>
+      {recaptchaSiteKey && (
+        <Script
+          src={`https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`}
+          strategy="afterInteractive"
+        />
+      )}
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/35 blur-3xl" />
         <div className="absolute left-[-8%] bottom-[-12%] h-72 w-72 rounded-full bg-[#aa995a]/25 blur-3xl" />
@@ -191,6 +284,20 @@ export default function ContactPage() {
             <p className="mt-1 text-sm text-slate-600">{t("contact.form.subtitle")}</p>
 
             <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">
+                  Website
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypotValue}
+                    onChange={(event) => setHoneypotValue(event.target.value)}
+                  />
+                </label>
+              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2 text-sm font-semibold text-slate-800">
                   {/* {t("contact.form.name")} */}
@@ -201,6 +308,10 @@ export default function ContactPage() {
                     value={formValues.name}
                     onChange={handleChange}
                     required
+                    minLength={3}
+                    maxLength={25}
+                    pattern="[A-Za-zĂÂÎȘŞȚŢăâîșşțţ\s]{3,25}"
+                    title="Numele trebuie să conțină doar litere și să aibă între 3 și 25 caractere."
                     className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
                   />
                 </label>
@@ -225,6 +336,11 @@ export default function ContactPage() {
                   placeholder={t("contact.form.phone")}
                   value={formValues.phone}
                   onChange={handleChange}
+                  minLength={9}
+                  maxLength={13}
+                  inputMode="numeric"
+                  pattern="[0-9]{9,13}"
+                  title="Numărul de telefon trebuie să conțină doar cifre și să aibă între 9 și 13 caractere."
                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
                 />
               </label>
@@ -236,8 +352,10 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={6}
+                maxLength={750}
                 className="mt-5 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
               />
+              <p className="text-xs text-slate-500">{formValues.message.length}/750</p>
               {/* </label> */}
 
               <div className="flex items-start gap-3 text-xs text-slate-700">
@@ -318,6 +436,7 @@ export default function ContactPage() {
 
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
