@@ -32,22 +32,27 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="ro">
+      <head>
+        <Script id="gtm-base" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PVWD2CT9');`}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <I18nProvider>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=<GOOGLE_KEY>"
-            strategy="afterInteractive"
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PVWD2CT9"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
           />
-          <Script id="gtag-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '<GOOGLE_KEY>');
-            `}
-          </Script>
+        </noscript>
+        <I18nProvider>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData).replace(/</g, "\\u003c") }}
