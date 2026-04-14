@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 const requiredFields = ["name", "email", "message"];
 
@@ -9,6 +10,11 @@ function isValidEmail(value) {
 function safeString(value, maxLen = 2000) {
   if (value == null) return "";
   return String(value).trim().slice(0, maxLen);
+}
+
+function parseBoolean(value) {
+  if (typeof value !== "string") return false;
+  return value.toLowerCase() === "true";
 }
 
 export async function POST(request) {
@@ -32,70 +38,87 @@ export async function POST(request) {
       return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
     }
 
-    const apiKey = process.env.SENDGRID_API_KEY;
-    const to = process.env.SENDGRID_TO;
-    const from = process.env.SENDGRID_FROM || to;
-    const templateId = process.env.SENDGRID_TEMPLATE_ID;
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = Number(process.env.SMTP_PORT || 465);
+    const smtpSecure = parseBoolean(process.env.SMTP_SECURE || "true");
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const from = process.env.MAIL_FROM || smtpUser;
+    const to = process.env.MAIL_TO || from;
 
-    if (!apiKey || !to || !from || !templateId) {
+    if (!smtpHost || !smtpPort || !smtpUser || !smtpPass || !from || !to) {
       return NextResponse.json(
         {
           error:
-            "Email service not configured. Please set SENDGRID_API_KEY, SENDGRID_TO, SENDGRID_FROM, SENDGRID_TEMPLATE_ID.",
+            "Email service not configured. Please set SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM, MAIL_TO.",
         },
         { status: 500 }
       );
     }
 
-    // Dynamic template request body (valid for SendGrid v3/mail/send)
-    const body = {
-      personalizations: [
-        {
-          to: [{ email: to }],
-          subject: `Mesaj contact - ${name || "Vizitator"}`,
-          dynamic_template_data: {
-            name,
-            email,
-            phone: phone || "-",
-            message,
-            submittedAt: new Date().toISOString(),
-            // Optional metadata
-            clinicName: "Synaptica Cluj",
-          },
-        },
-      ],
-      from: { email: from, name: "Synaptica Web" },
-      template_id: templateId,
-    };
-
-    const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
       },
-      body: JSON.stringify(body),
     });
 
-    if (!response.ok) {
-      const text = await response.text();
+    await transporter.sendMail({
+      from: `"Synaptica Web" <${from}>`,
+      to,
+      replyTo: email,
+      subject: `Mesaj contact - ${name || "Vizitator"}`,
+      text: [
+        "Ai primit un mesaj nou din formularul de contact Synaptica.",
+        "",
+        `Nume: ${name}`,
+        `Email: ${email}`,
+        `Telefon: ${phone || "-"}`,
+        "",
+        "Mesaj:",
+        message,
+        "",
+        `Trimis la: ${new Date().toISOString()}`,
+      ].join("\n"),
+      html: `
+        <h2>Mesaj nou din formularul de contact Synaptica</h2>
+        <p><strong>Nume:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Telefon:</strong> ${phone || "-"}</p>
+        <p><strong>Mesaj:</strong></p>
+        <p>${message.replace(/\n/g, "<br/>")}</p>
+        <hr/>
+        <p><small>Trimis la: ${new Date().toISOString()}</small></p>
+      `,
+    });
 
-      console.error("SendGrid error status:", response.status);
-      console.error("SendGrid error body:", text);
+    await transporter.sendMail({
+      from: `"Synaptica Cluj" <${from}>`,
+      to: email,
+      subject: "Am primit mesajul tău - Synaptica Cluj",
+      text: [
+        `Salut, ${name || ""}`.trim(),
+        "",
+        "Îți mulțumim pentru mesaj. Confirmăm că solicitarea ta a fost primită.",
+        "Revenim către tine în cel mai scurt timp posibil.",
+        "",
+        "Cu drag,",
+        "Echipa Synaptica Cluj",
+      ].join("\n"),
+      html: `
+        <p>${name ? `Salut, ${name},` : "Salut,"}</p>
+        <p>Îți mulțumim pentru mesaj. Confirmăm că solicitarea ta a fost primită.</p>
+        <p>Revenim către tine în cel mai scurt timp posibil.</p>
+        <p>Cu drag,<br/>Echipa Synaptica Cluj</p>
+      `,
+    });
 
-      return NextResponse.json(
-        {
-          error: "Failed to send message",
-          sendgridStatus: response.status,
-          sendgridResponse: text,
-        },
-        { status: 502 }
-      );
-    }
-
-
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, confirmationSent: true });
   } catch (error) {
+    console.error("Contact form send error:", error);
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
   }
 }
