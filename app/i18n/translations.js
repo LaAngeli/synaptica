@@ -968,7 +968,7 @@ export const translations = {
       links: {
         gdpr: "GDPR",
         terms: "Termeni și Condiții",
-        cookies: "Politica de Confidențialitate",
+        cookies: "Politica de Cookie-uri",
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
@@ -984,7 +984,7 @@ export const translations = {
         legalInfo: "Informații legale",
         gdpr: "GDPR",
         terms: "Termeni și Condiții",
-        cookies: "Politica de Confidențialitate",
+        cookies: "Politica de Cookie-uri",
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
