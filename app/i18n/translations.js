@@ -356,6 +356,34 @@ export const translations = {
         sending: "Sending...",
         success: "Message sent. We will get back to you soon.",
         error: "We couldn't send the message right now. Please try again.",
+        recaptchaNotConfigured: "reCAPTCHA is not configured.",
+        recaptchaUnavailable: "reCAPTCHA is currently unavailable.",
+        recaptchaValidationFailed: "reCAPTCHA validation failed.",
+        validation: {
+          required: "Please complete this field.",
+          typeMismatch: "Please enter a valid value.",
+          tooShort: "The value is too short.",
+          tooLong: "The value is too long.",
+          patternMismatch: "Please match the requested format.",
+          name: {
+            required: "Please enter your name.",
+            tooShort: "Name must contain between 3 and 25 characters.",
+            tooLong: "Name must contain between 3 and 25 characters.",
+            patternMismatch: "Name must contain only letters and be between 3 and 25 characters.",
+          },
+          email: {
+            required: "Please enter your email address.",
+            typeMismatch: "Please enter a valid email address.",
+          },
+          phone: {
+            tooShort: "Phone number must contain between 9 and 13 digits.",
+            tooLong: "Phone number must contain between 9 and 13 digits.",
+            patternMismatch: "Phone number must contain only digits and be between 9 and 13 characters.",
+          },
+          message: {
+            required: "Please enter your message.",
+          },
+        },
       },
       links: {
         gdpr: "GDPR",
@@ -908,6 +936,34 @@ export const translations = {
         sending: "Se trimite...",
         success: "Mesaj trimis. Revenim în curând.",
         error: "Mesajul nu a putut fi trimis acum. Te rugăm să încerci din nou.",
+        recaptchaNotConfigured: "reCAPTCHA nu este configurat.",
+        recaptchaUnavailable: "reCAPTCHA nu este disponibil momentan.",
+        recaptchaValidationFailed: "Validarea reCAPTCHA a eșuat.",
+        validation: {
+          required: "Te rugăm să completezi acest câmp.",
+          typeMismatch: "Te rugăm să introduci o valoare validă.",
+          tooShort: "Valoarea introdusă este prea scurtă.",
+          tooLong: "Valoarea introdusă este prea lungă.",
+          patternMismatch: "Te rugăm să respecți formatul cerut.",
+          name: {
+            required: "Te rugăm să introduci numele.",
+            tooShort: "Numele trebuie să conțină între 3 și 25 de caractere.",
+            tooLong: "Numele trebuie să conțină între 3 și 25 de caractere.",
+            patternMismatch: "Numele trebuie să conțină doar litere și să aibă între 3 și 25 de caractere.",
+          },
+          email: {
+            required: "Te rugăm să introduci adresa de email.",
+            typeMismatch: "Te rugăm să introduci o adresă de email validă.",
+          },
+          phone: {
+            tooShort: "Numărul de telefon trebuie să conțină între 9 și 13 cifre.",
+            tooLong: "Numărul de telefon trebuie să conțină între 9 și 13 cifre.",
+            patternMismatch: "Numărul de telefon trebuie să conțină doar cifre și să aibă între 9 și 13 caractere.",
+          },
+          message: {
+            required: "Te rugăm să introduci mesajul.",
+          },
+        },
       },
       links: {
         gdpr: "GDPR",

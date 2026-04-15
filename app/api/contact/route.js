@@ -47,6 +47,30 @@ function parseFloatValue(value, fallback) {
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
+function normalizeOrigin(value) {
+  if (!value) return "";
+  try {
+    const url = new URL(value);
+    return `${url.protocol}//${url.host}`.toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function getRequestHostOrigin(request) {
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const host = forwardedHost || request.headers.get("host");
+  const protocolFromNext = request.nextUrl?.protocol || "";
+  const proto = forwardedProto || protocolFromNext.replace(":", "") || "https";
+
+  if (!host || !proto) {
+    return "";
+  }
+
+  return normalizeOrigin(`${proto}://${host}`);
+}
+
 function getClientIp(request) {
   const forwardedFor = request.headers.get("x-forwarded-for");
   if (forwardedFor) {
@@ -61,13 +85,31 @@ function assertOriginAllowed(request) {
     return true;
   }
 
-  const expectedOrigin = process.env.CONTACT_ALLOWED_ORIGIN;
-  if (!expectedOrigin) {
+  const configuredOrigins = process.env.CONTACT_ALLOWED_ORIGIN;
+  const requestOrigin = normalizeOrigin(request.headers.get("origin") || "");
+  if (!requestOrigin) {
+    return false;
+  }
+
+  const allowedOrigins = configuredOrigins
+    ? configuredOrigins
+    .split(",")
+    .map((origin) => normalizeOrigin(origin.trim()))
+    .filter(Boolean)
+    : [];
+
+  // Fallback sigur: adăugăm și origin-ul hostului curent al requestului.
+  const runtimeOrigins = [
+    normalizeOrigin(request.nextUrl?.origin || ""),
+    getRequestHostOrigin(request),
+  ].filter(Boolean);
+
+  const allAllowedOrigins = new Set([...allowedOrigins, ...runtimeOrigins]);
+  if (allAllowedOrigins.size === 0) {
     return true;
   }
 
-  const requestOrigin = request.headers.get("origin");
-  return requestOrigin === expectedOrigin;
+  return allAllowedOrigins.has(requestOrigin);
 }
 
 function assertCsrfToken(request) {

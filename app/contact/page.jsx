@@ -26,6 +26,45 @@ export default function ContactPage() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const formRef = useRef(null);
 
+  const getFieldValidationMessage = (input) => {
+    const { name, validity } = input;
+
+    if (validity.valueMissing) {
+      return t(`contact.form.validation.${name}.required`) || t("contact.form.validation.required");
+    }
+
+    if (validity.typeMismatch) {
+      return t(`contact.form.validation.${name}.typeMismatch`) || t("contact.form.validation.typeMismatch");
+    }
+
+    if (validity.tooShort) {
+      return t(`contact.form.validation.${name}.tooShort`) || t("contact.form.validation.tooShort");
+    }
+
+    if (validity.tooLong) {
+      return t(`contact.form.validation.${name}.tooLong`) || t("contact.form.validation.tooLong");
+    }
+
+    if (validity.patternMismatch) {
+      return t(`contact.form.validation.${name}.patternMismatch`) || t("contact.form.validation.patternMismatch");
+    }
+
+    return "";
+  };
+
+  const handleInvalidField = (event) => {
+    const input = event.target;
+    input.setCustomValidity("");
+    const message = getFieldValidationMessage(input);
+    if (message) {
+      input.setCustomValidity(message);
+    }
+  };
+
+  const clearCustomValidation = (event) => {
+    event.target.setCustomValidity("");
+  };
+
   useEffect(() => {
     if (mapLoaded || mapAttempt >= 2) return;
     const timer = setTimeout(() => {
@@ -101,7 +140,7 @@ export default function ContactPage() {
     event.preventDefault();
 
     if (!recaptchaSiteKey) {
-      setFormStatus({ type: "error", message: "reCAPTCHA nu este configurat." });
+      setFormStatus({ type: "error", message: t("contact.form.recaptchaNotConfigured") });
       return;
     }
 
@@ -118,7 +157,7 @@ export default function ContactPage() {
 
     try {
       if (!window?.grecaptcha?.enterprise) {
-        throw new Error("reCAPTCHA nu este disponibil momentan.");
+        throw new Error(t("contact.form.recaptchaUnavailable"));
       }
 
       const recaptchaToken = await new Promise((resolve, reject) => {
@@ -129,7 +168,7 @@ export default function ContactPage() {
             });
             resolve(token);
           } catch (error) {
-            reject(new Error("Validarea reCAPTCHA a eșuat."));
+            reject(new Error(t("contact.form.recaptchaValidationFailed")));
           }
         });
       });
@@ -307,11 +346,13 @@ export default function ContactPage() {
                     placeholder={t("contact.form.name")}
                     value={formValues.name}
                     onChange={handleChange}
+                    onInvalid={handleInvalidField}
+                    onInput={clearCustomValidation}
                     required
                     minLength={3}
                     maxLength={25}
                     pattern="[A-Za-zĂÂÎȘŞȚŢăâîșşțţ\s]{3,25}"
-                    title="Numele trebuie să conțină doar litere și să aibă între 3 și 25 caractere."
+                    title={t("contact.form.validation.name.patternMismatch")}
                     className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
                   />
                 </label>
@@ -323,6 +364,8 @@ export default function ContactPage() {
                     placeholder={t("contact.form.email")}
                     value={formValues.email}
                     onChange={handleChange}
+                    onInvalid={handleInvalidField}
+                    onInput={clearCustomValidation}
                     required
                     className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
                   />
@@ -336,11 +379,13 @@ export default function ContactPage() {
                   placeholder={t("contact.form.phone")}
                   value={formValues.phone}
                   onChange={handleChange}
+                  onInvalid={handleInvalidField}
+                  onInput={clearCustomValidation}
                   minLength={9}
                   maxLength={13}
                   inputMode="numeric"
                   pattern="[0-9]{9,13}"
-                  title="Numărul de telefon trebuie să conțină doar cifre și să aibă între 9 și 13 caractere."
+                  title={t("contact.form.validation.phone.patternMismatch")}
                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
                 />
               </label>
@@ -350,6 +395,8 @@ export default function ContactPage() {
                 placeholder={t("contact.form.message")}
                 value={formValues.message}
                 onChange={handleChange}
+                onInvalid={handleInvalidField}
+                onInput={clearCustomValidation}
                 required
                 rows={6}
                 maxLength={750}
