@@ -1,11 +1,12 @@
 import { spawn } from "node:child_process";
+import { resolve } from "node:path";
 
 const port = process.env.PORT || "3000";
 const host = process.env.HOST || "0.0.0.0";
+const nextBin = resolve(process.cwd(), "node_modules/next/dist/bin/next");
 
-const child = spawn("next", ["start", "-H", host, "-p", String(port)], {
+const child = spawn(process.execPath, [nextBin, "start", "-H", host, "-p", String(port)], {
   stdio: "inherit",
-  shell: true,
 });
 
 child.on("exit", (code, signal) => {
