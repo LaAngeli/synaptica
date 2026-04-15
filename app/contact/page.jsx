@@ -22,6 +22,7 @@ export default function ContactPage() {
   const [csrfToken, setCsrfToken] = useState("");
   const [consentChecked, setConsentChecked] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+  const [lastSuccessfulSubmissionAt, setLastSuccessfulSubmissionAt] = useState(null);
   const [mapAttempt, setMapAttempt] = useState(0);
   const [mapLoaded, setMapLoaded] = useState(false);
   const formRef = useRef(null);
@@ -72,6 +73,16 @@ export default function ContactPage() {
     }, 4000);
     return () => clearTimeout(timer);
   }, [mapAttempt, mapLoaded]);
+
+  useEffect(() => {
+    if (formStatus?.type !== "success") return undefined;
+
+    const timer = setTimeout(() => {
+      setFormStatus(null);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, [formStatus]);
 
   useEffect(() => {
     const loadCsrfToken = async () => {
@@ -128,6 +139,10 @@ export default function ContactPage() {
     }
 
     setFormValues((prev) => ({ ...prev, [name]: nextValue }));
+
+    if (formStatus && formStatus.type !== "pending") {
+      setFormStatus(null);
+    }
   };
 
   const scrollToForm = () => {
@@ -197,6 +212,18 @@ export default function ContactPage() {
       setFormValues({ name: "", email: "", phone: "", message: "" });
       setHoneypotValue("");
       setConsentChecked(false);
+      const submittedAt = Date.now();
+      setLastSuccessfulSubmissionAt(submittedAt);
+
+      if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "contact_form_submit_success",
+          formId: "contact-form",
+          formName: "contact",
+          submittedAt,
+        });
+      }
     } catch (error) {
       setFormStatus({ type: "error", message: error.message || t("contact.form.error") });
     }
@@ -322,7 +349,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold text-slate-900">{t("contact.form.title")}</h2>
             <p className="mt-1 text-sm text-slate-600">{t("contact.form.subtitle")}</p>
 
-            <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+            <form id="contact-form" className="mt-5 space-y-4" onSubmit={handleSubmit}>
               <div className="hidden" aria-hidden="true">
                 <label htmlFor="website">
                   Website
@@ -460,6 +487,14 @@ export default function ContactPage() {
                   >
                     {formStatus.message}
                   </p>
+                )}
+                {lastSuccessfulSubmissionAt && (
+                  <span
+                    id="contact-form-success-trigger"
+                    data-conversion-event="contact_form_submit_success"
+                    data-submitted-at={lastSuccessfulSubmissionAt}
+                    hidden
+                  />
                 )}
               </div>
             </form>
