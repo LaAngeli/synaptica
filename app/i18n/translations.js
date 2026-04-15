@@ -325,7 +325,7 @@ export const translations = {
       phoneLabel: "Phone",
       phone: "0755062039",
       emailLabel: "Email",
-      email: "contact@synaptica-cluj.ro",
+      email: "contacts@synaptica-cluj.ro",
       addressLabel: "Address",
       address: "Str. Robert Koch Nr. 7, Cluj-Napoca 400347",
       scheduleLabel: "Opening hours",
@@ -442,7 +442,7 @@ export const translations = {
           {
             title: "4. Storage duration",
             body:
-              "Data will be stored for an indefinite period, with the option to delete upon user request via an email sent to contact@synaptica-cluj.ro.",
+              "Data will be stored for an indefinite period, with the option to delete upon user request via an email sent to contacts@synaptica-cluj.ro.",
           },
           {
             title: "5. User rights",
@@ -478,7 +478,7 @@ export const translations = {
           },
           {
             title: "10. Contact",
-            body: "For any questions or requests regarding data protection, you can write to: contact@synaptica-cluj.ro",
+            body: "For any questions or requests regarding data protection, you can write to: contacts@synaptica-cluj.ro",
           },
         ],
       },
@@ -532,7 +532,7 @@ export const translations = {
           },
           {
             title: "8. Contact",
-            body: "For questions or clarifications regarding these terms, you can contact us at: contact@synaptica-cluj.ro",
+            body: "For questions or clarifications regarding these terms, you can contact us at: contacts@synaptica-cluj.ro",
           },
         ],
       },
@@ -585,7 +585,7 @@ export const translations = {
           },
           {
             title: "6. Contact",
-            body: "For questions or requests related to this policy, contact us at: contact@synaptica-cluj.ro",
+            body: "For questions or requests related to this policy, contact us at: contacts@synaptica-cluj.ro",
           },
         ],
       },
@@ -905,7 +905,7 @@ export const translations = {
       phoneLabel: "Telefon",
       phone: "0755062039",
       emailLabel: "Email",
-      email: "contact@synaptica-cluj.ro",
+      email: "contacts@synaptica-cluj.ro",
       addressLabel: "Adresă",
       address: "Str. Robert Koch Nr. 7, Cluj-Napoca 400347",
       scheduleLabel: "Orar",
@@ -1023,7 +1023,7 @@ export const translations = {
           {
             title: "4. Durata stocării",
             body:
-              "Datele vor fi stocate pe durată nedeterminată, cu posibilitatea de ștergere la cererea utilizatorului, printr-un e-mail trimis la contact@synaptica-cluj.ro.",
+              "Datele vor fi stocate pe durată nedeterminată, cu posibilitatea de ștergere la cererea utilizatorului, printr-un e-mail trimis la contacts@synaptica-cluj.ro.",
           },
           {
             title: "5. Drepturile utilizatorului",
@@ -1059,7 +1059,7 @@ export const translations = {
           },
           {
             title: "10. Contact",
-            body: "Pentru orice întrebări sau solicitări legate de protecția datelor, ne poți scrie la: contact@synaptica-cluj.ro",
+            body: "Pentru orice întrebări sau solicitări legate de protecția datelor, ne poți scrie la: contacts@synaptica-cluj.ro",
           },
         ],
       },
@@ -1113,7 +1113,7 @@ export const translations = {
           },
           {
             title: "8. Contact",
-            body: "Pentru întrebări sau clarificări privind acești termeni, ne puteți contacta la: contact@synaptica-cluj.ro",
+            body: "Pentru întrebări sau clarificări privind acești termeni, ne puteți contacta la: contacts@synaptica-cluj.ro",
           },
         ],
       },
@@ -1166,7 +1166,7 @@ export const translations = {
           },
           {
             title: "6. Contact",
-            body: "Pentru întrebări sau solicitări legate de această politică, ne puteți contacta la: contact@synaptica-cluj.ro",
+            body: "Pentru întrebări sau solicitări legate de această politică, ne puteți contacta la: contacts@synaptica-cluj.ro",
           },
         ],
       },
