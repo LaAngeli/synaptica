@@ -465,19 +465,23 @@ export default function ContactPage() {
                 />
               </label>
 
-              <textarea
-                name="message"
-                placeholder={t("contact.form.message")}
-                value={formValues.message}
-                onChange={handleChange}
-                onInvalid={handleInvalidField}
-                onInput={clearCustomValidation}
-                required
-                rows={6}
-                maxLength={750}
-                className="mt-5 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
-              />
-              <p className="text-xs text-slate-500">{formValues.message.length}/750</p>
+              <div className="relative mt-5">
+                <textarea
+                  name="message"
+                  placeholder={t("contact.form.message")}
+                  value={formValues.message}
+                  onChange={handleChange}
+                  onInvalid={handleInvalidField}
+                  onInput={clearCustomValidation}
+                  required
+                  rows={6}
+                  maxLength={750}
+                  className="w-full resize-none rounded-xl border border-slate-200 bg-white px-3 py-2 pb-8 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+                />
+                <p className="pointer-events-none absolute bottom-2 right-3 text-xs text-slate-500">
+                  {formValues.message.length}/750
+                </p>
+              </div>
               {/* </label> */}
 
               <div className="flex items-start gap-3 text-xs text-slate-700">
