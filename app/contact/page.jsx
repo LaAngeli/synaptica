@@ -122,6 +122,33 @@ export default function ContactPage() {
     },
   ];
 
+  const getIconAction = (key, value) => {
+    if (key === "phone" && value) {
+      return {
+        href: `tel:${String(value).replace(/\s+/g, "")}`,
+        ariaLabel: t("contact.callCta"),
+      };
+    }
+
+    if (key === "email" && value) {
+      return {
+        href: `mailto:${value}`,
+        ariaLabel: t("contact.emailCta"),
+      };
+    }
+
+    if (key === "address" && value) {
+      return {
+        href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(value)}`,
+        ariaLabel: t("contact.mapTitle"),
+        target: "_blank",
+        rel: "noopener noreferrer",
+      };
+    }
+
+    return null;
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     let nextValue = value;
@@ -282,27 +309,43 @@ export default function ContactPage() {
         <div className="relative space-y-4">
           <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200/70">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-5">
-              {contactBlocks.map(({ key, label, Icon, value, lines }) => (
-                <div
-                  key={key}
-                  className="flex min-w-0 items-start gap-3 rounded-xl border border-slate-100/80 bg-white/50 px-3 py-2.5 sm:py-2"
-                >
-                  <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
-                    <Icon size={18} strokeWidth={2} aria-hidden />
-                  </span>
-                  <div className="min-w-0 space-y-0.5">
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
-                    {lines ? (
-                      <div className="space-y-1">
-                        <p className="text-sm font-semibold leading-snug text-slate-900">{lines[0]}</p>
-                        <p className="text-xs font-medium leading-snug text-slate-600">{lines[1]}</p>
-                      </div>
+              {contactBlocks.map(({ key, label, Icon, value, lines }) => {
+                const iconAction = getIconAction(key, value);
+
+                return (
+                  <div
+                    key={key}
+                    className="flex min-w-0 items-start gap-3 rounded-xl border border-slate-100/80 bg-white/50 px-3 py-2.5 sm:py-2"
+                  >
+                    {iconAction ? (
+                      <a
+                        href={iconAction.href}
+                        aria-label={iconAction.ariaLabel}
+                        target={iconAction.target}
+                        rel={iconAction.rel}
+                        className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                      >
+                        <Icon size={18} strokeWidth={2} aria-hidden />
+                      </a>
                     ) : (
-                      <p className="break-words text-sm font-semibold text-slate-900">{value}</p>
+                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
+                        <Icon size={18} strokeWidth={2} aria-hidden />
+                      </span>
                     )}
+                    <div className="min-w-0 space-y-0.5">
+                      <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
+                      {lines ? (
+                        <div className="space-y-1">
+                          <p className="text-sm font-semibold leading-snug text-slate-900">{lines[0]}</p>
+                          <p className="text-xs font-medium leading-snug text-slate-600">{lines[1]}</p>
+                        </div>
+                      ) : (
+                        <p className="break-words text-sm font-semibold text-slate-900">{value}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-2 border-t border-slate-200/80 pt-5 sm:gap-3">
