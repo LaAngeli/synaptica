@@ -264,6 +264,11 @@ export default function ContactPage() {
           strategy="afterInteractive"
         />
       )}
+      <style jsx global>{`
+        .grecaptcha-badge {
+          display: none !important;
+        }
+      `}</style>
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/35 blur-3xl" />
