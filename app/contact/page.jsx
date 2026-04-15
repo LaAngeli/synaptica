@@ -122,6 +122,33 @@ export default function ContactPage() {
     },
   ];
 
+  const getIconAction = (key, value) => {
+    if (key === "phone" && value) {
+      return {
+        href: `tel:${String(value).replace(/\s+/g, "")}`,
+        ariaLabel: t("contact.callCta"),
+      };
+    }
+
+    if (key === "email" && value) {
+      return {
+        href: `mailto:${value}`,
+        ariaLabel: t("contact.emailCta"),
+      };
+    }
+
+    if (key === "address" && value) {
+      return {
+        href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(value)}`,
+        ariaLabel: t("contact.mapTitle"),
+        target: "_blank",
+        rel: "noopener noreferrer",
+      };
+    }
+
+    return null;
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     let nextValue = value;
@@ -237,6 +264,11 @@ export default function ContactPage() {
           strategy="afterInteractive"
         />
       )}
+      <style jsx global>{`
+        .grecaptcha-badge {
+          display: none !important;
+        }
+      `}</style>
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/35 blur-3xl" />
@@ -287,9 +319,21 @@ export default function ContactPage() {
                   key={key}
                   className="flex min-w-0 items-start gap-3 rounded-xl border border-slate-100/80 bg-white/50 px-3 py-2.5 sm:py-2"
                 >
-                  <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
-                    <Icon size={18} strokeWidth={2} aria-hidden />
-                  </span>
+                  {getIconAction(key, value) ? (
+                    <a
+                      href={getIconAction(key, value).href}
+                      aria-label={getIconAction(key, value).ariaLabel}
+                      target={getIconAction(key, value).target}
+                      rel={getIconAction(key, value).rel}
+                      className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                    >
+                      <Icon size={18} strokeWidth={2} aria-hidden />
+                    </a>
+                  ) : (
+                    <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-[#817e32]/20 bg-white text-[#817e32] shadow-sm shadow-[#817e32]/10">
+                      <Icon size={18} strokeWidth={2} aria-hidden />
+                    </span>
+                  )}
                   <div className="min-w-0 space-y-0.5">
                     <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
                     {lines ? (
@@ -417,19 +461,23 @@ export default function ContactPage() {
                 />
               </label>
 
-              <textarea
-                name="message"
-                placeholder={t("contact.form.message")}
-                value={formValues.message}
-                onChange={handleChange}
-                onInvalid={handleInvalidField}
-                onInput={clearCustomValidation}
-                required
-                rows={6}
-                maxLength={750}
-                className="mt-5 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
-              />
-              <p className="text-xs text-slate-500">{formValues.message.length}/750</p>
+              <div className="relative mt-5">
+                <textarea
+                  name="message"
+                  placeholder={t("contact.form.message")}
+                  value={formValues.message}
+                  onChange={handleChange}
+                  onInvalid={handleInvalidField}
+                  onInput={clearCustomValidation}
+                  required
+                  rows={6}
+                  maxLength={750}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 pb-8 text-sm font-normal text-slate-900 shadow-inner shadow-slate-100 focus:border-[#cdb360] focus:outline-none focus:ring-2 focus:ring-[#cdb360]/30"
+                />
+                <p className="pointer-events-none absolute bottom-2 right-3 text-xs text-slate-500">
+                  {formValues.message.length}/750
+                </p>
+              </div>
               {/* </label> */}
 
               <div className="flex items-start gap-3 text-xs text-slate-700">
