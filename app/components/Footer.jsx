@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Music2 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useI18n } from "../providers";
 
 const companyLinks = [
@@ -126,6 +127,17 @@ export default function Footer() {
                     className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
                   >
                     <Music2 size={20} strokeWidth={2} className="shrink-0" />
+                  </Link>
+                )}
+                {socials.whatsapp && (
+                  <Link
+                    href={socials.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-[#7f733c]/60 p-2 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                  >
+                    <FaWhatsapp size={20} className="shrink-0" />
                   </Link>
                 )}
               </div>

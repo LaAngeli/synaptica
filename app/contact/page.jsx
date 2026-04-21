@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useI18n } from "../providers";
 
 const NAME_ALLOWED_CHARS = /[^\p{L}\s]/gu;
@@ -385,6 +386,17 @@ export default function ContactPage() {
                 >
                   <Music2 size={16} />
                   TikTok
+                </Link>
+              )}
+              {socials.whatsapp && (
+                <Link
+                  href={socials.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-800 transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                >
+                  <FaWhatsapp size={16} />
+                  WhatsApp
                 </Link>
               )}
             </div>

@@ -335,6 +335,7 @@ export const translations = {
         instagram: "https://www.instagram.com/synapticacluj/",
         facebook: "https://www.facebook.com/synapticacluj/",
         tiktok: "https://www.tiktok.com/@synapticacluj",
+        whatsapp: "https://wa.me/40755062039",
       },
       mapTitle: "Map to Synaptica Cluj",
       form: {
@@ -915,6 +916,7 @@ export const translations = {
         instagram: "https://www.instagram.com/synapticacluj/",
         facebook: "https://www.facebook.com/synapticacluj/",
         tiktok: "https://www.tiktok.com/@synapticacluj",
+        whatsapp: "https://wa.me/40755062039",
       },
       mapTitle: "Hartă către Synaptica Cluj",
       form: {
