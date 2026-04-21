@@ -596,8 +596,8 @@ export const translations = {
       links: [
         { href: "/", label: "Home" },
         { href: "/services", label: "Servicii" },
-        { href: "/pricing", label: "Preturi" },
-        { href: "/conditions", label: "Afectiuni" },
+        { href: "/pricing", label: "Prețuri" },
+        { href: "/conditions", label: "Afecțiuni" },
         { href: "/contact", label: "Contact" },
       ],
       languageLabel: "Limba",
@@ -625,7 +625,7 @@ export const translations = {
       neuro: {
         badge: "Neurofeedback",
         titleStart: "Antrenament cerebral pentru",
-        titleHighlight: "performanta de varf.",
+        titleHighlight: "performanță de vârf.",
         subtitle: "Feedback-ul EEG în timp real sprijină creierul să își regleze activitatea în mod natural, favorizând echilibrul, claritatea mentală și funcționarea optimă.",
         description:
           "Senzorii monitorizează activitatea cerebrală, identifică tiparele ineficiente și transmit semnale vizuale și auditive blânde, care ghidează creierul către un ritm funcțional optim.",
@@ -635,8 +635,8 @@ export const translations = {
           "Abordarea este adaptabilă și eficientă indiferent de nivelul inițial de funcționare.",
           "Metodologia utilizează sistemul NeurOptimal®, susținând autoreglarea cerebrală și optimizarea performanței la cel mai înalt nivel."
         ],
-        primaryCta: "Descopera neurofeedback",
-        secondaryCta: "Vezi afectiuni",
+        primaryCta: "Descoperă neurofeedback",
+        secondaryCta: "Vezi afecțiuni",
       },
       badge: "brainmapping",
       titleStart: "Înțelegerea creierului cu",
@@ -645,16 +645,16 @@ export const translations = {
       description:
         "Transformăm semnalele cerebrale în date aplicabile, identificând dezechilibrele neuronale și susținând planuri de terapie personalizate prin brainmapping avansat și analiză inteligentă.",
       seoIntro:
-        "Synaptica Cluj este o clinica dedicata sanatatii cerebrale, care combina brainmapping EEG, neurofeedback si programe ghidate pentru echilibru mental, claritate cognitiva si rezilienta emotionala. Lucram cu persoane care isi doresc progres masurabil, de la somn mai bun si concentrare crescuta pana la reglarea stresului si stare generala de bine. Fiecare parcurs incepe cu o evaluare care arata cum functioneaza creierul si unde sprijinul personalizat aduce cea mai mare valoare.",
+        "Synaptica Cluj este o clinică dedicată sănătății cerebrale, care combină brainmapping EEG, neurofeedback și programe ghidate pentru echilibru mental, claritate cognitivă și reziliență emoțională. Lucrăm cu persoane care își doresc progres măsurabil, de la somn mai bun și concentrare crescută până la reglarea stresului și stare generală de bine. Fiecare parcurs începe cu o evaluare care arată cum funcționează creierul și unde sprijinul personalizat aduce cea mai mare valoare.",
       seoDetail:
-        "Serviciile noastre imbina tehnologia moderna cu o abordare umana si empatica. Etapa de brainmapping ofera o imagine clara a tiparelor de activitate, iar sedintele de neurofeedback ajuta creierul sa se autoregleze prin semnale blande, in timp real. Adaptam recomandarile pentru fiecare persoana, explicam procesul pe intelesul tuturor si urmarim evolutia in timp. Daca vrei o ruta structurata pentru performanta, echilibru si sanatate mentala pe termen lung, Synaptica Cluj iti ofera un mediu calm, specialisti dedicati si solutii gandite pentru obiectivele tale.",
+        "Serviciile noastre îmbină tehnologia modernă cu o abordare umană și empatică. Etapa de brainmapping oferă o imagine clară a tiparelor de activitate, iar ședințele de neurofeedback ajută creierul să se autoregleze prin semnale blânde, în timp real. Adaptăm recomandările pentru fiecare persoană, explicăm procesul pe înțelesul tuturor și urmărim evoluția în timp. Dacă vrei o rută structurată pentru performanță, echilibru și sănătate mentală pe termen lung, Synaptica Cluj îți oferă un mediu calm, specialiști dedicați și soluții gândite pentru obiectivele tale.",
       primaryCta: "Vezi servicii",
-      secondaryCta: "Afla prețurile",
+      secondaryCta: "Află prețurile",
       statSpeedLabel: "Durata procesului",
-      statSpeedValue: "4-7 saptamani",
+      statSpeedValue: "4-7 săptămâni",
       statSpeedNote: "Brainmapping și protocol personalizat",
       statQualityLabel: "Antrenamente cerebrale personalizate",
-      statQualityValue: "Afectiuni adresate",
+      statQualityValue: "Afecțiuni adresate",
       statTags: ["Lipsa Somnului", "Anxietate"],
       statMoreLabel: "mai mult",
       flowLabel: "proces",
@@ -667,11 +667,11 @@ export const translations = {
       ],
       kitTitle: "Kit de lansare",
       kitStatus: "On track",
-      kitTags: ["Landing pages", "Animatii frumoase", "SEO-ready"],
-      quickNavBadge: "Navigare rapida",
-      quickNavTitle: "Tot ce ai nevoie, la un click distanta",
-      quickNavCta: "Ai o intrebare? Hai sa vorbim →",
-      quickLinkDiscover: "Descopera",
+      kitTags: ["Landing pages", "Animații frumoase", "SEO-ready"],
+      quickNavBadge: "Navigare rapidă",
+      quickNavTitle: "Tot ce ai nevoie, la un click distanță",
+      quickNavCta: "Ai o întrebare? Hai să vorbim →",
+      quickLinkDiscover: "Descoperă",
       quickLinks: [
         {
           title: "Servicii",
@@ -681,19 +681,19 @@ export const translations = {
           buttonName: "Descoperă serviciile"
         },
         {
-          title: "Preturi",
+          title: "Prețuri",
           href: "/pricing",
-          description: "Preturi clare pentru ședințe individuale și programe integrate, concepute pentru continuitate, rezultate măsurabile și o investiție eficientă în sănătatea ta neurologică.",
+          description: "Prețuri clare pentru ședințe individuale și programe integrate, concepute pentru continuitate, rezultate măsurabile și o investiție eficientă în sănătatea ta neurologică.",
           accent: "from-[#cdb360]/35 to-[#9f8a3f]/15",
           buttonName: "Vezi prețurile"
         },
         {
-          title: "Afectiuni",
+          title: "Afecțiuni",
           href: "/conditions",
           description:
             "Descoperă principalele afecțiuni și dificultăți care pot fi abordate prin neurofeedback și brainmapping, alături de soluții moderne pentru echilibru emoțional, claritate mentală și performanță optimă.",
           accent: "from-[#cdb360]/35 to-[#9f8a3f]/15",
-          buttonName: "Vezi afectiunile"
+          buttonName: "Vezi afecțiunile"
         },
         {
           title: "Contact",
@@ -706,16 +706,16 @@ export const translations = {
     },
     services: {
       pageTitle: "Servicii",
-      intro: "Programe premium pentru sanatatea creierului, cu tehnologie medicala si ingrijire personalizata.",
-      ctaPrimary: "Programeaza o sesiune",
-      ctaSecondary: "Contacteaza-ne",
+      intro: "Programe premium pentru sănătatea creierului, cu tehnologie medicală și îngrijire personalizată.",
+      ctaPrimary: "Programează o sesiune",
+      ctaSecondary: "Contactează-ne",
       includesTitle: "Ce include serviciul",
       stepsTitle: "Etape cheie",
       sections: [
         {
           key: "isync",
-          badge: "Terapie cu casca iSyncMe®",
-          title: "Brainmapping si protocol ghidat de inteligenta artificiala",
+          badge: "Terapie cu cască iSyncMe®",
+          title: "Brainmapping și protocol ghidat de inteligență artificială",
           highlight: "EEG de precizie, interpretare, protocol adaptiv",
           details: [
             "Terapia cu casca iSyncMe® reprezintă o abordare avansată de evaluare și susținere a funcționării cerebrale, bazată pe tehnologie EEG de înaltă precizie și analiză asistată de inteligență artificială. Sistemul captează activitatea electrică a creierului și o transformă într-o hartă detaliată a funcționării neuronale, oferind o perspectivă obiectivă asupra modului în care creierul procesează informația.",
@@ -725,18 +725,18 @@ export const translations = {
             "Întregul proces include monitorizare continuă și ajustări periodice, pentru a asigura consistență și eficiență pe termen mediu și lung. Această abordare permite o adaptare dinamică a protocolului, în funcție de evoluția fiecărei persoane.",
           ],
           bullets: [
-            "Brainmapping EEG pentru evaluare detaliata",
-            "Interpretare aliniata obiectivelor personale",
-            "Protocol personalizat ghidat de AI pentru sustinere progresiva",
-            "Monitorizare continua si ajustari ale protocolului",
+            "Brainmapping EEG pentru evaluare detaliată",
+            "Interpretare aliniată obiectivelor personale",
+            "Protocol personalizat ghidat de AI pentru susținere progresivă",
+            "Monitorizare continuă și ajustări ale protocolului",
           ],
           steps: ["Scanare", "Interpretare", "Protocol personalizat", "Monitorizare"],
         },
         {
           key: "neuro",
           badge: "Neurofeedback cu NeurOptimal®",
-          title: "Antrenament cerebral dinamic pentru echilibru si performanta",
-          highlight: "Feedback EEG in timp real, autoreglare fara efort",
+          title: "Antrenament cerebral dinamic pentru echilibru și performanță",
+          highlight: "Feedback EEG în timp real, autoreglare fără efort",
           details: [
             "Neurofeedback-ul cu NeurOptimal® este un sistem avansat de antrenament cerebral, non-invaziv, care funcționează prin feedback EEG în timp real. Tehnologia monitorizează continuu activitatea creierului și oferă semnale audio subtile, permițând creierului să își observe propriile variații și să se autoregleze natural.",
             "Spre deosebire de abordările direcționate sau rigide, NeurOptimal® utilizează un sistem dinamic, care răspunde în timp real la schimbările activității cerebrale. Creierul primește feedback exact în momentele de variație, ceea ce facilitează conștientizarea și ajustarea automată a ritmurilor sale interne.",
@@ -745,72 +745,72 @@ export const translations = {
             "Fiecare sesiune reprezintă un proces de învățare pentru creier, contribuind la dezvoltarea unei funcționări mai stabile, mai echilibrate și mai coerente în timp."
           ],
           bullets: [
-            "Feedback EEG in timp real pentru autoreglare",
-            "Antrenament non-invaziv, fara efort mental",
-            "Dezvolta flexibilitatea, echilibrul si rezilienta",
-            "Sustine performanta cognitiva, emotionala si starea generala",
+            "Feedback EEG în timp real pentru autoreglare",
+            "Antrenament non-invaziv, fără efort mental",
+            "Dezvoltă flexibilitatea, echilibrul și reziliența",
+            "Susține performanța cognitivă, emoțională și starea generală",
           ],
-          steps: ["Monitorizare dinamica", "Feedback subtil", "Invatare de autoreglare", "Echilibru sustinut"],
+          steps: ["Monitorizare dinamică", "Feedback subtil", "Învățare de autoreglare", "Echilibru susținut"],
         },
       ],
     },
     conditions: {
-      badge: "Afectiuni",
+      badge: "Afecțiuni",
       title: "Zone în care intervenim prin antrenament cerebral",
       description:
         "Prin tehnologii avansate de antrenament cerebral, brainmapping EEG și neurofeedback, susținem autoreglarea și optimizarea funcționării creierului în diverse contexte cognitive și emoționale. Abordarea este personalizată și orientată către echilibru, flexibilitate neuronală și performanță cognitivă, având ca obiectiv susținerea funcționării optime a creierului pe termen mediu și lung.",
-      contactCta: "Contacteaza-ne",
+      contactCta: "Contactează-ne",
       servicesCta: "Servicii",
       items: [
         {
           title: "ADHD",
           body:
-            "Daca doresti sa iti imbunatatesti atentia, sa iti gestionezi mai bine impulsurile si sa ai un control mai bun asupra nivelului de energie mentala, antrenamentele cerebrale pot fi solutia ideala pentru a te sustine in viata de zi cu zi.",
+            "Dacă dorești să îți îmbunătățești atenția, să îți gestionezi mai bine impulsurile și să ai un control mai bun asupra nivelului de energie mentală, antrenamentele cerebrale pot fi soluția ideală pentru a te susține în viața de zi cu zi.",
         },
         {
           title: "Alzheimer",
           body:
-            "Daca vrei sa iti protejezi memoria, sa reduci inflamatia cerebrala si sa iti mentii claritatea mentala, antrenamentele cerebrale pot contribui la sustinerea sanatatii cognitive pe termen lung.",
+            "Dacă vrei să îți protejezi memoria, să reduci inflamația cerebrală și să îți menții claritatea mentală, antrenamentele cerebrale pot contribui la susținerea sănătății cognitive pe termen lung.",
         },
         {
           title: "Autism",
           body:
-            "Pentru cei care doresc sa imbunatateasca conectivitatea neuronala, sa sustina comunicarea sociala si sa optimizeze functiile cognitive, antrenamentele cerebrale pot aduce imbunatatiri semnificative in calitatea vietii.",
+            "Pentru cei care doresc să îmbunătățească conectivitatea neuronală, să susțină comunicarea socială și să optimizeze funcțiile cognitive, antrenamentele cerebrale pot aduce îmbunătățiri semnificative în calitatea vieții.",
         },
         {
-          title: "Dementa",
+          title: "Demență",
           body:
-            "Pentru a stimula functiile cognitive, a mentine abilitatile de gandire si a incetini pierderea memoriei, antrenamentele cerebrale pot fi o solutie eficienta si naturala.",
+            "Pentru a stimula funcțiile cognitive, a menține abilitățile de gândire și a încetini pierderea memoriei, antrenamentele cerebrale pot fi o soluție eficientă și naturală.",
         },
         {
-          title: "Lipsa Somnului",
+          title: "Lipsa somnului",
           body:
-            "Pentru un somn odihnitor, reducerea stresului si echilibrarea ritmurilor naturale ale corpului, antrenamentele cerebrale pot deveni o solutie benefica pentru un stil de viata sanatos.",
+            "Pentru un somn odihnitor, reducerea stresului și echilibrarea ritmurilor naturale ale corpului, antrenamentele cerebrale pot deveni o soluție benefică pentru un stil de viață sănătos.",
         },
         {
           title: "Anxietate",
           body:
-            "Pentru reducerea stresului si echilibrarea sistemului nervos, antrenamentele cerebrale pot sustine o stare de calm si claritate.",
+            "Pentru reducerea stresului și echilibrarea sistemului nervos, antrenamentele cerebrale pot susține o stare de calm și claritate.",
         },
         {
           title: "Depresie",
           body:
-            "Pentru imbunatatirea starii de spirit, reducerea stresului emotional si cresterea nivelului de energie, antrenamentele cerebrale pot contribui semnificativ la starea ta de bine.",
+            "Pentru îmbunătățirea stării de spirit, reducerea stresului emoțional și creșterea nivelului de energie, antrenamentele cerebrale pot contribui semnificativ la starea ta de bine.",
         },
         {
           title: "Puterea de concentrare",
           body:
-            "Daca iti doresti sa iti imbunatatesti claritatea mentala, sa stimulezi neuroplasticitatea si sa iti mentii focalizarea pe obiective, antrenamentele cerebrale pot fi solutia potrivita.",
+            "Dacă îți dorești să îți îmbunătățești claritatea mentală, să stimulezi neuroplasticitatea și să îți menții focalizarea pe obiective, antrenamentele cerebrale pot fi soluția potrivită.",
         },
       ],
     },
     pricing: {
       badge: "Prețuri",
-      title: "Solutii dedicate fiecarui pas al transformarii tale",
+      title: "Soluții dedicate fiecărui pas al transformării tale",
       benefitsTitle: "Beneficii:",
       descriptionTitle: "Descriere:",
       description:
-        "Oferim pachete personalizate si transparente, concepute sa aduca cea mai buna experienta si rezultate eficiente. Descopera preturi clare si accesibile pentru fiecare etapa a calatoriei tale spre echilibru si vindecare.",
+        "Oferim pachete personalizate și transparente, concepute să aducă cea mai bună experiență și rezultate eficiente. Descoperă prețuri clare și accesibile pentru fiecare etapă a călătoriei tale spre echilibru și vindecare.",
       groups: [
         {
           title: "Prețuri iSyncMe®",
@@ -832,8 +832,8 @@ export const translations = {
 
             },
             {
-              label: "Terapie cu casca iSyncMe®",
-              price: [{ label: "1 ședinta", price: "400 RON" }],
+              label: "Terapie cu cască iSyncMe®",
+              price: [{ label: "1 ședință", price: "400 RON" }],
               extraPrices: [{ label: "pachet 20 ședinte", price: "6000 RON" }],
               description:
                 "Terapia iSyncMe® este o soluție de neuroterapie de ultimă generație, care depășește abordările tradiționale privind sănătatea creierului. Valorificând puterea fotobiomodulării avansate (PBM) și a ghidajului EEG în timp real, această terapie susține capacitatea naturală a creierului de a se reechilibra, de a îmbunătăți comunicarea neuronală și de a stimula regenerarea mentală și emoțională.\n\nPrin utilizarea tehnologiei cu lumină în spectru infraroșu, combinată cu feedback precis al undelor cerebrale, iSyncMe® acționează asupra circuitelor neuronale cheie, contribuind la creșterea performanței cognitive, a rezilienței emoționale și a funcționării zilnice. Prin integrarea neurostimulării bazate pe știință cu protocoale personalizate, iSyncMe® oferă o experiență transformatoare, concepută pentru a amplifica claritatea mentală, nivelul de energie și starea generală de bine, pentru persoanele care își doresc performanță cerebrală optimă și susținerea proceselor de recuperare.",
@@ -870,10 +870,10 @@ export const translations = {
           ],
         },
         {
-          title: "Preturi Neurofeedback",
+          title: "Prețuri Neurofeedback",
           items: [
             {
-              label: "Neurofeedback", price: [{ label: "1 sedinta", price: "300 RON" }],
+              label: "Neurofeedback", price: [{ label: "1 ședință", price: "300 RON" }],
               extraPrices: [{ label: "pachet 20 ședinte", price: "5000 RON" }],
               description:
                 "Neurofeedback cu NeurOptimal® este o formă avansată de antrenament cerebral, care folosește tehnologie de neurofeedback dinamică pentru a optimiza funcționarea naturală a creierului într-un mod **non-invaziv, sigur și adaptat fiecărei persoane**. Spre deosebire de neurofeedback-ul tradițional cu protocoale fixe, sistemul NeurOptimal® nu încearcă să „forțeze” creierul într-o anumită stare, ci îi oferă feedback în timp real despre propria activitate neuronală, astfel încât acesta să se autoregleze și să se optimizeze eficient. :contentReference[oaicite:1]{index=1}\n\nPrin monitorizarea undelor cerebrale și furnizarea de semnale subtile care reflectă activitatea creierului, NeurOptimal® stimulează procesele interne de autoreglare și flexibilitate neurologică, favorizând claritatea mentală, echilibrul emoțional și adaptabilitatea la provocările cotidiene. Această tehnologie este potrivită pentru persoane de orice vârstă care își doresc performanță optimă a creierului, îmbunătățirea concentrației sau suport pentru gestionarea stresului și sănătății mentale.",
@@ -972,8 +972,8 @@ export const translations = {
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
-        pricing: "Preturi",
-        conditions: "Afectiuni",
+        pricing: "Prețuri",
+        conditions: "Afecțiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
         maintainedBy: "Maintained by",
@@ -988,8 +988,8 @@ export const translations = {
         useful: "Link-uri utile",
         home: "Home",
         services: "Servicii",
-        pricing: "Preturi",
-        conditions: "Afectiuni",
+        pricing: "Prețuri",
+        conditions: "Afecțiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
         maintainedBy: "Maintained by",

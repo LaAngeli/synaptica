@@ -24,6 +24,7 @@ export default function AfectiuniPage() {
     autism: Puzzle,
     dementia: Shield,
     dementa: Shield,
+    "demență": Shield,
     "sleep issues": Moon,
     "lipsa somnului": Moon,
     anxiety: HeartPulse,
