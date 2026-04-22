@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CookieConsentBanner from "./components/CookieConsentBanner";
+import WhatsAppFloatingCta from "./components/WhatsAppFloatingCta";
 import { I18nProvider } from "./providers";
 import { rootMetadataBase } from "../lib/seo";
 import { buildSiteJsonLd } from "../lib/schema-jsonld";
@@ -89,6 +90,7 @@ fbq('track', 'PageView');`}
             <main className="mx-auto max-w-6xl px-4 pb-16 pt-24">{children}</main>
             <Footer />
             <CookieConsentBanner />
+            <WhatsAppFloatingCta />
           </div>
         </I18nProvider>
       </body>

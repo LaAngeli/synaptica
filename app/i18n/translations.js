@@ -386,6 +386,9 @@ export const translations = {
           },
         },
       },
+      whatsappCta: {
+        primary: "Book on WhatsApp",
+      },
       links: {
         gdpr: "GDPR",
         terms: "Terms & Conditions",
@@ -966,6 +969,9 @@ export const translations = {
             required: "Te rugăm să introduci mesajul.",
           },
         },
+      },
+      whatsappCta: {
+        primary: "Programează-te pe WhatsApp",
       },
       links: {
         gdpr: "GDPR",
