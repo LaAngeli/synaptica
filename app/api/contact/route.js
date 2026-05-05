@@ -306,7 +306,7 @@ export async function POST(request) {
       from: `"Synaptica Web" <${from}>`,
       to,
       replyTo: email,
-      subject: `Mesaj contact - ${name || "Vizitator"}`,
+      subject: `Formular de Contact - Synaptica Cluj (${name || "Vizitator"})`,
       text: [
         "Ai primit un mesaj nou din formularul de contact Synaptica.",
         "",
