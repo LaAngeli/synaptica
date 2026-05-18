@@ -4,7 +4,7 @@ import { createPageMetadata, SEO_HOME_TITLE_SEGMENT } from "../lib/seo";
 export const metadata = createPageMetadata({
   title: SEO_HOME_TITLE_SEGMENT,
   description:
-    "Evaluare EEG și ședințe neurofeedback la Cluj-Napoca: protocoale pentru somn, anxietate, ADHD și performanță mentală. Brainmapping clar, plan personalizat, echipă Synaptica Cluj.",
+    "Neurofeedback Cluj și brainmapping EEG în Cluj-Napoca: evaluare EEG, antrenament cerebral non-invaziv și protocoale personalizate pentru somn, stres, concentrare și echilibru mental.",
   path: "/",
 });
 

@@ -20,7 +20,11 @@ import {
 export default function ServiciiPage() {
   const { t } = useI18n();
   const sections = t("services.sections") || [];
+  const intro = t("services.intro");
+  const stackIntro = t("services.stackIntro");
   const includesTitle = t("services.includesTitle");
+  const aeoTitle = t("services.aeoTitle");
+  const aeoItems = t("services.aeoItems") || [];
   const ICONS_BY_SERVICE = {
     isync: [Radar, FileText, Sparkles, Activity],
     neuro: [Waves, Headphones, Gauge, Zap],
@@ -37,6 +41,10 @@ export default function ServiciiPage() {
       <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
         {t("services.pageTitle")}
       </span>
+      <div className="max-w-4xl space-y-3">
+        <p className="text-base leading-relaxed text-slate-700">{intro}</p>
+        <p className="text-sm leading-relaxed text-slate-600">{stackIntro}</p>
+      </div>
 
       {sections.map((section) => (
         <div
@@ -103,6 +111,19 @@ export default function ServiciiPage() {
           </div>
         </div>
       ))}
+
+      <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
+        <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          {aeoItems.map((item) => (
+            <article key={item.question} className="rounded-xl border border-slate-200 bg-white p-4">
+              <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
        <div className="flex flex-wrap gap-3 mt-10">
         <Link
           href="/contact"

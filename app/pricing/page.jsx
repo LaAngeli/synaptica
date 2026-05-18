@@ -7,6 +7,9 @@ import Link from "next/link";
 export default function PreturiPage() {
   const { t } = useI18n();
   const groups = t("pricing.groups") || [];
+  const intro = t("pricing.intro");
+  const aeoTitle = t("pricing.aeoTitle");
+  const aeoItems = t("pricing.aeoItems") || [];
 
   return (
     <section className=" space-y-3 relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
@@ -27,6 +30,7 @@ export default function PreturiPage() {
       <p className="max-w-4xl  text-base leading-relaxed text-slate-700">
         {t("pricing.description")}
       </p>
+      <p className="max-w-4xl text-sm leading-relaxed text-slate-600">{intro}</p>
 
       <div className="space-y-8">
         {groups.map((group) => (
@@ -101,6 +105,17 @@ export default function PreturiPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
+        <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          {aeoItems.map((item) => (
+            <article key={item.question} className="rounded-xl border border-slate-200 bg-white p-4">
+              <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
+            </article>
+          ))}
+        </div>
       </div>
       <div className="flex flex-wrap gap-3 mt-10">
         <Link

@@ -2,9 +2,9 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title:
-    "Servicii brainmapping EEG, neurofeedback NeurOptimal® și iSyncMe la Cluj",
+    "Servicii neurofeedback Cluj și brainmapping EEG | iSyncMe și NeurOptimal",
   description:
-    "Ce include: brainmapping EEG, neurofeedback, terapie cu casca iSyncMe® și plan personalizat la Cluj-Napoca. Află pașii, indicațiile și cum te putem ajuta la Synaptica Cluj.",
+    "Servicii neurofeedback Cluj și brainmapping EEG în Cluj-Napoca: iSyncMe, NeurOptimal, evaluare activitate cerebrală și protocol personalizat, non-invaziv.",
   path: "/services",
 });
 

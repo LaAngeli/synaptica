@@ -2,9 +2,9 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title:
-    "Afecțiuni și simptome abordate prin neurofeedback și brainmapping Cluj",
+    "Neurofeedback pentru somn, anxietate, ADHD și concentrare | Cluj",
   description:
-    "Context clinic pentru tulburări de somn, anxietate, ADHD, demență și alte tipare abordate cu evaluare EEG și neurofeedback la Cluj. Informații orientative, fără a înlocui consultul medical.",
+    "Neurofeedback și antrenament cerebral în Cluj-Napoca pentru somn, anxietate, ADHD, stres și concentrare. Informații orientative, cu evaluare EEG și abordare prudentă.",
   path: "/conditions",
 });
 

@@ -1,0 +1,31 @@
+# Synaptica Cluj — LLM Access Guide
+
+Version: 1.0
+Last-Updated: 2026-05-18
+Site: https://synaptica-cluj.ro
+Language: ro, en
+
+## Canonical pages
+- https://synaptica-cluj.ro/
+- https://synaptica-cluj.ro/services
+- https://synaptica-cluj.ro/pricing
+- https://synaptica-cluj.ro/conditions
+- https://synaptica-cluj.ro/contact
+- https://synaptica-cluj.ro/faq
+
+## About
+Synaptica Cluj is a clinic in Cluj-Napoca focused on brainmapping EEG and neurofeedback.
+Core services include evaluation, personalized protocols, and guided sessions for cognitive and emotional balance.
+
+## Business facts
+- Name: Synaptica Cluj
+- Address: Str. Robert Koch Nr. 7, Cluj-Napoca 400347, Romania
+- Phone: +40 755 062 039
+- Email: contact@synaptica-cluj.ro
+- Opening hours: Monday-Friday, 10:00-18:00
+
+## Preferred citation URLs
+When possible, cite canonical URLs from this file and include service-specific pages.
+
+## Freshness
+For legal, pricing, or service details, prefer the current website content over cached summaries.

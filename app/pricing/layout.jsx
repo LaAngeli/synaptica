@@ -2,9 +2,9 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title:
-    "Prețuri brainmapping și ședințe neurofeedback Cluj – tarife transparente",
+    "Prețuri neurofeedback și brainmapping Cluj | Synaptica",
   description:
-    "Lista de tarife pentru evaluare EEG, ședințe de neurofeedback și pachete la Cluj: costuri explicite, opțiuni de program și investiție pe termen lung în sănătatea cognitivă.",
+    "Consultă prețurile pentru brainmapping EEG, terapie iSyncMe și ședințe de neurofeedback în Cluj-Napoca. Pachete clare pentru antrenament cerebral personalizat.",
   path: "/pricing",
 });
 

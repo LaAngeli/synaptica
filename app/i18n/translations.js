@@ -30,7 +30,7 @@ export const translations = {
         titleEnd: "",
         subtitle: "The Synaptica Cluj experience: where technology meets empathy",
         description:
-          "At Synaptica Cluj, we combine cutting-edge technology with an empathetic and personalized approach to offer you fast and effective solutions for your mental health. Our advanced brainmapping, together with neurofeedback and photobiomodulation therapy, helps you overcome psychological and emotional challenges with remarkable efficiency. Our results remain stable over time, and our dedicated team is here to support you at every step of your journey toward optimal mental health.",
+          "At Synaptica Cluj in Cluj-Napoca, we provide neurofeedback and EEG brainmapping in a clear, personalized, and non-invasive framework. The process starts with an EEG evaluation, then continues with a personalized protocol that can support self-regulation, mental clarity, emotional balance, and cognitive performance.",
         imageAlt: "The Synaptica Cluj team and the technology used in the clinic",
       },
       neuro: {
@@ -55,11 +55,29 @@ export const translations = {
       titleHighlight: "precision and intelligence.",
       titleEnd: "",
       description:
-        "We transform brain signals into actionable data, identifying neural imbalances and supporting personalized therapy plans through advanced brainmapping and intelligent analysis.",
+        "At Synaptica Cluj, we turn brain signals into clear data through EEG brainmapping and use them to guide personalized brain training in Cluj-Napoca.",
       seoIntro:
-        "Synaptica Cluj is a clinic focused on brain health, combining EEG brainmapping, neurofeedback, and guided programs that support mental balance, cognitive clarity, and emotional resilience. We work with clients who want measurable progress, from improved sleep and focus to better stress regulation and overall wellbeing. Every journey starts with an evaluation that helps us understand how the brain functions and where personalized support can bring the most value.",
+        "Synaptica Cluj is a brain health clinic in Cluj-Napoca focused on neurofeedback, EEG brainmapping, and non-invasive brain training. Our programs can support mental balance, cognitive clarity, stress management, and better sleep quality. Each journey starts with an EEG evaluation to understand brain activity patterns and define a personalized direction.",
       seoDetail:
-        "Our services integrate modern technology with a human, supportive approach. The brainmapping stage offers a clear snapshot of activity patterns, while neurofeedback sessions help the brain self-regulate through gentle, real-time signals. We tailor recommendations to each person, explain the process clearly, and follow progress over time. If you are looking for a structured path to improve performance, restore balance, or support long-term mental health, Synaptica Cluj provides a calm environment, experienced specialists, and solutions designed around your goals.",
+        "Our services combine modern neurotechnology with an empathetic, educational approach. Brainmapping EEG provides an objective map of activity patterns, while neurofeedback with real-time EEG feedback can help the brain self-regulate naturally. We explain each step clearly, monitor progress, and adapt recommendations to your goals and response over time.",
+      aeoTitle: "Quick answers",
+      aeoItems: [
+        {
+          question: "What is neurofeedback?",
+          answer:
+            "Neurofeedback is a non-invasive brain training method that uses real-time EEG feedback to support natural self-regulation and mental balance.",
+        },
+        {
+          question: "What is EEG brainmapping?",
+          answer:
+            "EEG brainmapping is an evaluation of brain activity that helps identify functional patterns and supports building a personalized protocol.",
+        },
+        {
+          question: "How does the process start at Synaptica Cluj?",
+          answer:
+            "The process starts with an EEG evaluation in Cluj-Napoca, followed by result interpretation and a personalized intervention plan.",
+        },
+      ],
       primaryCta: "See services",
       secondaryCta: "Find out the prices",
       statSpeedLabel: "Process duration",
@@ -130,11 +148,37 @@ export const translations = {
     },
     services: {
       pageTitle: "Services",
-      intro: "Premium programs for brain health, with medical technology and personalized care.",
+      intro:
+        "At Synaptica Cluj in Cluj-Napoca, our services combine EEG brainmapping, iSyncMe, and NeurOptimal neurofeedback to support mental balance, clarity, and cognitive performance through a non-invasive approach.",
+      stackIntro:
+        "The services complement each other: evaluation through brainmapping EEG, interpretation of brain activity patterns, and personalized brain training with real-time EEG feedback.",
       ctaPrimary: "Schedule a session",
       ctaSecondary: "Contact us",
       includesTitle: "What the service includes",
       stepsTitle: "Key steps",
+      aeoTitle: "Quick answers",
+      aeoItems: [
+        {
+          question: "What is EEG brainmapping?",
+          answer:
+            "EEG brainmapping is an evaluation of brain activity that helps identify functional patterns and supports a personalized intervention direction.",
+        },
+        {
+          question: "What is NeurOptimal neurofeedback?",
+          answer:
+            "NeurOptimal neurofeedback is a non-invasive brain training method using real-time EEG feedback that can support natural self-regulation.",
+        },
+        {
+          question: "What is iSyncMe helmet therapy?",
+          answer:
+            "iSyncMe is a neurotechnology-based service that combines EEG data and guided protocol design to support personalized cognitive and emotional balance.",
+        },
+        {
+          question: "What is the difference between brainmapping and neurofeedback?",
+          answer:
+            "Brainmapping is primarily an evaluation phase, while neurofeedback is a training phase focused on supporting adaptive brain self-regulation.",
+        },
+      ],
       sections: [
         {
           key: "isync",
@@ -142,10 +186,10 @@ export const translations = {
           title: "Brainmapping and protocol guided by artificial intelligence",
           highlight: "EEG precision, interpretation, adaptive protocol",
           details: [
-            "iSyncMe® helmet therapy is an advanced approach to evaluating and supporting brain function, based on high-precision EEG technology and AI-assisted analysis. The system captures the brain’s electrical activity and transforms it into a detailed map of neuronal functioning, offering an objective perspective on how the brain processes information.",
-            "The process begins with a brainmapping scan that analyzes brain activity across different areas and frequencies. The data obtained are compared with normative databases and interpreted to identify functional patterns, imbalances, or areas needing additional support. This stage offers a clear and personalized understanding of brain activity.",
+            "iSyncMe® helmet therapy in Cluj-Napoca is an advanced service for evaluating and supporting brain function, based on high-precision EEG technology and AI-assisted analysis. The system captures electrical activity and transforms it into a functional map of brain patterns.",
+            "The process starts with a brainmapping EEG scan that evaluates activity across multiple regions and frequencies. Data is interpreted to identify patterns and support a personalized intervention direction.",
             "Based on the results obtained, the interpretation of the brainmapping follows, an essential stage in defining the intervention direction. The analysis does not stop at isolated values; it looks at the global coherence of brain activity and how the different regions interact with each other.",
-            "The next step is creating a personalized protocol, adapted to individual needs. The protocol is guided by artificial intelligence and aims to support self-regulation and optimize brain activity in a progressive and safe way. The intervention is structured yet flexible, adjusted according to the brain’s response along the way.",
+            "The next step is creating a personalized protocol, adapted to individual needs. The protocol is AI-guided and can support self-regulation and cognitive optimization in a progressive, safe way.",
             "The entire process includes continuous monitoring and periodic adjustments to ensure consistency and efficiency in the medium and long term. This approach allows dynamic adaptation of the protocol, depending on each person’s evolution.",
           ],
           bullets: [
@@ -162,9 +206,9 @@ export const translations = {
           title: "Dynamic brain training for balance and performance",
           highlight: "Real-time EEG feedback, effortless self-regulation",
           details: [
-            "Neurofeedback with NeurOptimal® is an advanced, non-invasive brain training system that works through real-time EEG feedback. The technology continuously monitors brain activity and provides subtle audio cues, allowing the brain to observe its own variations and self-regulate naturally.",
+            "Neurofeedback with NeurOptimal® is an advanced, non-invasive brain training system based on real-time EEG feedback. The technology monitors activity continuously and provides subtle cues that can support natural self-regulation.",
             "Unlike directed or rigid approaches, NeurOptimal® uses a dynamic system that responds in real time to changes in brain activity. The brain receives feedback exactly at the moments of variation, which facilitates awareness and automatic adjustment of its internal rhythms.",
-            "The training does not require conscious effort, mental exercises, or voluntary control. The brain is allowed to find its own balance in a natural and safe way. This approach supports neuronal flexibility, adaptability, and resilience, regardless of the starting point.",
+            "The training does not require conscious effort, mental exercises, or voluntary control. The brain is allowed to find its own balance in a natural and safe way. This approach can support neuronal flexibility, adaptability, and resilience.",
             "NeurOptimal® is used both for optimizing cognitive and emotional performance and for supporting overall wellbeing. The system suits people of all ages and is appreciated for its gentle yet effective character.",
             "Each session is a learning process for the brain, contributing to the development of more stable, more balanced, and more coherent functioning over time."
           ],
@@ -182,59 +226,107 @@ export const translations = {
       badge: "Conditions",
       title: "Areas where we intervene through brain training",
       description:
-        "Through advanced brain training technologies, EEG brainmapping, and neurofeedback, we support self-regulation and optimization of brain functioning in various cognitive and emotional contexts. The approach is personalized and oriented toward balance, neuronal flexibility, and cognitive performance, aiming to support the brain’s optimal functioning in the medium and long term.",
+        "In Cluj-Napoca, we use neurofeedback, EEG brainmapping, and non-invasive brain training as supportive approaches for sleep quality, anxiety, attention, stress regulation, and cognitive balance. The content below is informative and does not replace medical diagnosis or treatment.",
+      aeoTitle: "Quick answers",
+      aeoItems: [
+        {
+          question: "Can neurofeedback support anxiety management?",
+          answer:
+            "Neurofeedback may support nervous system self-regulation and may contribute to better calm, clarity, and emotional balance.",
+        },
+        {
+          question: "Is neurofeedback relevant for sleep issues?",
+          answer:
+            "For some people, neurofeedback may support better sleep quality by helping the brain improve self-regulation and stress response patterns.",
+        },
+        {
+          question: "How can neurofeedback support attention?",
+          answer:
+            "Neurofeedback can support attention by training adaptive brain patterns linked to focus, cognitive flexibility, and mental stability.",
+        },
+        {
+          question: "What is the role of EEG brainmapping before training?",
+          answer:
+            "EEG brainmapping provides an objective view of activity patterns and helps define a personalized intervention direction.",
+        },
+      ],
       contactCta: "Contact us",
       servicesCta: "Services",
       items: [
         {
           title: "ADHD",
           body:
-            "If you want to improve your attention, manage your impulses better, and have better control over your level of mental energy, brain training can be the ideal solution to support you in daily life.",
+            "For ADHD-related goals, neurofeedback brain training may support attention, self-regulation, and better management of mental energy in daily activities.",
         },
         {
           title: "Alzheimer’s",
           body:
-            "If you want to protect your memory, reduce brain inflammation, and maintain mental clarity, brain training can contribute to supporting long-term cognitive health.",
+            "In this context, brain training may be used as a complementary support focused on cognitive stimulation, mental clarity, and maintaining adaptive routines.",
         },
         {
           title: "Autism",
           body:
-            "For those who want to improve neuronal connectivity, support social communication, and optimize cognitive functions, brain training can bring significant improvements in quality of life.",
+            "For people with autism-related needs, neurofeedback may be used as a complementary support to improve self-regulation, adaptive responses, and cognitive organization.",
         },
         {
           title: "Dementia",
           body:
-            "To stimulate cognitive functions, maintain thinking abilities, and slow down memory loss, brain training can be an effective and natural solution.",
+            "In dementia-related contexts, brain training may be used as complementary support for cognitive stimulation, daily functioning, and emotional regulation.",
         },
         {
           title: "Sleep issues",
           body:
-            "For restful sleep, reducing stress, and balancing the body’s natural rhythms, brain training can become a beneficial solution for a healthy lifestyle.",
+            "For sleep difficulties, neurofeedback may support calmer arousal patterns, stress management, and better sleep quality over time.",
         },
         {
           title: "Anxiety",
           body:
-            "To reduce stress and balance the nervous system, brain training can support a state of calm and clarity.",
+            "For anxiety-related symptoms, neurofeedback may support nervous system self-regulation and may contribute to calm, clarity, and emotional balance.",
         },
         {
           title: "Depression",
           body:
-            "To improve mood, reduce emotional stress, and increase energy levels, brain training can contribute significantly to your wellbeing.",
+            "In depression-related contexts, brain training may be used as complementary support focused on emotional regulation, mental clarity, and daily functioning.",
         },
         {
           title: "Focus",
           body:
-            "If you want to improve your mental clarity, stimulate neuroplasticity, and maintain focus on your goals, brain training can be the right solution.",
+            "For concentration goals, neurofeedback may support sustained attention, clearer mental processing, and better cognitive control.",
         },
       ],
     },
     pricing: {
       badge: "Pricing",
       title: "Solutions for every step of your transformation",
+      intro:
+        "In Cluj-Napoca, Synaptica Cluj provides transparent pricing for EEG brainmapping, iSyncMe sessions, and NeurOptimal neurofeedback, so you can choose the right path based on goals, pace, and budget.",
       benefitsTitle: "Benefits:",
       descriptionTitle: "Description:",
       description:
-        "We offer personalized and transparent packages, designed to deliver the best experience and efficient results. Discover clear and accessible rates for every stage of your journey toward balance and healing.",
+        "Explore pricing for EEG evaluation, neurofeedback sessions, and integrated programs in Cluj-Napoca, with clear package structure and progressive support.",
+      aeoTitle: "Quick answers",
+      aeoItems: [
+        {
+          question: "How much does EEG brainmapping cost at Synaptica Cluj?",
+          answer:
+            "Brainmapping EEG is listed at 3000 RON and includes objective evaluation data used to guide a personalized intervention direction.",
+        },
+        {
+          question: "How much is one neurofeedback session?",
+          answer:
+            "One neurofeedback session is listed at 300 RON, with dedicated package options for clients who want continuity.",
+        },
+        {
+          question: "What does a 20-session package include?",
+          answer:
+            "The package includes a structured sequence of sessions with progress monitoring, and some options also include final brainmapping.",
+        },
+        {
+          question: "What is the difference between single sessions and packages?",
+          answer:
+            "Single sessions offer flexibility, while packages are designed for continuity, better protocol consistency, and clearer long-term tracking.",
+        },
+      ],
       groups: [
         {
           title: "iSyncMe® pricing",
@@ -319,7 +411,25 @@ export const translations = {
       badge: "Contact",
       title: "Synaptica Cluj",
       description:
-        "We are here to respond with empathy and promptness. If you have questions about our services or want to book an appointment, the Synaptica Cluj team offers personalized support, based on advanced technology and genuine care.",
+        "Contact Synaptica Cluj to book EEG brainmapping and neurofeedback sessions in Cluj-Napoca. You can request evaluation appointments, service details, package guidance, and next-step recommendations.",
+      aeoTitle: "Quick answers",
+      aeoItems: [
+        {
+          question: "How can I book an appointment at Synaptica Cluj?",
+          answer:
+            "You can book through the contact form, by phone, or via WhatsApp. After contact, the team confirms details and available slots.",
+        },
+        {
+          question: "Where is Synaptica Cluj located?",
+          answer:
+            "The clinic is located at 7 Robert Koch Street, Cluj-Napoca 400347.",
+        },
+        {
+          question: "What services can I book from this page?",
+          answer:
+            "You can request appointments for EEG brainmapping, neurofeedback sessions, and information about integrated programs.",
+        },
+      ],
       callCta: "Call us",
       emailCta: "Write to us",
       phoneLabel: "Phone",
@@ -623,7 +733,7 @@ export const translations = {
         titleEnd: "",
         subtitle: "Experiența Synaptica Cluj: unde tehnologia întâlnește empatia",
         description:
-          "La Synaptica Cluj, combinăm tehnologia de vârf cu o abordare empatică și personalizată pentru a-ți oferi soluții rapide și eficiente pentru sănătatea ta mentală. Brainmapping-ul nostru avansat, împreună cu terapia de neurofeedback și fotobiomodulare, te ajută să depășești provocările psihice și emoționale cu o eficiență remarcabilă. Rezultatele noastre sunt stabile în timp, iar echipa noastră dedicată este aici pentru a te sprijini în fiecare pas al călătoriei tale către o sănătate mentală optimă.",
+          "La Synaptica Cluj, în Cluj-Napoca, oferim neurofeedback și brainmapping EEG într-un cadru clar, personalizat și non-invaziv. Procesul începe cu o evaluare EEG, apoi continuă cu un protocol adaptat care poate susține autoreglarea cerebrală, claritatea mentală, echilibrul emoțional și performanța cognitivă.",
         imageAlt: "Echipa Synaptica Cluj și tehnologia utilizată",
       },
       neuro: {
@@ -647,11 +757,29 @@ export const translations = {
       titleHighlight: "precizie și inteligență.",
       titleEnd: "",
       description:
-        "Transformăm semnalele cerebrale în date aplicabile, identificând dezechilibrele neuronale și susținând planuri de terapie personalizate prin brainmapping avansat și analiză inteligentă.",
+        "La Synaptica Cluj, transformăm semnalele cerebrale în date clare prin brainmapping EEG și le folosim pentru antrenament cerebral personalizat în Cluj-Napoca.",
       seoIntro:
-        "Synaptica Cluj este o clinică dedicată sănătății cerebrale, care combină brainmapping EEG, neurofeedback și programe ghidate pentru echilibru mental, claritate cognitivă și reziliență emoțională. Lucrăm cu persoane care își doresc progres măsurabil, de la somn mai bun și concentrare crescută până la reglarea stresului și stare generală de bine. Fiecare parcurs începe cu o evaluare care arată cum funcționează creierul și unde sprijinul personalizat aduce cea mai mare valoare.",
+        "Synaptica Cluj este o clinică din Cluj-Napoca dedicată sănătății cerebrale, cu focus pe neurofeedback, brainmapping EEG și antrenament cerebral non-invaziv. Programele noastre pot susține echilibrul mental, claritatea cognitivă, gestionarea stresului și îmbunătățirea somnului. Fiecare parcurs începe cu o evaluare EEG pentru a înțelege tiparele de activitate cerebrală și direcția optimă de intervenție.",
       seoDetail:
-        "Serviciile noastre îmbină tehnologia modernă cu o abordare umană și empatică. Etapa de brainmapping oferă o imagine clară a tiparelor de activitate, iar ședințele de neurofeedback ajută creierul să se autoregleze prin semnale blânde, în timp real. Adaptăm recomandările pentru fiecare persoană, explicăm procesul pe înțelesul tuturor și urmărim evoluția în timp. Dacă vrei o rută structurată pentru performanță, echilibru și sănătate mentală pe termen lung, Synaptica Cluj îți oferă un mediu calm, specialiști dedicați și soluții gândite pentru obiectivele tale.",
+        "Serviciile noastre combină neurotehnologia modernă cu o abordare empatică și educațională. Brainmapping-ul EEG oferă o hartă obiectivă a activității cerebrale, iar ședințele de neurofeedback cu feedback EEG în timp real pot ajuta creierul să se autoregleze natural. Explicăm fiecare etapă pe înțelesul tău, monitorizăm progresul și ajustăm recomandările în funcție de obiective și răspunsul individual.",
+      aeoTitle: "Răspunsuri rapide",
+      aeoItems: [
+        {
+          question: "Ce este neurofeedback-ul?",
+          answer:
+            "Neurofeedback-ul este o metodă non-invazivă de antrenament cerebral care folosește feedback EEG în timp real pentru a susține autoreglarea naturală și echilibrul mental.",
+        },
+        {
+          question: "Ce este brainmapping-ul EEG?",
+          answer:
+            "Brainmapping-ul EEG este o evaluare a activității cerebrale care ajută la identificarea tiparelor funcționale și la construirea unui protocol personalizat.",
+        },
+        {
+          question: "Cum începe procesul la Synaptica Cluj?",
+          answer:
+            "Procesul începe cu evaluare EEG în Cluj-Napoca, urmată de interpretarea rezultatelor și stabilirea unui plan personalizat de intervenție.",
+        },
+      ],
       primaryCta: "Vezi servicii",
       secondaryCta: "Află prețurile",
       statSpeedLabel: "Durata procesului",
@@ -710,11 +838,37 @@ export const translations = {
     },
     services: {
       pageTitle: "Servicii",
-      intro: "Programe premium pentru sănătatea creierului, cu tehnologie medicală și îngrijire personalizată.",
+      intro:
+        "La Synaptica Cluj, serviciile noastre combină brainmapping EEG, iSyncMe și neurofeedback NeurOptimal pentru susținerea echilibrului mental, clarității cognitive și performanței, printr-o abordare non-invazivă.",
+      stackIntro:
+        "Serviciile se completează între ele: evaluare prin brainmapping EEG, interpretarea tiparelor de activitate cerebrală și antrenament cerebral personalizat cu feedback EEG în timp real.",
       ctaPrimary: "Programează o sesiune",
       ctaSecondary: "Contactează-ne",
       includesTitle: "Ce include serviciul",
       stepsTitle: "Etape cheie",
+      aeoTitle: "Răspunsuri rapide",
+      aeoItems: [
+        {
+          question: "Ce este brainmapping-ul EEG?",
+          answer:
+            "Brainmapping-ul EEG este o evaluare a activității cerebrale care ajută la identificarea tiparelor funcționale și la definirea unei direcții personalizate de intervenție.",
+        },
+        {
+          question: "Ce este neurofeedback-ul cu NeurOptimal?",
+          answer:
+            "Neurofeedback-ul cu NeurOptimal este o metodă non-invazivă de antrenament cerebral, bazată pe feedback EEG în timp real, care poate susține autoreglarea naturală.",
+        },
+        {
+          question: "Ce este terapia cu casca iSyncMe?",
+          answer:
+            "Terapia cu casca iSyncMe este un serviciu bazat pe neurotehnologie, care folosește date EEG și protocol ghidat pentru susținerea echilibrului cognitiv și emoțional.",
+        },
+        {
+          question: "Care este diferența dintre brainmapping și neurofeedback?",
+          answer:
+            "Brainmapping-ul este etapa de evaluare, iar neurofeedback-ul este etapa de antrenament cerebral orientată spre autoreglare și adaptare funcțională.",
+        },
+      ],
       sections: [
         {
           key: "isync",
@@ -722,10 +876,10 @@ export const translations = {
           title: "Brainmapping și protocol ghidat de inteligență artificială",
           highlight: "EEG de precizie, interpretare, protocol adaptiv",
           details: [
-            "Terapia cu casca iSyncMe® reprezintă o abordare avansată de evaluare și susținere a funcționării cerebrale, bazată pe tehnologie EEG de înaltă precizie și analiză asistată de inteligență artificială. Sistemul captează activitatea electrică a creierului și o transformă într-o hartă detaliată a funcționării neuronale, oferind o perspectivă obiectivă asupra modului în care creierul procesează informația.",
-            "Procesul începe cu o scanare cerebrală de tip brainmapping, care analizează activitatea cerebrală în diferite zone și frecvențe. Datele obținute sunt comparate cu baze de date normative și sunt interpretate pentru a identifica tipare funcționale, dezechilibre sau zone care necesită susținere suplimentară. Această etapă oferă o înțelegere clară și personalizată a activității cerebrale.",
+            "Terapia cu casca iSyncMe® în Cluj-Napoca este un serviciu avansat pentru evaluarea și susținerea funcționării cerebrale, bazat pe tehnologie EEG de precizie și analiză asistată de inteligență artificială. Sistemul captează activitatea electrică și o transformă într-o hartă funcțională a tiparelor cerebrale.",
+            "Procesul începe cu o scanare de tip brainmapping EEG, care analizează activitatea cerebrală în diferite zone și frecvențe. Datele obținute sunt interpretate pentru identificarea tiparelor și orientarea unei intervenții personalizate.",
             "Pe baza rezultatelor obținute, are loc interpretarea brainmapping-ului, etapă esențială în definirea direcției de intervenție. Analiza nu se rezumă la valori izolate, ci urmărește coerența globală a activității cerebrale și modul în care diferitele regiuni interacționează între ele.",
-            "Următorul pas este crearea unui protocol personalizat, adaptat nevoilor individuale. Protocolul este ghidat de inteligență artificială și are rolul de a susține autoreglarea și optimizarea activității cerebrale într-un mod progresiv și sigur. Intervenția este structurată, dar flexibilă, fiind ajustată în funcție de răspunsul creierului pe parcurs.",
+            "Următorul pas este crearea unui protocol personalizat, adaptat nevoilor individuale. Protocolul este ghidat de inteligență artificială și poate susține autoreglarea și optimizarea activității cerebrale într-un mod progresiv și sigur.",
             "Întregul proces include monitorizare continuă și ajustări periodice, pentru a asigura consistență și eficiență pe termen mediu și lung. Această abordare permite o adaptare dinamică a protocolului, în funcție de evoluția fiecărei persoane.",
           ],
           bullets: [
@@ -742,9 +896,9 @@ export const translations = {
           title: "Antrenament cerebral dinamic pentru echilibru și performanță",
           highlight: "Feedback EEG în timp real, autoreglare fără efort",
           details: [
-            "Neurofeedback-ul cu NeurOptimal® este un sistem avansat de antrenament cerebral, non-invaziv, care funcționează prin feedback EEG în timp real. Tehnologia monitorizează continuu activitatea creierului și oferă semnale audio subtile, permițând creierului să își observe propriile variații și să se autoregleze natural.",
+            "Neurofeedback-ul cu NeurOptimal® este un sistem avansat de antrenament cerebral non-invaziv, bazat pe feedback EEG în timp real. Tehnologia monitorizează continuu activitatea creierului și oferă semnale subtile care pot susține autoreglarea naturală.",
             "Spre deosebire de abordările direcționate sau rigide, NeurOptimal® utilizează un sistem dinamic, care răspunde în timp real la schimbările activității cerebrale. Creierul primește feedback exact în momentele de variație, ceea ce facilitează conștientizarea și ajustarea automată a ritmurilor sale interne.",
-            "Antrenamentul nu presupune efort conștient, exerciții mentale sau control voluntar. Creierul este lăsat să își găsească propriul echilibru, într-un mod natural și sigur. Această abordare susține flexibilitatea neuronală, capacitatea de adaptare și reziliența, indiferent de punctul de start.",
+            "Antrenamentul nu presupune efort conștient, exerciții mentale sau control voluntar. Creierul este lăsat să își găsească propriul echilibru într-un mod natural și sigur. Această abordare poate susține flexibilitatea neuronală, capacitatea de adaptare și reziliența.",
             "NeurOptimal® este utilizat atât pentru optimizarea performanței cognitive și emoționale, cât și pentru susținerea stării generale de bine. Sistemul este potrivit pentru persoane de toate vârstele și este apreciat pentru caracterul său blând, dar eficient.",
             "Fiecare sesiune reprezintă un proces de învățare pentru creier, contribuind la dezvoltarea unei funcționări mai stabile, mai echilibrate și mai coerente în timp."
           ],
@@ -762,59 +916,107 @@ export const translations = {
       badge: "Afecțiuni",
       title: "Zone în care intervenim prin antrenament cerebral",
       description:
-        "Prin tehnologii avansate de antrenament cerebral, brainmapping EEG și neurofeedback, susținem autoreglarea și optimizarea funcționării creierului în diverse contexte cognitive și emoționale. Abordarea este personalizată și orientată către echilibru, flexibilitate neuronală și performanță cognitivă, având ca obiectiv susținerea funcționării optime a creierului pe termen mediu și lung.",
+        "Folosind tehnologii avansate de antrenament cerebral, brainmapping EEG și neurofeedback, susținem autoreglarea și optimizarea activității creierului în contexte cognitive și emoționale variate. Abordarea noastră este personalizată, orientată spre echilibru, flexibilitate neuronală și performanță cognitivă, cu focus pe menținerea unei funcționări cerebrale cât mai eficiente pe termen mediu și lung.",
+      aeoTitle: "Răspunsuri rapide",
+      aeoItems: [
+        {
+          question: "Poate ajuta neurofeedback-ul în anxietate?",
+          answer:
+            "Neurofeedback-ul poate susține autoreglarea sistemului nervos și poate contribui la o stare mai bună de calm, claritate și echilibru emoțional.",
+        },
+        {
+          question: "Este neurofeedback-ul potrivit pentru probleme de somn?",
+          answer:
+            "Pentru unele persoane, neurofeedback-ul poate susține îmbunătățirea calității somnului prin optimizarea tiparelor de autoreglare și a răspunsului la stres.",
+        },
+        {
+          question: "Cum poate susține neurofeedback-ul atenția?",
+          answer:
+            "Neurofeedback-ul poate susține atenția prin antrenarea tiparelor cerebrale asociate cu focalizarea, stabilitatea mentală și flexibilitatea cognitivă.",
+        },
+        {
+          question: "Ce rol are brainmapping-ul EEG înainte de protocol?",
+          answer:
+            "Brainmapping-ul EEG oferă o imagine obiectivă a activității cerebrale și ajută la stabilirea unei direcții personalizate de intervenție.",
+        },
+      ],
       contactCta: "Contactează-ne",
       servicesCta: "Servicii",
       items: [
         {
           title: "ADHD",
           body:
-            "Dacă dorești să îți îmbunătățești atenția, să îți gestionezi mai bine impulsurile și să ai un control mai bun asupra nivelului de energie mentală, antrenamentele cerebrale pot fi soluția ideală pentru a te susține în viața de zi cu zi.",
+            "Pentru obiective asociate ADHD, antrenamentul cerebral prin neurofeedback poate susține atenția, autoreglarea și gestionarea mai bună a energiei mentale în activitățile zilnice.",
         },
         {
           title: "Alzheimer",
           body:
-            "Dacă vrei să îți protejezi memoria, să reduci inflamația cerebrală și să îți menții claritatea mentală, antrenamentele cerebrale pot contribui la susținerea sănătății cognitive pe termen lung.",
+            "În acest context, antrenamentul cerebral poate fi utilizat ca suport complementar pentru stimulare cognitivă, claritate mentală și menținerea unor rutine funcționale.",
         },
         {
           title: "Autism",
           body:
-            "Pentru cei care doresc să îmbunătățească conectivitatea neuronală, să susțină comunicarea socială și să optimizeze funcțiile cognitive, antrenamentele cerebrale pot aduce îmbunătățiri semnificative în calitatea vieții.",
+            "Pentru nevoi asociate autismului, neurofeedback-ul poate fi utilizat ca suport complementar pentru autoreglare, adaptare funcțională și organizare cognitivă.",
         },
         {
           title: "Demență",
           body:
-            "Pentru a stimula funcțiile cognitive, a menține abilitățile de gândire și a încetini pierderea memoriei, antrenamentele cerebrale pot fi o soluție eficientă și naturală.",
+            "În contexte asociate demenței, antrenamentul cerebral poate fi utilizat ca suport complementar pentru stimulare cognitivă, funcționare zilnică și reglare emoțională.",
         },
         {
           title: "Lipsa somnului",
           body:
-            "Pentru un somn odihnitor, reducerea stresului și echilibrarea ritmurilor naturale ale corpului, antrenamentele cerebrale pot deveni o soluție benefică pentru un stil de viață sănătos.",
+            "Pentru dificultăți de somn, neurofeedback-ul poate susține reglarea activării mentale, gestionarea stresului și îmbunătățirea calității somnului în timp.",
         },
         {
           title: "Anxietate",
           body:
-            "Pentru reducerea stresului și echilibrarea sistemului nervos, antrenamentele cerebrale pot susține o stare de calm și claritate.",
+            "Pentru simptome asociate anxietății, neurofeedback-ul poate susține autoreglarea sistemului nervos și poate contribui la calm, claritate și echilibru emoțional.",
         },
         {
           title: "Depresie",
           body:
-            "Pentru îmbunătățirea stării de spirit, reducerea stresului emoțional și creșterea nivelului de energie, antrenamentele cerebrale pot contribui semnificativ la starea ta de bine.",
+            "În contexte asociate depresiei, antrenamentul cerebral poate fi utilizat ca suport complementar pentru reglare emoțională, claritate mentală și funcționare zilnică.",
         },
         {
           title: "Puterea de concentrare",
           body:
-            "Dacă îți dorești să îți îmbunătățești claritatea mentală, să stimulezi neuroplasticitatea și să îți menții focalizarea pe obiective, antrenamentele cerebrale pot fi soluția potrivită.",
+            "Pentru obiective de concentrare, neurofeedback-ul poate susține atenția susținută, claritatea mentală și un control cognitiv mai bun.",
         },
       ],
     },
     pricing: {
       badge: "Prețuri",
       title: "Soluții dedicate fiecărui pas al transformării tale",
+      intro:
+        "În Cluj-Napoca, Synaptica Cluj oferă prețuri clare pentru brainmapping EEG, ședințe iSyncMe și neurofeedback NeurOptimal, astfel încât să alegi opțiunea potrivită pentru obiectivele și ritmul tău.",
       benefitsTitle: "Beneficii:",
       descriptionTitle: "Descriere:",
       description:
-        "Oferim pachete personalizate și transparente, concepute să aducă cea mai bună experiență și rezultate eficiente. Descoperă prețuri clare și accesibile pentru fiecare etapă a călătoriei tale spre echilibru și vindecare.",
+        "Consultă prețurile pentru evaluare EEG, ședințe neurofeedback și pachete integrate în Cluj-Napoca, cu structură clară și parcurs personalizat de antrenament cerebral.",
+      aeoTitle: "Răspunsuri rapide",
+      aeoItems: [
+        {
+          question: "Cât costă brainmapping-ul la Synaptica Cluj?",
+          answer:
+            "Brainmapping-ul EEG este listat la 3000 RON și oferă date obiective pentru orientarea unui protocol personalizat.",
+        },
+        {
+          question: "Cât costă o ședință de neurofeedback?",
+          answer:
+            "O ședință individuală de neurofeedback este listată la 300 RON, cu opțiuni de pachet pentru continuitate.",
+        },
+        {
+          question: "Ce include pachetul de 20 de ședințe?",
+          answer:
+            "Pachetul include un parcurs structurat de ședințe cu monitorizare progresivă, iar unele opțiuni includ și brainmapping final.",
+        },
+        {
+          question: "Care este diferența dintre ședință individuală și pachet?",
+          answer:
+            "Ședința individuală oferă flexibilitate, iar pachetul susține continuitatea, coerența protocolului și urmărirea mai clară a progresului.",
+        },
+      ],
       groups: [
         {
           title: "Prețuri iSyncMe®",
@@ -880,7 +1082,7 @@ export const translations = {
               label: "Neurofeedback", price: [{ label: "1 ședință", price: "300 RON" }],
               extraPrices: [{ label: "pachet 20 ședinte", price: "5000 RON" }],
               description:
-                "Neurofeedback cu NeurOptimal® este o formă avansată de antrenament cerebral, care folosește tehnologie de neurofeedback dinamică pentru a optimiza funcționarea naturală a creierului într-un mod **non-invaziv, sigur și adaptat fiecărei persoane**. Spre deosebire de neurofeedback-ul tradițional cu protocoale fixe, sistemul NeurOptimal® nu încearcă să „forțeze” creierul într-o anumită stare, ci îi oferă feedback în timp real despre propria activitate neuronală, astfel încât acesta să se autoregleze și să se optimizeze eficient. :contentReference[oaicite:1]{index=1}\n\nPrin monitorizarea undelor cerebrale și furnizarea de semnale subtile care reflectă activitatea creierului, NeurOptimal® stimulează procesele interne de autoreglare și flexibilitate neurologică, favorizând claritatea mentală, echilibrul emoțional și adaptabilitatea la provocările cotidiene. Această tehnologie este potrivită pentru persoane de orice vârstă care își doresc performanță optimă a creierului, îmbunătățirea concentrației sau suport pentru gestionarea stresului și sănătății mentale.",
+                "Neurofeedback cu NeurOptimal® este o formă avansată de antrenament cerebral, care folosește tehnologie de neurofeedback dinamică pentru a optimiza funcționarea naturală a creierului într-un mod non-invaziv, sigur și adaptat fiecărei persoane. Spre deosebire de neurofeedback-ul tradițional cu protocoale fixe, sistemul NeurOptimal® nu încearcă să „forțeze” creierul într-o anumită stare, ci îi oferă feedback în timp real despre propria activitate neuronală, astfel încât acesta să se autoregleze și să se optimizeze eficient.\n\nPrin monitorizarea undelor cerebrale și furnizarea de semnale subtile care reflectă activitatea creierului, NeurOptimal® stimulează procesele interne de autoreglare și flexibilitate neurologică, favorizând claritatea mentală, echilibrul emoțional și adaptabilitatea la provocările cotidiene. Această tehnologie este potrivită pentru persoane de orice vârstă care își doresc performanță optimă a creierului, îmbunătățirea concentrației sau suport pentru gestionarea stresului și sănătății mentale.",
               benefits: [
                 "Antrenament cerebral non-invaziv care susține autoreglarea naturală a creierului",
                 "Funcționează în timp real, adaptându-se la tiparele unice de activitate neuronală",
@@ -903,7 +1105,25 @@ export const translations = {
       badge: "Contact",
       title: "Synaptica Cluj",
       description:
-        "Suntem aici pentru a-ți răspunde cu empatie și promptitudine. Dacă ai întrebări despre serviciile noastre sau dorești să faci o programare, echipa Synaptica Cluj îți oferă suport personalizat, bazat pe tehnologie avansată și grijă autentică.",
+        "Contactează Synaptica Cluj pentru programări la brainmapping EEG și neurofeedback în Cluj-Napoca. Poți solicita evaluare, informații despre servicii, detalii despre pachete și pașii de început ai procesului.",
+      aeoTitle: "Răspunsuri rapide",
+      aeoItems: [
+        {
+          question: "Cum pot face o programare la Synaptica Cluj?",
+          answer:
+            "Poți face programarea prin formularul de contact, telefonic sau pe WhatsApp. După mesaj, echipa confirmă detaliile și intervalele disponibile.",
+        },
+        {
+          question: "Unde se află Synaptica Cluj?",
+          answer:
+            "Ne găsești pe Str. Robert Koch Nr. 7, Cluj-Napoca 400347.",
+        },
+        {
+          question: "Pentru ce servicii pot solicita o programare?",
+          answer:
+            "Poți solicita programări pentru brainmapping EEG, ședințe de neurofeedback și informații despre programele integrate disponibile.",
+        },
+      ],
       callCta: "Sună-ne",
       emailCta: "Scrie-ne",
       phoneLabel: "Telefon",

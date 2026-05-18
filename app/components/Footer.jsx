@@ -18,6 +18,7 @@ const usefulLinks = [
   { labelKey: "legal.links.pricing", href: "/pricing" },
   { labelKey: "legal.links.conditions", href: "/conditions" },
   { labelKey: "legal.links.contact", href: "/contact" },
+  { href: "/faq", fallbackLabel: "FAQ" },
 ];
 
 export default function Footer() {
@@ -66,7 +67,7 @@ export default function Footer() {
                   {companyLinks.map((link, idx) => (
                     <span key={link.href} className="inline-flex flex-wrap items-center gap-2">
                       <Link href={link.href} className="text-[#7f733c] underline hover:text-[#9f8a3f]">
-                        {t(link.labelKey)}
+                        {link.labelKey ? t(link.labelKey) : link.fallbackLabel}
                       </Link>
                       {idx < companyLinks.length - 1 && <span className="text-[#7f733c]" aria-hidden>|</span>}
                     </span>
@@ -80,7 +81,7 @@ export default function Footer() {
                   {usefulLinks.map((link, idx) => (
                     <span key={link.href} className="inline-flex flex-wrap items-center gap-2">
                       <Link href={link.href} className="text-[#7f733c] underline hover:text-[#9f8a3f]">
-                        {t(link.labelKey)}
+                        {link.labelKey ? t(link.labelKey) : link.fallbackLabel}
                       </Link>
                       {idx < usefulLinks.length - 1 && <span className="text-[#7f733c]" aria-hidden>|</span>}
                     </span>

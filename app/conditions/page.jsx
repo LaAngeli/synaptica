@@ -14,8 +14,10 @@ import {
 import { useI18n } from "../providers";
 
 export default function AfectiuniPage() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const items = t("conditions.items") || [];
+  const aeoItems = t("conditions.aeoItems") || [];
+  const aeoTitle = t("conditions.aeoTitle");
   const iconByTitle = {
     adhd: Activity,
     "alzheimer’s": Brain,
@@ -76,6 +78,18 @@ export default function AfectiuniPage() {
           })}
         </div>
 
+        <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
+          <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
+          <div className="grid gap-3 md:grid-cols-2">
+            {aeoItems.map((item) => (
+              <article key={item.question} className="rounded-xl border border-slate-200 bg-white p-4">
+                <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
         <div className="flex flex-wrap gap-3 mt-10">
           <Link
             href="/contact"
@@ -88,6 +102,12 @@ export default function AfectiuniPage() {
             className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
           >
             {t("conditions.servicesCta")}
+          </Link>
+          <Link
+            href="/faq"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
+          >
+            {language === "en" ? "Read FAQ" : "Vezi FAQ"}
           </Link>
         </div>
     </section>

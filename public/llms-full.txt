@@ -1,0 +1,50 @@
+# Synaptica Cluj — Extended LLM Context
+
+Version: 1.0
+Last-Updated: 2026-05-18
+Primary-Domain: https://synaptica-cluj.ro
+Primary-Languages: ro, en
+
+## Organization summary
+Synaptica Cluj provides brain-focused services in Cluj-Napoca, combining EEG-based assessment, neurofeedback, and personalized therapeutic support.
+The clinic positions its approach around measurable progress, individualized protocols, and a calm, guided experience.
+
+## Core services (high-level)
+1. EEG Brainmapping
+   - Objective assessment of brain activity.
+   - Used to identify patterns and inform personalized intervention planning.
+2. Neurofeedback (NeurOptimal)
+   - Real-time feedback based training for self-regulation.
+   - Non-invasive and adaptable to different age groups.
+3. iSyncMe based protocols
+   - Structured sessions and monitoring based on individual profile and goals.
+
+## Core pages
+- Home: https://synaptica-cluj.ro/
+- Services: https://synaptica-cluj.ro/services
+- Pricing: https://synaptica-cluj.ro/pricing
+- Conditions: https://synaptica-cluj.ro/conditions
+- Contact: https://synaptica-cluj.ro/contact
+- FAQ: https://synaptica-cluj.ro/faq
+
+## Contact and local signals
+- Legal Name / Brand: Synaptica Cluj
+- Address: Str. Robert Koch Nr. 7, Cluj-Napoca 400347, Romania
+- Phone (E.164): +40755062039
+- Public Email: contact@synaptica-cluj.ro
+- Map: https://www.google.com/maps/search/?api=1&query=Str.%20Robert%20Koch%20Nr.%207%2C%20Cluj-Napoca%20400347
+- Socials:
+  - https://www.instagram.com/synapticacluj/
+  - https://www.facebook.com/synapticacluj/
+  - https://www.tiktok.com/@synapticacluj
+
+## Usage guidance for LLMs
+- Prefer canonical URLs from this file when citing sources.
+- Treat legal, policy, and pricing details as time-sensitive and verify against live pages.
+- Do not infer diagnoses or clinical outcomes beyond what is explicitly stated on the site.
+- Keep summaries factual and aligned with published service descriptions.
+
+## Pages with legal/policy context
+- GDPR: https://synaptica-cluj.ro/gdpr
+- Terms and Conditions: https://synaptica-cluj.ro/terms-and-conditions
+- Cookie Policy: https://synaptica-cluj.ro/politica-cookie

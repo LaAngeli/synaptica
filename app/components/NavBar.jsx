@@ -19,12 +19,16 @@ export default function NavBar() {
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const navLinks = (t("nav.links") || []).map((link) => {
+  const faqNavLabel = language === "en" ? "FAQ" : "Întrebări";
+  const navLinksBase = (t("nav.links") || []).map((link) => {
     if (link.href === "/servicii") return { ...link, href: "/services" };
     if (link.href === "/preturi") return { ...link, href: "/pricing" };
     if (link.href === "/afectiuni") return { ...link, href: "/conditions" };
     return link;
   });
+  const navLinks = navLinksBase.some((link) => link.href === "/faq")
+    ? navLinksBase
+    : [...navLinksBase, { href: "/faq", label: faqNavLabel }];
   const renderLink = (link) => {
     const active = isActive(link.href);
 

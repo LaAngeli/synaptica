@@ -5,8 +5,10 @@ import { defaultLanguage, supportedLanguages, translations } from "./i18n/transl
 
 const I18nContext = createContext(null);
 
-const getValueFromPath = (object, path) =>
-  path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), object);
+const getValueFromPath = (object, path) => {
+  if (typeof path !== "string" || !path) return undefined;
+  return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), object);
+};
 
 export function I18nProvider({ children }) {
   const [language, setLanguage] = useState(defaultLanguage);

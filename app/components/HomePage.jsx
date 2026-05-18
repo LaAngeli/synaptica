@@ -9,6 +9,7 @@ export default function HomePage() {
   const quickLinks = t("home.quickLinks") || [];
   const statTags = t("home.statTags") || [];
   const neuroPoints = t("home.neuro.points") || [];
+  const aeoItems = t("home.aeoItems") || [];
 
   return (
     <div className="space-y-10 text-slate-900">
@@ -157,6 +158,18 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="space-y-5 rounded-3xl border border-slate-200 bg-white/85 px-6 py-8 shadow-lg shadow-slate-200 sm:px-8">
+        <h2 className="text-2xl font-semibold text-slate-900">{t("home.aeoTitle")}</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {aeoItems.map((item) => (
+            <article key={item.question} className="rounded-2xl border border-slate-200 bg-white p-4">
+              <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
+            </article>
+          ))}
         </div>
       </section>
 
