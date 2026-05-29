@@ -62,7 +62,7 @@ export default function NavBar() {
           <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
             <Image
               src="/synaptica_logo_text.png"
-              alt="Synaptica Cluj logo"
+              alt="Synaptica Cluj"
               width={140}
               height={40}
               priority

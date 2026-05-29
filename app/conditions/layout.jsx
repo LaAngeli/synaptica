@@ -2,7 +2,7 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title:
-    "Neurofeedback pentru somn, anxietate, ADHD și concentrare | Cluj",
+    "Neurofeedback pentru somn, anxietate, ADHD și concentrare",
   description:
     "Neurofeedback și antrenament cerebral în Cluj-Napoca pentru somn, anxietate, ADHD, stres și concentrare. Informații orientative, cu evaluare EEG și abordare prudentă.",
   path: "/conditions",

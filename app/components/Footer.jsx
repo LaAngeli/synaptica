@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <Image
               src="/synaptica_logo.png"
-              alt="Synaptica logo"
+              alt="Synaptica Cluj"
               width={280}
               height={280}
               className="opacity-20"
