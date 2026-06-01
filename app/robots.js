@@ -6,6 +6,8 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
+        // Resurse de build (JS/CSS/fonturi cu hash) — nu sunt pagini; hash-ul se schimbă la deploy.
+        disallow: "/_next/",
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
