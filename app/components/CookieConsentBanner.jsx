@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useI18n } from "../providers";
-
-const CONSENT_STORAGE_KEY = "synaptica-cookie-consent";
+import {
+  CONSENT_STORAGE_KEY,
+  grantAllConsent,
+  loadMetaPixelIfConsented,
+} from "../../lib/google-consent";
 
 export default function CookieConsentBanner() {
   const { t } = useI18n();
@@ -19,6 +22,8 @@ export default function CookieConsentBanner() {
   const handleAccept = () => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
+      grantAllConsent();
+      loadMetaPixelIfConsented();
     }
     setVisible(false);
   };

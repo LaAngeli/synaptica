@@ -8,6 +8,7 @@ import WhatsAppFloatingCta from "./components/WhatsAppFloatingCta";
 import { I18nProvider } from "./providers";
 import { rootMetadataBase } from "../lib/seo";
 import { buildSiteJsonLd } from "../lib/schema-jsonld";
+import { CONSENT_STORAGE_KEY } from "../lib/google-consent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ro">
       <head>
+        {/* Consent Mode v2 (Advanced) — default denied ÎNAINTE de GTM.
+            Ref: developers.google.com/tag-platform/security/guides/consent?consentmode=advanced */}
+        <Script id="gtm-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('consent','default',{
+  'ad_storage':'denied',
+  'ad_user_data':'denied',
+  'ad_personalization':'denied',
+  'analytics_storage':'denied',
+  'wait_for_update':500
+});
+gtag('set','ads_data_redaction',true);
+gtag('set','url_passthrough',true);
+try{
+  if(localStorage.getItem('${CONSENT_STORAGE_KEY}')==='accepted'){
+    gtag('consent','update',{
+      'ad_storage':'granted',
+      'ad_user_data':'granted',
+      'ad_personalization':'granted',
+      'analytics_storage':'granted'
+    });
+  }
+}catch(e){}`}
+        </Script>
         <Script id="gtm-base" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -42,16 +69,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NL3XVBXL');`}
         </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
-          {`!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+          {`try{
+if(localStorage.getItem('${CONSENT_STORAGE_KEY}')!=='accepted'){throw 0;}
+if(window.fbq){throw 0;}
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '816358718204231');
-fbq('track', 'PageView');`}
+fbq('init','816358718204231');fbq('track','PageView');
+}catch(e){}`}
         </Script>
       </head>
       <body
