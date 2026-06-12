@@ -149,9 +149,9 @@ export const translations = {
     services: {
       pageTitle: "Services",
       intro:
-        "At Synaptica Cluj in Cluj-Napoca, our services combine EEG brainmapping, iSyncMe, and NeurOptimal neurofeedback to support mental balance, clarity, and cognitive performance through a non-invasive approach.",
+        "At Synaptica Cluj in Cluj-Napoca, our services combine EEG brainmapping, iSyncMe and NeurOptimal neurofeedback with gentle holistic therapies — Bowen Therapy and Rejuvance natural facial lifting — to support mental balance, clarity, cognitive performance and overall wellbeing through non-invasive approaches.",
       stackIntro:
-        "The services complement each other: evaluation through brainmapping EEG, interpretation of brain activity patterns, and personalized brain training with real-time EEG feedback.",
+        "The services complement each other: evaluation through brainmapping EEG, interpretation of brain activity patterns and personalized brain training with real-time EEG feedback, alongside gentle, non-invasive therapies for deep physical relaxation and natural facial rejuvenation.",
       ctaPrimary: "Schedule a session",
       ctaSecondary: "Contact us",
       includesTitle: "What the service includes",
@@ -159,24 +159,24 @@ export const translations = {
       aeoTitle: "Quick answers",
       aeoItems: [
         {
-          question: "What is EEG brainmapping?",
+          question: "What is iSyncMe helmet therapy?",
           answer:
-            "EEG brainmapping is an evaluation of brain activity that helps identify functional patterns and supports a personalized intervention direction.",
+            "iSyncMe is a neurotechnology-based service that combines high-precision EEG brainmapping with AI-guided protocol design to support personalized cognitive and emotional balance.",
         },
         {
           question: "What is NeurOptimal neurofeedback?",
           answer:
-            "NeurOptimal neurofeedback is a non-invasive brain training method using real-time EEG feedback that can support natural self-regulation.",
+            "NeurOptimal neurofeedback is a non-invasive brain training method using real-time EEG feedback that can support natural self-regulation, with no conscious effort required.",
         },
         {
-          question: "What is iSyncMe helmet therapy?",
+          question: "Is Bowen Therapy safe for children and pregnant women?",
           answer:
-            "iSyncMe is a neurotechnology-based service that combines EEG data and guided protocol design to support personalized cognitive and emotional balance.",
+            "Yes. Bowen Therapy is a gentle, 100% non-invasive technique suitable for everyone, including babies (Baby Bowen), children, pregnant women, athletes and seniors.",
         },
         {
-          question: "What is the difference between brainmapping and neurofeedback?",
+          question: "How many Rejuvance sessions are recommended?",
           answer:
-            "Brainmapping is primarily an evaluation phase, while neurofeedback is a training phase focused on supporting adaptive brain self-regulation.",
+            "For optimal results we recommend a full protocol of 6 sessions of 45–60 minutes each, followed by 1–2 maintenance sessions per month.",
         },
       ],
       sections: [
@@ -219,6 +219,48 @@ export const translations = {
             "Supports cognitive performance, emotional balance, and general wellbeing",
           ],
           steps: ["Dynamic monitoring", "Subtle feedback", "Self-regulation learning", "Sustained balance"],
+        },
+        {
+          key: "bowen",
+          badge: "Bowen Therapy",
+          title: "Bowen Therapy in Cluj-Napoca for relaxation and natural balance",
+          highlight: "Non-invasive technique, self-healing, deep relaxation",
+          details: [
+            "Bowen Therapy in Cluj-Napoca is a gentle, 100% non-invasive manual technique built on a simple yet powerful premise: in a state of deep relaxation, the body has the innate ability to heal itself and recover its physical and emotional balance.",
+            "A Bowen session involves delicate, precise moves performed with the fingers over muscles and joints. These light touches stimulate receptors in the tissues and send clear signals to the central nervous system, activating cellular memory and inducing a profound state of harmony. The therapist does not force the body, but simply gives it the impulse needed to start its own natural self-healing process.",
+            "During a session, the therapist performs sets of fine moves on key points of the body, with short integration breaks that allow the body to process the signals received. Responses can appear quickly: deep muscle relaxation, reduced spasms and pain, and visibly improved blood circulation.",
+            "Bowen Therapy is safe and suitable for all ages — from babies and children (Baby Bowen) to pregnant women, athletes, seniors and people with special needs. For expectant mothers, dedicated procedures help ease back pain, sciatica, headaches and fatigue, while for infants a session of only 15 minutes can support digestion, sleep and a sense of calm.",
+            "Thanks to its holistic approach, Bowen Therapy can bring improvements in musculoskeletal issues, respiratory and internal conditions, hormonal imbalances and stress-related tension, while also supporting posture, mobility, sleep quality and concentration. A session lasts between 30 and 60 minutes, and a short series of sessions is recommended to consolidate the results.",
+          ],
+          bullets: [
+            "We start with a conversation about your health and what brought you in",
+            "Gentle, precise touches — no pressure, no forcing the body",
+            "Quiet breaks during the session so your body can integrate the work",
+            "Adapted for adults, children, babies (Baby Bowen) and pregnancy",
+            "Practical aftercare tips to help you maintain the results at home",
+          ],
+          steps: ["Initial consultation", "Bowen moves", "Integration breaks", "Aftercare guidance"],
+        },
+        {
+          key: "rejuvance",
+          badge: "Rejuvance — natural facial lifting",
+          title: "Natural Rejuvance facial lifting in Cluj-Napoca, without invasive procedures",
+          highlight: "Pure manual technique, anti-aging, deep relaxation",
+          details: [
+            "Rejuvance is a holistic natural facial lifting technique in Cluj-Napoca, designed in full harmony with the body's physiology. It is a gentle method that restores skin firmness and facial radiance without invasive procedures, electrical devices or chemical substances.",
+            "Unlike classic massage, Rejuvance uses extremely light, delicate finger touches, with no serums or ointments. Through this pure manual technique you obtain a visible rejuvenation of the face, accompanied by deep relaxation for body, mind and soul. The aesthetic result is naturally influenced by age, skin quality, the depth of wrinkles and genetic constitution.",
+            "While it does not replace the structural changes of cosmetic surgery, Rejuvance offers a major advantage: a visible rejuvenating effect, completely free of the risks, pain, anesthesia or complications associated with surgery.",
+            "For optimal results, a full protocol of 6 serial sessions is recommended, each lasting 45 to 60 minutes. The first sessions focus on the scalp, forehead, eye area and cheeks; the next ones work on the face, neck, shoulders and décolletage; and the final session is personalized to your areas of interest and to smoothing wrinkles. After the package is complete, 1–2 maintenance sessions per month are recommended.",
+            "The benefits of Rejuvance therapy include a visible anti-aging effect, reduced dark circles and under-eye bags, a firmer facial contour, brighter and more elastic skin, as well as deep relaxation of the entire nervous system. The therapy does not interfere with other massage techniques, but it is not applied on areas recently treated with Botox or injectables and has certain medical contraindications.",
+          ],
+          bullets: [
+            "Purely manual work — no creams, devices or invasive procedures",
+            "A structured course of 6 sessions, with easy monthly maintenance",
+            "Smoother lines and a more defined, firmer facial contour",
+            "Less visible dark circles and under-eye puffiness",
+            "Simple exercises and self-massage to keep your results at home",
+          ],
+          steps: ["Skin assessment", "6-session protocol", "Manual lifting", "Maintenance sessions"],
         },
       ],
     },
@@ -299,32 +341,32 @@ export const translations = {
       badge: "Pricing",
       title: "Solutions for every step of your transformation",
       intro:
-        "In Cluj-Napoca, Synaptica Cluj provides transparent pricing for EEG brainmapping, iSyncMe sessions, and NeurOptimal neurofeedback, so you can choose the right path based on goals, pace, and budget.",
+        "In Cluj-Napoca, Synaptica Cluj provides transparent pricing for EEG brainmapping, iSyncMe sessions, NeurOptimal neurofeedback, Bowen Therapy and Rejuvance natural facial lifting, so you can choose the right path based on goals, pace, and budget.",
       benefitsTitle: "Benefits:",
       descriptionTitle: "Description:",
       description:
-        "Explore pricing for EEG evaluation, neurofeedback sessions, and integrated programs in Cluj-Napoca, with clear package structure and progressive support.",
+        "Explore pricing for EEG evaluation, neurofeedback sessions, integrated programs, Bowen Therapy and Rejuvance facial lifting in Cluj-Napoca, with a clear package structure and progressive support.",
       aeoTitle: "Quick answers",
       aeoItems: [
         {
-          question: "How much does EEG brainmapping cost at Synaptica Cluj?",
+          question: "How much do iSyncMe services cost at Synaptica Cluj?",
           answer:
-            "Brainmapping EEG is listed at 3000 RON and includes objective evaluation data used to guide a personalized intervention direction.",
+            "EEG brainmapping is listed at 3000 RON, one iSyncMe therapy session at 400 RON, the 20-session package at 6000 RON, and the complete package with final brainmapping at 7500 RON.",
         },
         {
           question: "How much is one neurofeedback session?",
           answer:
-            "One neurofeedback session is listed at 300 RON, with dedicated package options for clients who want continuity.",
+            "One NeurOptimal neurofeedback session is listed at 300 RON, with a 20-session package available at 5000 RON for clients who want continuity.",
         },
         {
-          question: "What does a 20-session package include?",
+          question: "How much does a Bowen Therapy session cost?",
           answer:
-            "The package includes a structured sequence of sessions with progress monitoring, and some options also include final brainmapping.",
+            "Bowen Therapy is listed at 150 RON per session for children and adults, while Baby Bowen (0–6 months) is 120 RON per session.",
         },
         {
-          question: "What is the difference between single sessions and packages?",
+          question: "How much does Rejuvance natural facial lifting cost?",
           answer:
-            "Single sessions offer flexibility, while packages are designed for continuity, better protocol consistency, and clearer long-term tracking.",
+            "Rejuvance facial lifting (face & neck) is listed at 280 RON per session, and a maintenance session is 200 RON.",
         },
       ],
       groups: [
@@ -402,6 +444,49 @@ export const translations = {
                 "Safe, comfortable technology requiring no conscious effort from the client",
                 "Suitable for all ages and life stages, without the need for a medical diagnosis",
               ]
+            },
+          ],
+        },
+        {
+          title: "Bowen Therapy pricing",
+          items: [
+            {
+              label: "Bowen Therapy",
+              price: [
+                { label: "Baby Bowen (0–6 months) / session", price: "120 RON" },
+                { label: "Children (6 months – 18 years) / session", price: "150 RON" },
+                { label: "Adults / session", price: "150 RON" },
+              ],
+              description:
+                "Bowen Therapy is a gentle, 100% non-invasive manual technique that helps the body activate its own natural self-healing process. Through delicate moves on muscles and joints, it stimulates the nervous system and induces deep relaxation, making it suitable for all ages — from babies (Baby Bowen) to pregnant women, athletes and seniors.\n\nA session lasts between 30 and 60 minutes (about 15 minutes for infants) and includes an initial consultation, sets of fine moves and integration breaks. A short series of sessions is recommended to consolidate the results.",
+              benefits: [
+                "100% non-invasive technique, safe for all ages",
+                "Deep muscle relaxation and pain reduction",
+                "Improves blood circulation and lymphatic drainage",
+                "Supports posture, mobility and sleep quality",
+                "Reduces emotional tension and stress",
+                "Dedicated options: Baby Bowen, children and pregnancy",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Rejuvance pricing",
+          items: [
+            {
+              label: "Rejuvance — natural facial lifting",
+              price: [{ label: "Face & neck / session", price: "280 RON" }],
+              extraPrices: [{ label: "Maintenance session", price: "200 RON" }],
+              description:
+                "Rejuvance is a holistic natural facial lifting technique performed purely by hand, with no devices, serums or chemical substances. It restores skin firmness and radiance through a visible anti-aging effect, while also providing deep relaxation of the nervous system.\n\nFor optimal results, a full protocol of 6 serial sessions of 45–60 minutes is recommended, followed by 1–2 maintenance sessions per month. The therapy has certain contraindications and is not applied on areas recently treated with Botox or injectables.",
+              benefits: [
+                "100% manual facial lifting, with no invasive procedures",
+                "Anti-aging effect: smoothed wrinkles and firmer contour",
+                "Reduces dark circles and under-eye bags",
+                "Brighter, more elastic and hydrated skin",
+                "Deep relaxation of the entire nervous system",
+                "6-session protocol plus monthly maintenance",
+              ],
             },
           ],
         },
@@ -839,9 +924,9 @@ export const translations = {
     services: {
       pageTitle: "Servicii",
       intro:
-        "La Synaptica Cluj, serviciile noastre combină brainmapping EEG, iSyncMe și neurofeedback NeurOptimal pentru susținerea echilibrului mental, clarității cognitive și performanței, printr-o abordare non-invazivă.",
+        "La Synaptica Cluj, serviciile noastre combină brainmapping EEG, iSyncMe și neurofeedback NeurOptimal cu terapii holistice blânde — Terapia Bowen și liftingul facial natural Rejuvance — pentru susținerea echilibrului mental, clarității cognitive, performanței și stării generale de bine, prin abordări non-invazive.",
       stackIntro:
-        "Serviciile se completează între ele: evaluare prin brainmapping EEG, interpretarea tiparelor de activitate cerebrală și antrenament cerebral personalizat cu feedback EEG în timp real.",
+        "Serviciile se completează între ele: evaluare prin brainmapping EEG, interpretarea tiparelor de activitate cerebrală și antrenament cerebral personalizat cu feedback EEG în timp real, alături de terapii blânde, non-invazive, pentru relaxare fizică profundă și reîntinerire facială naturală.",
       ctaPrimary: "Programează o sesiune",
       ctaSecondary: "Contactează-ne",
       includesTitle: "Ce include serviciul",
@@ -849,24 +934,24 @@ export const translations = {
       aeoTitle: "Răspunsuri rapide",
       aeoItems: [
         {
-          question: "Ce este brainmapping-ul EEG?",
+          question: "Ce este terapia cu casca iSyncMe?",
           answer:
-            "Brainmapping-ul EEG este o evaluare a activității cerebrale care ajută la identificarea tiparelor funcționale și la definirea unei direcții personalizate de intervenție.",
+            "Terapia cu casca iSyncMe este un serviciu bazat pe neurotehnologie, care combină brainmapping EEG de precizie cu un protocol ghidat de inteligență artificială pentru susținerea echilibrului cognitiv și emoțional.",
         },
         {
           question: "Ce este neurofeedback-ul cu NeurOptimal?",
           answer:
-            "Neurofeedback-ul cu NeurOptimal este o metodă non-invazivă de antrenament cerebral, bazată pe feedback EEG în timp real, care poate susține autoreglarea naturală.",
+            "Neurofeedback-ul cu NeurOptimal este o metodă non-invazivă de antrenament cerebral, bazată pe feedback EEG în timp real, care poate susține autoreglarea naturală, fără efort conștient.",
         },
         {
-          question: "Ce este terapia cu casca iSyncMe?",
+          question: "Este Terapia Bowen sigură pentru copii și femei însărcinate?",
           answer:
-            "Terapia cu casca iSyncMe este un serviciu bazat pe neurotehnologie, care folosește date EEG și protocol ghidat pentru susținerea echilibrului cognitiv și emoțional.",
+            "Da. Terapia Bowen este o tehnică blândă, 100% non-invazivă, potrivită pentru oricine, inclusiv bebeluși (Baby Bowen), copii, femei însărcinate, sportivi și seniori.",
         },
         {
-          question: "Care este diferența dintre brainmapping și neurofeedback?",
+          question: "Câte ședințe Rejuvance sunt recomandate?",
           answer:
-            "Brainmapping-ul este etapa de evaluare, iar neurofeedback-ul este etapa de antrenament cerebral orientată spre autoreglare și adaptare funcțională.",
+            "Pentru rezultate optime se recomandă un protocol complet de 6 ședințe a câte 45–60 de minute, urmate de 1–2 ședințe de întreținere pe lună.",
         },
       ],
       sections: [
@@ -909,6 +994,48 @@ export const translations = {
             "Susține performanța cognitivă, emoțională și starea generală",
           ],
           steps: ["Monitorizare dinamică", "Feedback subtil", "Învățare de autoreglare", "Echilibru susținut"],
+        },
+        {
+          key: "bowen",
+          badge: "Terapia Bowen",
+          title: "Terapie Bowen în Cluj-Napoca pentru relaxare și echilibru natural",
+          highlight: "Tehnică non-invazivă, auto-vindecare, relaxare profundă",
+          details: [
+            "Terapia Bowen în Cluj-Napoca este o tehnică manuală blândă și 100% non-invazivă, care pornește de la o premisă simplă, dar puternică: într-o stare de relaxare profundă, corpul are capacitatea înnăscută de a se vindeca și de a-și recăpăta echilibrul fizic și emoțional.",
+            "O ședință de terapie Bowen presupune mișcări delicate și precise realizate cu degetele pe mușchi și articulații. Aceste atingeri fine stimulează receptorii din țesuturi și transmit semnale clare către sistemul nervos central, activând memoria celulară și inducând o stare profundă de armonie. Terapeutul nu forțează corpul, ci îi oferă impulsul necesar pentru a-și începe propriul proces natural de auto-vindecare.",
+            "Pe parcursul unei ședințe, terapeutul efectuează serii de mișcări fine pe puncte cheie ale corpului, intercalate cu scurte pauze de integrare, în care corpul are timp să proceseze semnalele primite. Răspunsurile pot apărea rapid: relaxare musculară profundă, reducerea spasmelor și a durerii și o îmbunătățire vizibilă a circulației sângelui.",
+            "Terapia Bowen este sigură și potrivită pentru toate vârstele — de la bebeluși și copii (Baby Bowen) la femei însărcinate, sportivi, seniori și persoane cu nevoi speciale. Pentru viitoarele mămici, procedurile specifice ajută la ameliorarea durerilor de spate, sciaticii, durerilor de cap și a oboselii, iar pentru bebeluși o ședință de doar 15 minute poate susține digestia, somnul și starea de calm.",
+            "Prin abordarea sa holistică, terapia Bowen poate aduce îmbunătățiri în probleme musculo-scheletale, afecțiuni respiratorii și interne, dezechilibre hormonale și tensiune asociată stresului, susținând în același timp postura, mobilitatea, calitatea somnului și capacitatea de concentrare. O ședință durează între 30 și 60 de minute, iar pentru consolidarea efectelor este recomandată o serie de câteva ședințe.",
+          ],
+          bullets: [
+            "Începem cu o discuție despre starea ta de sănătate și ce te aduce la noi",
+            "Atingeri blânde și precise — fără presiune, fără forțare",
+            "Momente de liniște în ședință, ca organismul să proceseze ce primește",
+            "Adaptată pentru adulți, copii, bebeluși (Baby Bowen) sau gravide",
+            "Sfaturi practice după ședință, ca efectele să se păstreze acasă",
+          ],
+          steps: ["Discuție inițială", "Mișcări Bowen", "Pauze de integrare", "Recomandări post-ședință"],
+        },
+        {
+          key: "rejuvance",
+          badge: "Rejuvance — lifting facial natural",
+          title: "Lifting facial natural Rejuvance în Cluj-Napoca, fără proceduri invazive",
+          highlight: "Tehnică manuală pură, anti-aging, relaxare profundă",
+          details: [
+            "Rejuvance este o tehnică holistică de lifting facial natural în Cluj-Napoca, concepută în armonie deplină cu fiziologia corpului. Este o metodă blândă care redă fermitatea pielii și luminozitatea chipului, fără proceduri invazive, fără aparate electrice și fără substanțe chimice.",
+            "Spre deosebire de masajul clasic, Rejuvance folosește atingeri extrem de ușoare și delicate ale degetelor, fără seruri sau unguente. Prin această tehnică manuală pură se obține o reîntinerire vizibilă a chipului, însoțită de o stare profundă de relaxare pentru corp, minte și suflet. Rezultatul estetic este influențat natural de vârstă, calitatea pielii, profunzimea ridurilor și constituția genetică.",
+            "Deși nu înlocuiește modificările structurale ale unei intervenții chirurgicale, Rejuvance oferă un avantaj major: un efect vizibil de întinerire, complet lipsit de riscurile, durerile, anestezia sau complicațiile asociate chirurgiei estetice.",
+            "Pentru rezultate optime se recomandă un protocol complet de 6 ședințe seriate, fiecare durând între 45 și 60 de minute. Primele ședințe se concentrează pe scalp, frunte, zona ochilor și obraji, următoarele lucrează fața, gâtul, umerii și decolteul, iar ultima ședință este personalizată pe zonele tale de interes și pe estomparea ridurilor. După finalizarea pachetului, sunt recomandate 1–2 ședințe de întreținere pe lună.",
+            "Beneficiile terapiei Rejuvance includ un efect anti-aging vizibil, diminuarea cearcănelor și a pungilor de sub ochi, un contur facial mai ferm, o piele mai luminoasă și elastică, precum și o relaxare profundă a întregului sistem nervos. Terapia nu interferează cu alte tehnici de masaj, însă nu se aplică pe zonele tratate recent cu Botox sau produse injectabile și are anumite contraindicații medicale.",
+          ],
+          bullets: [
+            "Doar mâinile terapeutului — fără creme, aparate sau proceduri invazive",
+            "Program de 6 ședințe, urmat de întreținere ușoară, la nevoie",
+            "Riduri mai estompate și un contur facial mai bine definit",
+            "Cearcăne și pungi sub ochi vizibil reduse",
+            "La final, exerciții simple pe care le poți face acasă",
+          ],
+          steps: ["Evaluarea tenului", "Protocol de 6 ședințe", "Lifting manual", "Ședințe de întreținere"],
         },
       ],
     },
@@ -989,32 +1116,32 @@ export const translations = {
       badge: "Prețuri",
       title: "Soluții dedicate fiecărui pas al transformării tale",
       intro:
-        "În Cluj-Napoca, Synaptica Cluj oferă prețuri clare pentru brainmapping EEG, ședințe iSyncMe și neurofeedback NeurOptimal, astfel încât să alegi opțiunea potrivită pentru obiectivele și ritmul tău.",
+        "În Cluj-Napoca, Synaptica Cluj oferă prețuri clare pentru brainmapping EEG, ședințe iSyncMe, neurofeedback NeurOptimal, Terapia Bowen și liftingul facial natural Rejuvance, astfel încât să alegi opțiunea potrivită pentru obiectivele și ritmul tău.",
       benefitsTitle: "Beneficii:",
       descriptionTitle: "Descriere:",
       description:
-        "Consultă prețurile pentru evaluare EEG, ședințe neurofeedback și pachete integrate în Cluj-Napoca, cu structură clară și parcurs personalizat de antrenament cerebral.",
+        "Consultă prețurile pentru evaluare EEG, ședințe neurofeedback, pachete integrate, Terapie Bowen și lifting facial Rejuvance în Cluj-Napoca, cu structură clară și parcurs personalizat.",
       aeoTitle: "Răspunsuri rapide",
       aeoItems: [
         {
-          question: "Cât costă brainmapping-ul la Synaptica Cluj?",
+          question: "Cât costă serviciile iSyncMe la Synaptica Cluj?",
           answer:
-            "Brainmapping-ul EEG este listat la 3000 RON și oferă date obiective pentru orientarea unui protocol personalizat.",
+            "Brainmapping-ul EEG este listat la 3000 RON, o ședință de terapie iSyncMe la 400 RON, pachetul de 20 ședințe la 6000 RON, iar pachetul complet cu brainmapping final la 7500 RON.",
         },
         {
           question: "Cât costă o ședință de neurofeedback?",
           answer:
-            "O ședință individuală de neurofeedback este listată la 300 RON, cu opțiuni de pachet pentru continuitate.",
+            "O ședință de neurofeedback NeurOptimal este listată la 300 RON, cu pachet de 20 ședințe disponibil la 5000 RON pentru clienții care doresc continuitate.",
         },
         {
-          question: "Ce include pachetul de 20 de ședințe?",
+          question: "Cât costă o ședință de Terapie Bowen?",
           answer:
-            "Pachetul include un parcurs structurat de ședințe cu monitorizare progresivă, iar unele opțiuni includ și brainmapping final.",
+            "Terapia Bowen este listată la 150 RON pe ședință pentru copii și adulți, iar Baby Bowen (0–6 luni) la 120 RON pe ședință.",
         },
         {
-          question: "Care este diferența dintre ședință individuală și pachet?",
+          question: "Cât costă liftingul facial natural Rejuvance?",
           answer:
-            "Ședința individuală oferă flexibilitate, iar pachetul susține continuitatea, coerența protocolului și urmărirea mai clară a progresului.",
+            "Liftingul facial Rejuvance (față și gât) este listat la 280 RON pe ședință, iar o ședință de întreținere la 200 RON.",
         },
       ],
       groups: [
@@ -1097,6 +1224,49 @@ export const translations = {
 
             },
 
+          ],
+        },
+        {
+          title: "Tarife Terapie Bowen",
+          items: [
+            {
+              label: "Terapia Bowen",
+              price: [
+                { label: "Baby Bowen (0–6 luni) / ședință", price: "120 RON" },
+                { label: "Copii (6 luni – 18 ani) / ședință", price: "150 RON" },
+                { label: "Adulți / ședință", price: "150 RON" },
+              ],
+              description:
+                "Terapia Bowen este o tehnică manuală blândă și 100% non-invazivă, care ajută corpul să își activeze propriul proces natural de auto-vindecare. Prin mișcări delicate pe mușchi și articulații, stimulează sistemul nervos și induce o relaxare profundă, fiind potrivită pentru toate vârstele — de la bebeluși (Baby Bowen) la femei însărcinate, sportivi și seniori.\n\nO ședință durează între 30 și 60 de minute (aproximativ 15 minute pentru bebeluși) și include o discuție inițială, serii de mișcări fine și pauze de integrare. Pentru consolidarea efectelor este recomandată o serie de câteva ședințe.",
+              benefits: [
+                "Tehnică 100% non-invazivă, sigură pentru toate vârstele",
+                "Relaxare musculară profundă și reducerea durerii",
+                "Îmbunătățește circulația sângelui și drenajul limfatic",
+                "Susține postura, mobilitatea și calitatea somnului",
+                "Reduce tensiunea emoțională și stresul",
+                "Variante dedicate: Baby Bowen, copii și gravide",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Tarife Rejuvance",
+          items: [
+            {
+              label: "Rejuvance — lifting facial natural",
+              price: [{ label: "Față și gât / ședință", price: "280 RON" }],
+              extraPrices: [{ label: "Ședință de întreținere", price: "200 RON" }],
+              description:
+                "Rejuvance este o tehnică holistică de lifting facial natural, realizată exclusiv manual, fără aparate, seruri sau substanțe chimice. Redă fermitatea și luminozitatea pielii printr-un efect anti-aging vizibil, oferind în același timp o relaxare profundă a sistemului nervos.\n\nPentru rezultate optime se recomandă un protocol complet de 6 ședințe seriate, a câte 45–60 de minute, urmate de 1–2 ședințe de întreținere pe lună. Terapia are anumite contraindicații și nu se aplică pe zonele tratate recent cu Botox sau produse injectabile.",
+              benefits: [
+                "Lifting facial 100% manual, fără proceduri invazive",
+                "Efect anti-aging: riduri netezite și contur mai ferm",
+                "Diminuează cearcănele și pungile de sub ochi",
+                "Piele mai luminoasă, elastică și hidratată",
+                "Relaxare profundă a întregului sistem nervos",
+                "Protocol de 6 ședințe plus întreținere lunară",
+              ],
+            },
           ],
         },
       ],

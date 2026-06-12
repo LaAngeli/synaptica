@@ -12,6 +12,7 @@ import {
   Target,
 } from "lucide-react";
 import { useI18n } from "../providers";
+import QuickAnswersGrid from "../components/QuickAnswersGrid";
 
 export default function AfectiuniPage() {
   const { t, language } = useI18n();
@@ -80,14 +81,7 @@ export default function AfectiuniPage() {
 
         <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
           <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
-          <div className="grid gap-3 md:grid-cols-2">
-            {aeoItems.map((item) => (
-              <article key={item.question} className="rounded-xl border border-slate-200 bg-white p-4">
-                <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
-              </article>
-            ))}
-          </div>
+          <QuickAnswersGrid items={aeoItems} />
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10">

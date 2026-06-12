@@ -27,3 +27,33 @@ body {
 a {
   text-decoration: none;
 }
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+@keyframes qa-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details[open] .qa-reveal {
+  animation: qa-reveal 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details[open] .qa-reveal {
+    animation: none;
+  }
+  details > summary span {
+    transition: none !important;
+  }
+}

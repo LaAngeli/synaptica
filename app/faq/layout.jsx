@@ -2,9 +2,9 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title:
-    "FAQ neurofeedback și brainmapping Cluj - întrebări frecvente despre evaluare și programări",
+    "FAQ Cluj-Napoca: neurofeedback, brainmapping, Terapia Bowen și Rejuvance",
   description:
-    "Întrebări frecvente despre brainmapping EEG, neurofeedback, număr de ședințe, programări și localizarea clinicii Synaptica Cluj. Răspunsuri clare pentru decizii informate.",
+    "Întrebări frecvente despre brainmapping EEG, neurofeedback, Terapia Bowen, Rejuvance, număr de ședințe, prețuri, programări și localizarea clinicii Synaptica Cluj.",
   path: "/faq",
 });
 

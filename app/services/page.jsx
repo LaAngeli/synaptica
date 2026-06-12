@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useI18n } from "../providers";
+import QuickAnswersGrid from "../components/QuickAnswersGrid";
 import {
   Radar,
   FileText,
@@ -11,6 +12,13 @@ import {
   Gauge,
   Zap,
   CheckCircle2,
+  Hand,
+  Moon,
+  HeartPulse,
+  Droplets,
+  Smile,
+  Flower2,
+  Leaf,
 } from "lucide-react";
 
 
@@ -28,6 +36,8 @@ export default function ServiciiPage() {
   const ICONS_BY_SERVICE = {
     isync: [Radar, FileText, Sparkles, Activity],
     neuro: [Waves, Headphones, Gauge, Zap],
+    bowen: [Hand, Waves, Moon, HeartPulse, Droplets],
+    rejuvance: [Hand, Sparkles, Smile, Flower2, Leaf],
   };
 
   return (
@@ -114,14 +124,7 @@ export default function ServiciiPage() {
 
       <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
         <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
-        <div className="grid gap-3 md:grid-cols-2">
-          {aeoItems.map((item) => (
-            <article key={item.question} className="rounded-xl border border-slate-200 bg-white p-4">
-              <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">{item.answer}</p>
-            </article>
-          ))}
-        </div>
+        <QuickAnswersGrid items={aeoItems} />
       </div>
 
        <div className="flex flex-wrap gap-3 mt-10">
