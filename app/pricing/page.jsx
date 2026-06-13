@@ -4,40 +4,34 @@ import { useI18n } from "../providers";
 import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import QuickAnswersGrid from "../components/QuickAnswersGrid";
+import PricingPageIntro from "../components/PricingPageIntro";
 
 export default function PreturiPage() {
   const { t } = useI18n();
   const groups = t("pricing.groups") || [];
-  const intro = t("pricing.intro");
   const aeoTitle = t("pricing.aeoTitle");
   const aeoItems = t("pricing.aeoItems") || [];
 
   return (
     <section className=" space-y-3 relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
-        <div className="absolute right-1/10 top-1/2 h-64 w-64 rounded-full bg-[#aa995a]/30 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute left-[-6%] top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/30 blur-3xl" />
+        <div className="absolute right-1/4 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
+        <div className="absolute right-[-4%] bottom-[-8%] h-64 w-64 rounded-full bg-[#9f8a3f]/20 blur-3xl" />
       </div>
 
-      {/* <div className="space-y-6 rounded-3xl border border-slate-200 bg-gradient-to-br from-white/95 via-white/90 to-[#f6f0de]/80 p-8 shadow-xl shadow-slate-200"> */}
-
-      <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
-        {t("pricing.badge")}
-      </span>
-      <h1 className="text-4xl font-bold text-slate-900 sm:text-5xl">
-        {t("pricing.title")}
-
-      </h1>
-      <p className="max-w-4xl  text-base leading-relaxed text-slate-700">
-        {t("pricing.description")}
+      <p className="sr-only">
+        {t("pricing.description")} {t("pricing.seoIntro")}
       </p>
-      <p className="max-w-4xl text-sm leading-relaxed text-slate-600">{intro}</p>
+
+      <PricingPageIntro t={t} groups={groups} />
 
       <div className="space-y-8">
         {groups.map((group) => (
           <div
-            key={group.title}
-            className="mt-10"
+            key={group.key || group.title}
+            id={group.key}
+            className="scroll-mt-28 mt-10"
           >
             <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
             <div className="mt-4 space-y-6">

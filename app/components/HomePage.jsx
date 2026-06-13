@@ -25,24 +25,73 @@ export default function HomePage() {
           <div className="absolute right-[-4%] bottom-[-12%] h-72 w-72 rounded-full bg-[#9f8a3f]/20 blur-3xl" aria-hidden />
         </div>
 
-        <div className="relative max-w-4xl space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32] backdrop-blur-sm">
-            {t("home.company.badge")}
-          </span>
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-              {t("home.company.titleStart")}{" "}
-              <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
-                {t("home.company.titleHighlight")}
-              </span>
-              {t("home.company.titleEnd")}
-            </h2>
-            <p className="text-lg font-semibold text-slate-800">
-              {t("home.company.subtitle")}
-            </p>
-            <p className="text-base leading-relaxed text-slate-700">
-              {t("home.company.description")}
-            </p>
+        <div className="relative grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="max-w-4xl space-y-6">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32] backdrop-blur-sm">
+              {t("home.company.badge")}
+            </span>
+            <div className="space-y-4">
+              <h2 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+                {t("home.company.titleStart")}{" "}
+                <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
+                  {t("home.company.titleHighlight")}
+                </span>
+                {t("home.company.titleEnd")}
+              </h2>
+
+              <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-xs lg:hidden">
+                <picture className="block w-full">
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet="/images/home/synaptica-cluj-reception-480.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width: 1024px)"
+                    srcSet="/images/home/synaptica-cluj-reception-768.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/home/synaptica-cluj-reception-768.webp"
+                    alt={t("home.company.imageAlt")}
+                    width={768}
+                    height={969}
+                    loading="lazy"
+                    decoding="async"
+                    className="mx-auto h-auto w-full rounded-2xl object-contain"
+                  />
+                </picture>
+              </div>
+
+              <p className="text-lg font-semibold text-slate-800">
+                {t("home.company.subtitle")}
+              </p>
+              <p className="text-base leading-relaxed text-slate-700">
+                {t("home.company.description")}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative hidden min-h-0 lg:mx-0 lg:block lg:max-w-none lg:justify-self-end">
+            <div className="relative overflow-hidden rounded-[1.75rem] lg:max-h-[min(72vh,34rem)] lg:[mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_8%,rgba(0,0,0,0.28)_18%,rgba(0,0,0,0.55)_30%,rgba(0,0,0,0.82)_42%,black_52%,black_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_8%,rgba(0,0,0,0.28)_18%,rgba(0,0,0,0.55)_30%,rgba(0,0,0,0.82)_42%,black_52%,black_100%)]">
+              <picture className="block h-full w-full">
+                <source
+                  media="(max-width: 1280px)"
+                  srcSet="/images/home/synaptica-cluj-reception-768.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/images/home/synaptica-cluj-reception-1024.webp"
+                  alt={t("home.company.imageAlt")}
+                  width={1024}
+                  height={1291}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto max-h-[min(72vh,34rem)] w-full object-contain object-right"
+                />
+              </picture>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-white/95 from-0% via-slate-50/70 via-40% to-transparent to-100%" aria-hidden />
+            </div>
           </div>
         </div>
       </section>
@@ -123,40 +172,81 @@ export default function HomePage() {
           <div className="absolute left-1/3 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
           <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-[#aa995a]/30 blur-3xl" />
         </div>
-        <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-          <div className="space-y-7">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
-              {t("home.neuro.badge")}
-            </span>
-            <h2 className="max-w-[690px] text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-              {t("home.neuro.titleStart")}{" "}
-              <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
-                {t("home.neuro.titleHighlight")}
-              </span>
-            </h2>
-            <p className="text-lg font-semibold text-slate-800">{t("home.neuro.subtitle")}</p>
-            <p className="max-w-2xl text-slate-700">{t("home.neuro.description")}</p>
-            <ul className="space-y-2 text-sm text-slate-700">
-              {neuroPoints.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <div className="mt-0.5 items-center  justify-center">
-                    <RadarIcon
-                      size={18}
-                      strokeWidth={2}
-                      color="#817e32"
-                    />
-                  </div>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/services#neuro"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
-              >
-                {t("home.neuro.primaryCta")}
-              </Link>
+
+        <div className="relative space-y-7">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
+            {t("home.neuro.badge")}
+          </span>
+
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div className="relative hidden min-h-0 lg:block lg:justify-self-start">
+              <div className="relative overflow-hidden rounded-[1.75rem] lg:max-h-[min(72vh,34rem)] lg:[mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.82)_58%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.28)_82%,rgba(0,0,0,0.08)_92%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.82)_58%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.28)_82%,rgba(0,0,0,0.08)_92%,transparent_100%)]">
+                <picture className="block h-full w-full">
+                  <source
+                    srcSet="/images/home/synaptica-neurofeedback-768.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/home/synaptica-neurofeedback-768.webp"
+                    alt={t("home.neuro.imageAlt")}
+                    width={768}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto max-h-[min(72vh,34rem)] w-full object-contain object-left"
+                  />
+                </picture>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-[46%] bg-gradient-to-l from-white/95 from-0% via-white/85 via-35% to-transparent to-100%" aria-hidden />
+              </div>
+            </div>
+
+            <div className="space-y-7">
+              <h2 className="max-w-[690px] text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:max-w-none">
+                {t("home.neuro.titleStart")}{" "}
+                <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
+                  {t("home.neuro.titleHighlight")}
+                </span>
+              </h2>
+
+              <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-xs lg:hidden">
+                <picture className="block w-full">
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet="/images/home/synaptica-neurofeedback-480.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/home/synaptica-neurofeedback-768.webp"
+                    alt={t("home.neuro.imageAlt")}
+                    width={768}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="mx-auto h-auto w-full rounded-2xl object-contain"
+                  />
+                </picture>
+              </div>
+
+              <p className="text-lg font-semibold text-slate-800">{t("home.neuro.subtitle")}</p>
+              <p className="max-w-2xl text-slate-700 lg:max-w-none">{t("home.neuro.description")}</p>
+              <ul className="space-y-2 text-sm text-slate-700">
+                {neuroPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-2">
+                    <div className="mt-0.5 items-center justify-center">
+                      <RadarIcon size={18} strokeWidth={2} color="#817e32" />
+                    </div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/services#neuro"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
+                >
+                  {t("home.neuro.primaryCta")}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

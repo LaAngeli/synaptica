@@ -31,7 +31,8 @@ export const translations = {
         subtitle: "The Synaptica Cluj experience: where technology meets empathy",
         description:
           "At Synaptica Cluj in Cluj-Napoca, we provide neurofeedback and EEG brainmapping in a clear, personalized, and non-invasive framework. The process starts with an EEG evaluation, then continues with a personalized protocol that can support self-regulation, mental clarity, emotional balance, and cognitive performance.",
-        imageAlt: "The Synaptica Cluj team and the technology used in the clinic",
+        imageAlt:
+          "Synaptica Cluj reception with a textured white counter, three organic pendant lamps, and gold wall branding",
       },
       neuro: {
         badge: "Neurofeedback",
@@ -49,6 +50,8 @@ export const translations = {
         ],
         primaryCta: "Discover neurofeedback",
         secondaryCta: "See conditions",
+        imageAlt:
+          "Synaptica Cluj specialist presenting the iSyncMe neurofeedback headset in a minimalist clinic setting",
       },
       badge: "brainmapping",
       titleStart: "Understanding the brain with",
@@ -148,10 +151,15 @@ export const translations = {
     },
     services: {
       pageTitle: "Services",
+      heroTitleStart: "Integrated care for",
+      heroTitleHighlight: "mind, body and balance",
+      heroTitleEnd: "",
       intro:
-        "At Synaptica Cluj in Cluj-Napoca, our services combine EEG brainmapping, iSyncMe and NeurOptimal neurofeedback with gentle holistic therapies — Bowen Therapy and Rejuvance natural facial lifting — to support mental balance, clarity, cognitive performance and overall wellbeing through non-invasive approaches.",
+        "At Synaptica Cluj we combine neurotechnology and gentle holistic therapies — all non-invasive — to support mental clarity, performance and overall wellbeing.",
       stackIntro:
         "The services complement each other: evaluation through brainmapping EEG, interpretation of brain activity patterns and personalized brain training with real-time EEG feedback, alongside gentle, non-invasive therapies for deep physical relaxation and natural facial rejuvenation.",
+      navLabel: "Jump to a service",
+      navCta: "View details",
       ctaPrimary: "Schedule a session",
       ctaSecondary: "Contact us",
       includesTitle: "What the service includes",
@@ -198,6 +206,10 @@ export const translations = {
             "AI-guided personalized protocol for progressive support",
             "Continuous monitoring and protocol adjustments",
           ],
+          imageAlt:
+            "iSyncMe neurofeedback helmet on a glass table in a bright Synaptica Cluj clinic setting with flowers",
+          includesImageAlt:
+            "Interior view of the iSyncMe helmet showing EEG sensors and electrodes, held by a clinician",
           steps: ["Scan", "Interpretation", "Personalized protocol", "Monitoring"],
         },
         {
@@ -218,6 +230,10 @@ export const translations = {
             "Develops flexibility, balance, and resilience",
             "Supports cognitive performance, emotional balance, and general wellbeing",
           ],
+          imageAlt:
+            "NeurOptimal neurofeedback session with laptop and large screen displaying brain training patterns in a Synaptica Cluj clinic room",
+          includesImageAlt:
+            "NeurOptimal zAmp device with EEG sensor wires connected, Advanced Brain Training Systems",
           steps: ["Dynamic monitoring", "Subtle feedback", "Self-regulation learning", "Sustained balance"],
         },
         {
@@ -239,6 +255,10 @@ export const translations = {
             "Adapted for adults, children, babies (Baby Bowen) and pregnancy",
             "Practical aftercare tips to help you maintain the results at home",
           ],
+          imageAlt:
+            "Bowen therapy session at Synaptica Cluj — therapist applying gentle manual technique to a patient's back",
+          includesImageAlt:
+            "Close-up of Bowen therapy at Synaptica — therapist's hands performing a precise move on the upper back",
           steps: ["Initial consultation", "Bowen moves", "Integration breaks", "Aftercare guidance"],
         },
         {
@@ -260,6 +280,10 @@ export const translations = {
             "Less visible dark circles and under-eye puffiness",
             "Simple exercises and self-massage to keep your results at home",
           ],
+          imageAlt:
+            "Rejuvance natural facial lifting session at Synaptica Cluj — close-up of a gentle facial treatment",
+          includesImageAlt:
+            "Close-up of Rejuvance manual technique at Synaptica — therapist's delicate touch on the jawline and chin",
           steps: ["Skin assessment", "6-session protocol", "Manual lifting", "Maintenance sessions"],
         },
       ],
@@ -340,8 +364,15 @@ export const translations = {
     pricing: {
       badge: "Pricing",
       title: "Solutions for every step of your transformation",
+      heroTitleStart: "Solutions for",
+      heroTitleHighlight: "every step of your transformation",
+      heroTitleEnd: "",
       intro:
+        "Explore transparent pricing for EEG evaluation, neurofeedback, integrated packages, Bowen Therapy and Rejuvance in Cluj-Napoca — clear structure, personalized path.",
+      seoIntro:
         "In Cluj-Napoca, Synaptica Cluj provides transparent pricing for EEG brainmapping, iSyncMe sessions, NeurOptimal neurofeedback, Bowen Therapy and Rejuvance natural facial lifting, so you can choose the right path based on goals, pace, and budget.",
+      navLabel: "Jump to pricing",
+      navCta: "View prices",
       benefitsTitle: "Benefits:",
       descriptionTitle: "Description:",
       description:
@@ -371,7 +402,9 @@ export const translations = {
       ],
       groups: [
         {
+          key: "isync",
           title: "iSyncMe® pricing",
+          navHighlight: "from 400 RON / session",
           items: [
             {
               label: "Brainmapping",
@@ -426,7 +459,9 @@ export const translations = {
           ],
         },
         {
+          key: "neuro",
           title: "Neurofeedback pricing",
+          navHighlight: "300 RON / session",
           items: [
             {
               label: "Neurofeedback",
@@ -448,7 +483,9 @@ export const translations = {
           ],
         },
         {
+          key: "bowen",
           title: "Bowen Therapy pricing",
+          navHighlight: "from 120 RON / session",
           items: [
             {
               label: "Bowen Therapy",
@@ -471,7 +508,9 @@ export const translations = {
           ],
         },
         {
+          key: "rejuvance",
           title: "Rejuvance pricing",
+          navHighlight: "280 RON / session",
           items: [
             {
               label: "Rejuvance — natural facial lifting",
@@ -819,7 +858,8 @@ export const translations = {
         subtitle: "Experiența Synaptica Cluj: unde tehnologia întâlnește empatia",
         description:
           "La Synaptica Cluj, în Cluj-Napoca, oferim neurofeedback și brainmapping EEG într-un cadru clar, personalizat și non-invaziv. Procesul începe cu o evaluare EEG, apoi continuă cu un protocol adaptat care poate susține autoreglarea cerebrală, claritatea mentală, echilibrul emoțional și performanța cognitivă.",
-        imageAlt: "Echipa Synaptica Cluj și tehnologia utilizată",
+        imageAlt:
+          "Recepția Synaptica Cluj cu birou texturat alb, trei lămpi suspendate organice și branding auriu pe perete",
       },
       neuro: {
         badge: "Neurofeedback",
@@ -836,6 +876,8 @@ export const translations = {
         ],
         primaryCta: "Descoperă neurofeedback",
         secondaryCta: "Vezi afecțiuni",
+        imageAlt:
+          "Specialist Synaptica Cluj prezentând casca iSyncMe pentru neurofeedback, într-un cadru clinic minimalist",
       },
       badge: "brainmapping",
       titleStart: "Înțelegerea creierului cu",
@@ -923,10 +965,15 @@ export const translations = {
     },
     services: {
       pageTitle: "Servicii",
+      heroTitleStart: "Servicii integrate pentru",
+      heroTitleHighlight: "minte, corp și echilibru",
+      heroTitleEnd: "",
       intro:
-        "La Synaptica Cluj, serviciile noastre combină brainmapping EEG, iSyncMe și neurofeedback NeurOptimal cu terapii holistice blânde — Terapia Bowen și liftingul facial natural Rejuvance — pentru susținerea echilibrului mental, clarității cognitive, performanței și stării generale de bine, prin abordări non-invazive.",
+        "La Synaptica Cluj combinăm neurotehnologie și terapii holistice blânde — toate non-invazive — pentru claritate mentală, performanță și starea generală de bine.",
       stackIntro:
         "Serviciile se completează între ele: evaluare prin brainmapping EEG, interpretarea tiparelor de activitate cerebrală și antrenament cerebral personalizat cu feedback EEG în timp real, alături de terapii blânde, non-invazive, pentru relaxare fizică profundă și reîntinerire facială naturală.",
+      navLabel: "Navigare rapidă",
+      navCta: "Vezi detalii",
       ctaPrimary: "Programează o sesiune",
       ctaSecondary: "Contactează-ne",
       includesTitle: "Ce include serviciul",
@@ -973,6 +1020,10 @@ export const translations = {
             "Protocol personalizat ghidat de AI pentru susținere progresivă",
             "Monitorizare continuă și ajustări ale protocolului",
           ],
+          imageAlt:
+            "Cască iSyncMe pentru neurofeedback, pe o masă din sticlă, într-un cadru luminos al clinicii Synaptica Cluj",
+          includesImageAlt:
+            "Vedere interioară a căștii iSyncMe cu senzori EEG, ținută de un clinician",
           steps: ["Scanare", "Interpretare", "Protocol personalizat", "Monitorizare"],
         },
         {
@@ -993,6 +1044,10 @@ export const translations = {
             "Dezvoltă flexibilitatea, echilibrul și reziliența",
             "Susține performanța cognitivă, emoțională și starea generală",
           ],
+          imageAlt:
+            "Sesiune NeurOptimal cu laptop și ecran mare afișând pattern-uri de antrenament cerebral, într-o sală de clinică Synaptica Cluj",
+          includesImageAlt:
+            "Dispozitiv NeurOptimal zAmp cu senzori EEG și cabluri conectate, Advanced Brain Training Systems",
           steps: ["Monitorizare dinamică", "Feedback subtil", "Învățare de autoreglare", "Echilibru susținut"],
         },
         {
@@ -1014,6 +1069,10 @@ export const translations = {
             "Adaptată pentru adulți, copii, bebeluși (Baby Bowen) sau gravide",
             "Sfaturi practice după ședință, ca efectele să se păstreze acasă",
           ],
+          imageAlt:
+            "Ședință de Terapia Bowen la Synaptica Cluj — tehnica manuală blândă aplicată pe spatele pacientului",
+          includesImageAlt:
+            "Prim-plan cu tehnica Bowen la Synaptica — mâinile terapeutului efectuează o mișcare precisă pe partea superioară a spatelui",
           steps: ["Discuție inițială", "Mișcări Bowen", "Pauze de integrare", "Recomandări post-ședință"],
         },
         {
@@ -1035,6 +1094,10 @@ export const translations = {
             "Cearcăne și pungi sub ochi vizibil reduse",
             "La final, exerciții simple pe care le poți face acasă",
           ],
+          imageAlt:
+            "Ședință de lifting facial natural Rejuvance la Synaptica Cluj — prim-plan cu tratament facial blând",
+          includesImageAlt:
+            "Prim-plan cu tehnica manuală Rejuvance la Synaptica — atingere delicată pe linia maxilarului și bărbie",
           steps: ["Evaluarea tenului", "Protocol de 6 ședințe", "Lifting manual", "Ședințe de întreținere"],
         },
       ],
@@ -1115,8 +1178,15 @@ export const translations = {
     pricing: {
       badge: "Prețuri",
       title: "Soluții dedicate fiecărui pas al transformării tale",
+      heroTitleStart: "Soluții dedicate",
+      heroTitleHighlight: "fiecărui pas al transformării tale",
+      heroTitleEnd: "",
       intro:
+        "Consultă prețurile pentru evaluare EEG, neurofeedback, pachete integrate, Terapie Bowen și Rejuvance în Cluj-Napoca — structură clară, parcurs personalizat.",
+      seoIntro:
         "În Cluj-Napoca, Synaptica Cluj oferă prețuri clare pentru brainmapping EEG, ședințe iSyncMe, neurofeedback NeurOptimal, Terapia Bowen și liftingul facial natural Rejuvance, astfel încât să alegi opțiunea potrivită pentru obiectivele și ritmul tău.",
+      navLabel: "Navigare rapidă",
+      navCta: "Vezi prețurile",
       benefitsTitle: "Beneficii:",
       descriptionTitle: "Descriere:",
       description:
@@ -1146,7 +1216,9 @@ export const translations = {
       ],
       groups: [
         {
+          key: "isync",
           title: "Prețuri iSyncMe®",
+          navHighlight: "de la 400 RON / ședință",
           items: [
             {
               label: "Brainmapping",
@@ -1203,7 +1275,9 @@ export const translations = {
           ],
         },
         {
+          key: "neuro",
           title: "Prețuri Neurofeedback",
+          navHighlight: "300 RON / ședință",
           items: [
             {
               label: "Neurofeedback", price: [{ label: "1 ședință", price: "300 RON" }],
@@ -1227,7 +1301,9 @@ export const translations = {
           ],
         },
         {
+          key: "bowen",
           title: "Tarife Terapie Bowen",
+          navHighlight: "de la 120 RON / ședință",
           items: [
             {
               label: "Terapia Bowen",
@@ -1250,7 +1326,9 @@ export const translations = {
           ],
         },
         {
+          key: "rejuvance",
           title: "Tarife Rejuvance",
+          navHighlight: "280 RON / ședință",
           items: [
             {
               label: "Rejuvance — lifting facial natural",
