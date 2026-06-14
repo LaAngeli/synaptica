@@ -49,6 +49,10 @@ export default function ServiceSectionMedia({
 
   const mask = position === "right" ? RIGHT_MASK : LEFT_MASK;
   const objectPosition = position === "right" ? "object-right" : "object-left";
+  const roundedClass =
+    position === "right"
+      ? "rounded-tr-[1.75rem] rounded-br-[1.75rem]"
+      : "rounded-tl-[1.75rem] rounded-bl-[1.75rem]";
   const overlayClass =
     position === "right"
       ? "absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-white/95 from-0% via-white/85 via-35% to-transparent to-100%"
@@ -61,7 +65,7 @@ export default function ServiceSectionMedia({
       }`}
     >
       <div
-        className={`relative overflow-hidden rounded-[1.75rem] ${maxHeightClass} lg:[mask-image:var(--service-mask)] lg:[-webkit-mask-image:var(--service-mask)]`}
+        className={`relative overflow-hidden ${roundedClass} ${maxHeightClass} lg:[mask-image:var(--service-mask)] lg:[-webkit-mask-image:var(--service-mask)]`}
         style={{ "--service-mask": mask }}
       >
         <picture className="block h-full w-full">
