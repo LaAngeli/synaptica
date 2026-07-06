@@ -636,6 +636,17 @@ export const translations = {
         maintainedBy: "Maintained by",
       },
     },
+    reviews: {
+      eyebrow: "Verified reviews",
+      title: "What people say after visiting us",
+      subtitle: "Real reviews from our Google Business profile in Cluj-Napoca.",
+      onGoogle: "reviews on Google",
+      writeCta: "Write a review",
+      seeAllCta: "See on Google",
+      prev: "Previous reviews",
+      next: "More reviews",
+      demoNote: "Sample reviews — live data loads from Google once the API is configured.",
+    },
     legal: {
       links: {
         legalInfo: "Legal information",
@@ -1454,6 +1465,17 @@ export const translations = {
         rights: "Toate drepturile rezervate.",
         maintainedBy: "Maintained by",
       },
+    },
+    reviews: {
+      eyebrow: "Recenzii verificate",
+      title: "Ce spun oamenii care ne-au trecut pragul",
+      subtitle: "Recenzii reale din profilul nostru Google din Cluj-Napoca.",
+      onGoogle: "recenzii pe Google",
+      writeCta: "Scrie o recenzie",
+      seeAllCta: "Vezi pe Google",
+      prev: "Recenzii anterioare",
+      next: "Mai multe recenzii",
+      demoNote: "Recenzii demonstrative — datele reale se încarcă din Google după configurarea API-ului.",
     },
     legal: {
       links: {

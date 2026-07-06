@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useI18n } from "../providers";
 import { ChevronRight, RadarIcon } from "lucide-react";
 import QuickAnswersGrid from "./QuickAnswersGrid";
+import GoogleReviews from "./GoogleReviews";
 
 export default function HomePage() {
   const { t } = useI18n();
@@ -256,6 +257,8 @@ export default function HomePage() {
         <h2 className="text-2xl font-semibold text-slate-900">{t("home.aeoTitle")}</h2>
         <QuickAnswersGrid items={aeoItems} gridClassName="grid gap-4 md:grid-cols-3" />
       </section>
+
+      <GoogleReviews />
 
       <section className="space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

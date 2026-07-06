@@ -25,11 +25,12 @@ brainmapping EEG** din Cluj-Napoca (Str. Robert Koch 7). Producție: https://syn
 ## Structură
 - `app/` — App Router. Fiecare rută are `page.jsx` + un `layout.jsx` dedicat pentru metadata.
   - `app/components/` — componente partajate (NavBar, Footer, HomePage, FaqPage, ...)
-  - `app/api/contact/` — **singurul backend**: `POST /api/contact` + `GET /api/contact/csrf`
+  - `app/api/contact/` — backend contact: `POST /api/contact` + `GET /api/contact/csrf`
+  - `app/api/reviews/` — recenzii Google (Places API New, server-side, revalidate 6h; fallback demonstrativ fără chei)
   - `app/i18n/` — `translations.js` (RO/EN) + `branding.js` (paletă brand)
   - `app/providers.jsx` — `I18nProvider` (Context) + hook `useI18n()`
 - `lib/` — logică non-UI: `seo.js` (helpers metadata), `schema-jsonld.js`, `faq-content.js`,
-  `service-images.js`, `businessContact.js` (NAP — sursă unică), `google-consent.js`
+  `service-images.js`, `businessContact.js` (NAP — sursă unică), `google-consent.js`, `google-reviews.js`
 - `public/` — imagini `.webp` responsive (480/768/1024), `llms.txt` / `llms-full.txt`, logo-uri
 
 ## Convenții importante

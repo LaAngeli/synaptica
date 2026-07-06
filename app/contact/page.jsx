@@ -6,6 +6,7 @@ import Script from "next/script";
 import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useI18n } from "../providers";
+import GoogleReviews from "../components/GoogleReviews";
 
 const NAME_ALLOWED_CHARS = /[^\p{L}\s]/gu;
 const RECAPTCHA_ACTION = "contact_submit";
@@ -307,7 +308,7 @@ export default function ContactPage() {
 
 
 
-        <div className="relative space-y-4">
+        <div className="relative min-w-0 space-y-4">
           <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200/70">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-5">
               {contactBlocks.map(({ key, label, Icon, value, lines }) => {
@@ -575,6 +576,7 @@ export default function ContactPage() {
 
 
 
+          <GoogleReviews showHeading={false} className="mt-15" />
         </div>
       </div>
       </section>
