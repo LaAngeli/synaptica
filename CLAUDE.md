@@ -54,6 +54,13 @@ brainmapping EEG** din Cluj-Napoca (Str. Robert Koch 7). Producție: https://syn
 - **`.env` e necesar** pentru contact (SMTP + reCAPTCHA), vezi `.env.example`. Fără el, `/api/contact`
   răspunde 500. `.env` e gitignored.
 - Verificarea originii în `/api/contact` e activă doar în `production` (`NODE_ENV`).
+- **Două chei Google Maps Platform, INTENȚIONAT separate** — nu le uni niciodată pe una singură:
+  `GOOGLE_PLACES_API_KEY` (server-only, doar Places API New, pentru recenzii) și
+  `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_KEY` (publică, doar Maps Embed API, pentru harta din `/contact`).
+  Motivul: cheia de embed e expusă în HTML-ul paginii; dacă ar avea acces și la Places API
+  (care e billable), oricine ar putea extrage cheia din sursă și genera costuri pe contul tău.
+  Maps Embed API e gratuit necondiționat — expunerea ei publică e sigură DOAR dacă e restricționată
+  strict la acel API.
 
 ## Git & deploy (regulă durabilă a userului)
 - **Push = deploy live.** Hostul urmărește repo-ul și lansează deploy automat la fiecare push pe `main`.

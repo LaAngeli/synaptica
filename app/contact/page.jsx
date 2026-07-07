@@ -7,10 +7,21 @@ import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "l
 import { FaWhatsapp } from "react-icons/fa";
 import { useI18n } from "../providers";
 import GoogleReviews from "../components/GoogleReviews";
+import { businessContact } from "../../lib/businessContact";
 
 const NAME_ALLOWED_CHARS = /[^\p{L}\s]/gu;
 const RECAPTCHA_ACTION = "contact_submit";
 const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+// Fallback: embed public, fără cheie ("Share → Embed a map"). Folosit dacă
+// NEXT_PUBLIC_GOOGLE_MAPS_EMBED_KEY nu e setat încă.
+const FALLBACK_MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.4374125507807!2d23.579772277409482!3d46.75627397112452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490d4232b292bb%3A0xf80d7c264dc03c9c!2sSynaptica%20Cluj!5e0!3m2!1sen!2sro!4v1767811850763!5m2!1sen!2sro";
+
+const mapEmbedKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_KEY;
+const mapEmbedSrc = mapEmbedKey
+  ? `https://www.google.com/maps/embed/v1/place?key=${mapEmbedKey}&q=${businessContact.geoCoordinates.latitude},${businessContact.geoCoordinates.longitude}&zoom=16`
+  : FALLBACK_MAP_EMBED_SRC;
 
 export default function ContactPage() {
   const { t } = useI18n();
@@ -564,7 +575,7 @@ export default function ContactPage() {
             <iframe
               key={`map-${mapAttempt}`}
               title={t("contact.mapTitle")}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.4374125507807!2d23.579772277409482!3d46.75627397112452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490d4232b292bb%3A0xf80d7c264dc03c9c!2sSynaptica%20Cluj!5e0!3m2!1sen!2sro!4v1767811850763!5m2!1sen!2sro"
+              src={mapEmbedSrc}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
