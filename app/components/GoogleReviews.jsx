@@ -58,13 +58,24 @@ export default function GoogleReviews({ showHeading = true, className = "" }) {
     dragRef.current.down = false;
   };
 
+  // Places API (New) întoarce max 5 recenzii într-o ordine deterministă. Amestecăm
+  // ordinea la fiecare mount (refresh) ca să nu apară mereu în același loc.
+  const shuffle = (array) => {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
   useEffect(() => {
     let active = true;
     fetch("/api/reviews")
       .then((response) => (response.ok ? response.json() : Promise.reject(new Error("reviews"))))
       .then((payload) => {
         if (active) {
-          setData(payload);
+          setData({ ...payload, reviews: shuffle(payload.reviews || []) });
           setStatus("ready");
         }
       })
