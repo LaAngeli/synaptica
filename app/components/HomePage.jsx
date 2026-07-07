@@ -258,8 +258,6 @@ export default function HomePage() {
         <QuickAnswersGrid items={aeoItems} gridClassName="grid gap-4 md:grid-cols-3" />
       </section>
 
-      <GoogleReviews />
-
       <section className="space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -301,6 +299,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <GoogleReviews />
     </div>
   );
 }
