@@ -367,18 +367,39 @@ export default function BrainSlider() {
 
         <div
           ref={handleRef}
-          className="pointer-events-none absolute inset-y-0 left-1/2 w-0.5 -translate-x-px"
+          className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2"
           style={{
+            width: "2.3px",
             background:
               "linear-gradient(180deg,rgba(205,179,96,0),rgba(205,179,96,.85) 16%,rgba(205,179,96,.85) 41%,rgba(205,179,96,0) 45%,rgba(205,179,96,0) 55%,rgba(205,179,96,.85) 59%,rgba(205,179,96,.85) 84%,rgba(205,179,96,0))",
           }}
         >
-          <div
-            className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1 rounded-full border-[1.5px] border-[#cdb360]/90"
-            style={{ boxShadow: "0 0 22px rgba(205,179,96,.45),inset 0 0 12px rgba(205,179,96,.22)" }}
-          >
-            <span className="text-[13px] leading-none text-[#cdb360]">‹</span>
-            <span className="text-[13px] leading-none text-[#cdb360]">›</span>
+          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2.5">
+            <span
+              className="text-base font-semibold leading-none text-[#cdb360]"
+              style={{ filter: "drop-shadow(0 0 6px rgba(205,179,96,.55))" }}
+              aria-hidden="true"
+            >
+              ‹
+            </span>
+            <div
+              className="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-[#cdb360]/90 bg-[#0b1527]"
+              style={{ boxShadow: "0 0 22px rgba(205,179,96,.45),inset 0 0 12px rgba(205,179,96,.22)" }}
+            >
+              <img
+                src="/synaptica_logo.png"
+                alt=""
+                className="h-6 w-auto object-contain"
+                style={{ filter: "drop-shadow(0 0 5px rgba(205,179,96,.4))" }}
+              />
+            </div>
+            <span
+              className="text-base font-semibold leading-none text-[#cdb360]"
+              style={{ filter: "drop-shadow(0 0 6px rgba(205,179,96,.55))" }}
+              aria-hidden="true"
+            >
+              ›
+            </span>
           </div>
         </div>
 
