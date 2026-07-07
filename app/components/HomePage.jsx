@@ -5,6 +5,7 @@ import { useI18n } from "../providers";
 import { ChevronRight, RadarIcon } from "lucide-react";
 import QuickAnswersGrid from "./QuickAnswersGrid";
 import GoogleReviews from "./GoogleReviews";
+import BrainSlider from "./BrainSlider";
 
 export default function HomePage() {
   const { t } = useI18n();
@@ -96,6 +97,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <BrainSlider />
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
         <div className="pointer-events-none absolute inset-0">

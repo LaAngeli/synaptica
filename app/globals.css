@@ -57,3 +57,25 @@ details[open] .qa-reveal {
     transition: none !important;
   }
 }
+
+@keyframes bs-hint {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(4px);
+  }
+}
+
+.bs-hint {
+  animation: bs-hint 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bs-hint {
+    animation: none;
+  }
+}

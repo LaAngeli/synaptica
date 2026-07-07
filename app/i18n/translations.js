@@ -23,6 +23,17 @@ export const translations = {
       contactCta: "Contact",
     },
     home: {
+      brainSlider: {
+        eyebrow: "brainmapping EEG",
+        titleStart: "See the brain",
+        titleHighlight: "come alive.",
+        paragraph:
+          "Drag the bar across the map: the neural network lights up where you pass, just like in a neurofeedback session.",
+        before: "before",
+        after: "after",
+        drag: "drag",
+        imageAlt: "Wireframe brain map with a glowing neural network",
+      },
       company: {
         badge: "Synaptica Cluj",
         titleStart: "Revolutionize your",
@@ -862,6 +873,17 @@ export const translations = {
       contactCta: "Contact",
     },
     home: {
+      brainSlider: {
+        eyebrow: "brainmapping EEG",
+        titleStart: "Vezi creierul",
+        titleHighlight: "activându-se.",
+        paragraph:
+          "Trage bara peste hartă: rețeaua neuronală se aprinde acolo unde treci, exact ca într-o sesiune de neurofeedback.",
+        before: "până la",
+        after: "după",
+        drag: "trage",
+        imageAlt: "Hartă cerebrală wireframe cu rețea neuronală luminoasă",
+      },
       company: {
         badge: "Synaptica Cluj",
         titleStart: "Revoluționează-ți",
