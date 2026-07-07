@@ -639,7 +639,7 @@ export const translations = {
     },
     reviews: {
       eyebrow: "Verified reviews",
-      title: "What our patients say",
+      title: "What our clients say",
       subtitle: "Real reviews, verified on Google.",
       onGoogle: "reviews on Google",
       writeCta: "Write a review",
@@ -1470,7 +1470,7 @@ export const translations = {
     },
     reviews: {
       eyebrow: "Recenzii verificate",
-      title: "Ce spun pacienții noștri",
+      title: "Ce spun clienții noștri",
       subtitle: "Recenzii reale, verificate pe Google.",
       onGoogle: "recenzii pe Google",
       writeCta: "Scrie o recenzie",
