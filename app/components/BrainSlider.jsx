@@ -32,7 +32,9 @@ export default function BrainSlider() {
     const [gr, gg, gb] = GOLD;
 
     const S = {
-      split: 0.5,
+      // Centrul orizontal al creierului din imagine (0.506), nu centrul geometric al
+      // containerului (0.5) — imaginea are creierul ușor descentrat.
+      split: 0.506,
       nodes: [],
       edges: [],
       impulses: [],
@@ -404,9 +406,11 @@ export default function BrainSlider() {
         </div>
 
         <div className="pointer-events-none absolute bottom-3.5 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-[0.14em] text-[#cdb360]/70">
-          <span className="bs-hint inline-flex items-center gap-2">
+          <span className="bs-hint relative inline-block">
             {t("home.brainSlider.drag")}
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true" className="absolute left-full top-1/2 ml-2 -translate-y-1/2">
+              →
+            </span>
           </span>
         </div>
       </div>
