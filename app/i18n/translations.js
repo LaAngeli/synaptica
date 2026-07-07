@@ -25,10 +25,10 @@ export const translations = {
     home: {
       brainSlider: {
         eyebrow: "brainmapping EEG",
-        titleStart: "See the brain",
-        titleHighlight: "come alive.",
+        titleStart: "Brain map,",
+        titleHighlight: "real training.",
         paragraph:
-          "Drag the bar across the map: the neural network lights up where you pass, just like in a neurofeedback session.",
+          "Through EEG brainmapping and non-invasive neurofeedback, we support cerebral self-regulation, step by step.",
         before: "before",
         after: "after",
         drag: "drag",
@@ -875,10 +875,10 @@ export const translations = {
     home: {
       brainSlider: {
         eyebrow: "brainmapping EEG",
-        titleStart: "Vezi creierul",
-        titleHighlight: "activându-se.",
+        titleStart: "Hartă cerebrală,",
+        titleHighlight: "antrenament real.",
         paragraph:
-          "Trage bara peste hartă: rețeaua neuronală se aprinde acolo unde treci, exact ca într-o sesiune de neurofeedback.",
+          "Prin brainmapping EEG și neurofeedback non-invaziv, sprijinim autoreglarea cerebrală, pas cu pas.",
         before: "până la",
         after: "după",
         drag: "trage",
