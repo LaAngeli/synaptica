@@ -216,6 +216,10 @@ export default function BrainSlider() {
         ctx.stroke();
       }
 
+      // Pe canvas mic (mobil) rețeaua e mai densă, iar halourile aditive se cumulează
+      // într-un „wash" prea luminos — atenuăm glow-ul proporțional cu lățimea (desktop: 1).
+      const glowK = Math.max(0.32, Math.min(1, (W - 300) / 520));
+
       for (const n of S.nodes) {
         const x = mapX(n.nx);
         const y = mapY(n.ny);
@@ -224,15 +228,15 @@ export default function BrainSlider() {
         const flick = 1 + Math.sin(n.ph) * lerp(0.06, 0.55, a);
         const bright = lerp(0.62, 1, a) * n.l * flick * breath;
         const rad = lerp(0.7, 2.2, a) * (0.7 + n.l * 0.9);
-        const halo = rad * lerp(2.4, 5.5, a);
+        const halo = rad * lerp(2.4, 5.5, a) * (0.55 + 0.45 * glowK);
         const g = ctx.createRadialGradient(x, y, 0, x, y, halo);
-        g.addColorStop(0, `rgba(${gr},${gg},${gb},${0.5 * bright})`);
+        g.addColorStop(0, `rgba(${gr},${gg},${gb},${0.5 * bright * glowK})`);
         g.addColorStop(1, `rgba(${gr},${gg},${gb},0)`);
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(x, y, halo, 0, 7);
         ctx.fill();
-        ctx.fillStyle = `rgba(${Math.min(255, gr + 40)},${Math.min(255, gg + 50)},${Math.min(255, gb + 90)},${Math.min(1, bright)})`;
+        ctx.fillStyle = `rgba(${Math.min(255, gr + 40)},${Math.min(255, gg + 50)},${Math.min(255, gb + 90)},${Math.min(1, bright) * (0.72 + 0.28 * glowK)})`;
         ctx.beginPath();
         ctx.arc(x, y, rad, 0, 7);
         ctx.fill();
@@ -273,10 +277,10 @@ export default function BrainSlider() {
         ctx.lineTo(hx, hy);
         ctx.stroke();
         const hb = lerp(0.55, 1, aH) * (0.85 + 0.15 * Math.sin(now * 0.02 + im.e));
-        const hr = lerp(1.6, 4.2, aH);
+        const hr = lerp(1.6, 4.2, aH) * (0.6 + 0.4 * glowK);
         const hg = ctx.createRadialGradient(hx, hy, 0, hx, hy, hr * 3.2);
-        hg.addColorStop(0, `rgba(255,246,214,${0.85 * hb})`);
-        hg.addColorStop(0.35, `rgba(${gr},${gg},${gb},${0.55 * hb})`);
+        hg.addColorStop(0, `rgba(255,246,214,${0.85 * hb * glowK})`);
+        hg.addColorStop(0.35, `rgba(${gr},${gg},${gb},${0.55 * hb * glowK})`);
         hg.addColorStop(1, `rgba(${gr},${gg},${gb},0)`);
         ctx.fillStyle = hg;
         ctx.beginPath();
@@ -317,6 +321,7 @@ export default function BrainSlider() {
 
     return () => {
       cancelAnimationFrame(S.raf);
+      img.removeEventListener("load", start);
       ro.disconnect();
       window.removeEventListener("resize", onWinResize);
       window.removeEventListener("pointermove", onMove);
