@@ -5,7 +5,7 @@ import { useI18n } from "../providers";
 import SectionCard from "./SectionCard";
 
 const GOLD = [205, 179, 96];
-const BRAIN_SRC = "/images/brain/brain-base.png";
+const BRAIN_SRC = "/images/brain/brain-base.webp";
 
 /**
  * Secțiune interactivă „brainmapping": trage bara peste harta cerebrală, iar rețeaua
