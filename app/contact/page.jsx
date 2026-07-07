@@ -7,6 +7,7 @@ import { Clock, Facebook, Instagram, Mail, MapPin, Music2, Phone, Send } from "l
 import { FaWhatsapp } from "react-icons/fa";
 import { useI18n } from "../providers";
 import GoogleReviews from "../components/GoogleReviews";
+import SectionCard from "../components/SectionCard";
 import { businessContact } from "../../lib/businessContact";
 
 const NAME_ALLOWED_CHARS = /[^\p{L}\s]/gu;
@@ -277,17 +278,9 @@ export default function ContactPage() {
           strategy="afterInteractive"
         />
       )}
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/35 blur-3xl" />
-        <div className="absolute left-[-8%] bottom-[-12%] h-72 w-72 rounded-full bg-[#aa995a]/25 blur-3xl" />
-      </div>
-
-      <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-start">
-        <div className="space-y-6">
-
-
-          <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-start">
+        <SectionCard contentClassName="space-y-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
             {t("contact.badge")}
           </span>
           <h1 className="text-4xl font-bold text-slate-900 sm:text-5xl">
@@ -315,9 +308,7 @@ export default function ContactPage() {
               {t("contact.emailCta")}
             </button>
           </div>
-        </div>
-
-
+        </SectionCard>
 
         <div className="relative min-w-0 space-y-4">
           <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200/70">
@@ -571,26 +562,28 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg shadow-slate-200">
-            <iframe
-              key={`map-${mapAttempt}`}
-              title={t("contact.mapTitle")}
-              src={mapEmbedSrc}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-[260px] w-full"
-              onLoad={() => setMapLoaded(true)}
-              onError={() => setMapAttempt((prev) => (prev < 2 ? prev + 1 : prev))}
-            />
-          </div>
+          <SectionCard contentClassName="space-y-4">
+            <h2 className="text-lg font-semibold text-slate-900">{t("contact.mapHeading")}</h2>
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm shadow-slate-200/60">
+              <iframe
+                key={`map-${mapAttempt}`}
+                title={t("contact.mapTitle")}
+                src={mapEmbedSrc}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[280px] w-full"
+                onLoad={() => setMapLoaded(true)}
+                onError={() => setMapAttempt((prev) => (prev < 2 ? prev + 1 : prev))}
+              />
+            </div>
+          </SectionCard>
 
 
 
           <GoogleReviews showHeading={false} className="mt-15" />
         </div>
       </div>
-      </section>
     </>
   );
 }

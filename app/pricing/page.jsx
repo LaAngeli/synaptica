@@ -5,6 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import QuickAnswersGrid from "../components/QuickAnswersGrid";
 import PricingPageIntro from "../components/PricingPageIntro";
+import SectionCard from "../components/SectionCard";
 
 export default function PreturiPage() {
   const { t } = useI18n();
@@ -13,28 +14,22 @@ export default function PreturiPage() {
   const aeoItems = t("pricing.aeoItems") || [];
 
   return (
-    <section className=" space-y-3 relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute left-[-6%] top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/30 blur-3xl" />
-        <div className="absolute right-1/4 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
-        <div className="absolute right-[-4%] bottom-[-8%] h-64 w-64 rounded-full bg-[#9f8a3f]/20 blur-3xl" />
-      </div>
-
+    <div className="space-y-10 text-slate-900">
       <p className="sr-only">
         {t("pricing.description")} {t("pricing.seoIntro")}
       </p>
 
       <PricingPageIntro t={t} groups={groups} />
 
-      <div className="space-y-8">
-        {groups.map((group) => (
-          <div
-            key={group.key || group.title}
-            id={group.key}
-            className="scroll-mt-28 mt-10"
-          >
-            <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
-            <div className="mt-4 space-y-6">
+      {groups.map((group) => (
+        <SectionCard
+          key={group.key || group.title}
+          id={group.key}
+          className="scroll-mt-28"
+          contentClassName="space-y-4"
+        >
+          <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
+          <div className="space-y-6">
               {(group.items || []).map((item) => (
                 <div
                   key={item.label}
@@ -98,14 +93,15 @@ export default function PreturiPage() {
                 </div>
               ))}
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
+        </SectionCard>
+      ))}
+
+      <SectionCard variant="plain" contentClassName="space-y-4">
         <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
         <QuickAnswersGrid items={aeoItems} />
-      </div>
-      <div className="flex flex-wrap gap-3 mt-10">
+      </SectionCard>
+
+      <div className="flex flex-wrap gap-3">
         <Link
           href="/contact"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
@@ -119,6 +115,6 @@ export default function PreturiPage() {
           {t("home.neuro.secondaryCta")}
         </Link>
       </div>
-    </section>
+    </div>
   );
 }

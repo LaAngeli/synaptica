@@ -572,6 +572,7 @@ export const translations = {
         whatsapp: "https://wa.me/40755062039",
       },
       mapTitle: "Map to Synaptica Cluj",
+      mapHeading: "Where to find us",
       form: {
         title: "Write your message",
         subtitle: "Leave your details and we will contact you shortly.",
@@ -1401,6 +1402,7 @@ export const translations = {
         whatsapp: "https://wa.me/40755062039",
       },
       mapTitle: "Hartă către Synaptica Cluj",
+      mapHeading: "Unde ne găsești",
       form: {
         title: "Scrie mesajul tău",
         subtitle: "Lasă-ne detaliile și revenim în scurt timp.",

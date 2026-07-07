@@ -4,6 +4,7 @@ import { useI18n } from "../providers";
 import QuickAnswersGrid from "../components/QuickAnswersGrid";
 import ServiceSectionMedia from "../components/ServiceSectionMedia";
 import ServicesPageIntro from "../components/ServicesPageIntro";
+import SectionCard from "../components/SectionCard";
 import {
   SERVICE_IMAGE_ASSETS,
   SERVICE_INCLUDES_IMAGE_ASSETS,
@@ -45,13 +46,7 @@ export default function ServiciiPage() {
   };
 
   return (
-    <section className="space-y-3 relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute left-[-6%] top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/30 blur-3xl" />
-        <div className="absolute right-1/4 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
-        <div className="absolute right-[-4%] bottom-[-8%] h-64 w-64 rounded-full bg-[#9f8a3f]/20 blur-3xl" />
-      </div>
-
+    <div className="space-y-10 text-slate-900">
       <p className="sr-only">{t("services.stackIntro")}</p>
 
       <ServicesPageIntro t={t} sections={sections} />
@@ -69,13 +64,7 @@ export default function ServiciiPage() {
         const includesPosition = includesAsset?.position || "left";
 
         return (
-          <div
-            key={section.key}
-            id={section.key}
-            className={`relative mb-15 scroll-mt-28 ${
-              index > 0 ? "border-t border-slate-200/60 pt-14" : "pt-6"
-            }`}
-          >
+          <SectionCard key={section.key} id={section.key} className="scroll-mt-28">
             <div
               className={
                 hasImage
@@ -207,16 +196,16 @@ export default function ServiciiPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </SectionCard>
         );
       })}
 
-      <div className="relative mt-10 space-y-4 rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm shadow-slate-200/60">
+      <SectionCard variant="plain" contentClassName="space-y-4">
         <h2 className="text-lg font-semibold text-slate-900">{aeoTitle}</h2>
         <QuickAnswersGrid items={aeoItems} />
-      </div>
+      </SectionCard>
 
-      <div className="relative mt-10 flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3">
         <Link
           href="/contact"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
@@ -230,6 +219,6 @@ export default function ServiciiPage() {
           {t("home.secondaryCta")}
         </Link>
       </div>
-    </section>
+    </div>
   );
 }

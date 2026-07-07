@@ -18,7 +18,7 @@ const SERVICE_NAV_ICONS = {
  */
 export default function ServicesPageIntro({ t, sections }) {
   return (
-    <div className="relative mb-14 overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white/55 p-6 shadow-lg shadow-slate-200/40 backdrop-blur-sm sm:p-8 lg:p-10">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/55 p-6 shadow-lg shadow-slate-200/40 backdrop-blur-sm sm:p-8 lg:p-10">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#cdb360]/35 blur-3xl" />
         <div className="absolute -right-12 bottom-[-2rem] h-52 w-52 rounded-full bg-[#9f8a3f]/25 blur-3xl" />
