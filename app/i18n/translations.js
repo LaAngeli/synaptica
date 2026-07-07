@@ -638,8 +638,8 @@ export const translations = {
     },
     reviews: {
       eyebrow: "Verified reviews",
-      title: "What people say after visiting us",
-      subtitle: "Real reviews from our Google Business profile in Cluj-Napoca.",
+      title: "What our patients say",
+      subtitle: "Real reviews, verified on Google.",
       onGoogle: "reviews on Google",
       writeCta: "Write a review",
       seeAllCta: "See on Google",
@@ -1468,8 +1468,8 @@ export const translations = {
     },
     reviews: {
       eyebrow: "Recenzii verificate",
-      title: "Ce spun oamenii care ne-au trecut pragul",
-      subtitle: "Recenzii reale din profilul nostru Google din Cluj-Napoca.",
+      title: "Ce spun pacienții noștri",
+      subtitle: "Recenzii reale, verificate pe Google.",
       onGoogle: "recenzii pe Google",
       writeCta: "Scrie o recenzie",
       seeAllCta: "Vezi pe Google",
