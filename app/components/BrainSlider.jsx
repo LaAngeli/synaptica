@@ -349,18 +349,21 @@ export default function BrainSlider() {
 
       <div
         ref={containerRef}
-        className="relative w-full select-none overflow-hidden rounded-2xl border border-[#cdb360]/20 bg-black shadow-xl shadow-slate-300/50"
+        className="relative w-full select-none overflow-hidden rounded-2xl border border-[#cdb360]/20 bg-gradient-to-br from-[#0b1527] via-[#0e1d33] to-[#070d18] shadow-xl shadow-slate-300/50"
         style={{ cursor: "ew-resize", touchAction: "none" }}
       >
+        {/* mix-blend-screen: fundalul negru al imaginii devine transparent, doar rețeaua
+            aurie rămâne — apare peste gradientul navy. scale-[1.2] mărește creierul pe mobil
+            (img + canvas scalate identic, din centru, ca să rămână aliniate). */}
         <img
           ref={imgRef}
           src={BRAIN_SRC}
           alt={t("home.brainSlider.imageAlt")}
           draggable="false"
-          className="pointer-events-none absolute inset-0 h-full w-full object-contain"
-          style={{ filter: "brightness(.78) contrast(1.04)" }}
+          className="pointer-events-none absolute inset-0 h-full w-full origin-center scale-[1.2] object-contain mix-blend-screen sm:scale-100"
+          style={{ filter: "brightness(.86) contrast(1.05)" }}
         />
-        <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full" />
+        <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full origin-center scale-[1.2] sm:scale-100" />
 
         <span className="pointer-events-none absolute left-[18px] top-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/40">
           {t("home.brainSlider.before")}
