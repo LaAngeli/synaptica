@@ -34,6 +34,21 @@ export const translations = {
       contactCta: "Contact",
     },
     home: {
+      testimonials: {
+        eyebrow: "Video testimonials",
+        titleStart: "Real results,",
+        titleHighlight: "in their own words",
+        subtitle:
+          "Clients who completed our neurofeedback and brainmapping programs share their experience.",
+        rosterLabel: "More stories",
+        playLabel: "Play testimonial",
+        items: [
+          { name: "Andreea M.", condition: "Anxiety", quote: "I learned to quiet my mind without fighting it." },
+          { name: "Mihai D.", condition: "Sleep", quote: "First time in years I sleep through the night." },
+          { name: "Elena R.", condition: "ADHD (child)", quote: "My child focuses on homework — calmly, no arguments." },
+          { name: "Radu T.", condition: "Burnout", quote: "I got back the energy and clarity I used to have." },
+        ],
+      },
       brainSlider: {
         eyebrow: "brainmapping EEG",
         titleStart: "Brain map,",
@@ -901,6 +916,21 @@ export const translations = {
       contactCta: "Contact",
     },
     home: {
+      testimonials: {
+        eyebrow: "Testimoniale video",
+        titleStart: "Rezultate reale,",
+        titleHighlight: "povestite de ei",
+        subtitle:
+          "Clienții care au parcurs programele noastre de neurofeedback și brainmapping își împărtășesc experiența.",
+        rosterLabel: "Mai multe povești",
+        playLabel: "Redă testimonialul",
+        items: [
+          { name: "Andreea M.", condition: "Anxietate", quote: "Am învățat să-mi liniștesc mintea fără să lupt cu ea." },
+          { name: "Mihai D.", condition: "Somn", quote: "Prima dată în ani de zile când dorm toată noaptea." },
+          { name: "Elena R.", condition: "ADHD (copil)", quote: "Copilul meu se concentrează la teme — calm, fără certuri." },
+          { name: "Radu T.", condition: "Burnout", quote: "Mi-am recăpătat energia și claritatea de dinainte." },
+        ],
+      },
       brainSlider: {
         eyebrow: "brainmapping EEG",
         titleStart: "Hartă cerebrală,",

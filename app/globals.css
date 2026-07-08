@@ -79,3 +79,22 @@ details[open] .qa-reveal {
     animation: none;
   }
 }
+
+@keyframes signal-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.signal-live {
+  animation: signal-scroll 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-live {
+    animation: none;
+  }
+}

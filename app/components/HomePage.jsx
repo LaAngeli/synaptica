@@ -6,6 +6,7 @@ import { ChevronRight, RadarIcon } from "lucide-react";
 import QuickAnswersGrid from "./QuickAnswersGrid";
 import GoogleReviews from "./GoogleReviews";
 import BrainSlider from "./BrainSlider";
+import VideoTestimonials from "./VideoTestimonials";
 
 export default function HomePage() {
   const { t } = useI18n();
@@ -255,6 +256,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <VideoTestimonials />
 
       <section className="space-y-5 rounded-3xl border border-slate-200 bg-white/85 px-6 py-8 shadow-lg shadow-slate-200 sm:px-8">
         <h2 className="text-2xl font-semibold text-slate-900">{t("home.aeoTitle")}</h2>
