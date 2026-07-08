@@ -420,6 +420,12 @@ export const translations = {
             {
               label: "Brainmapping",
               price: [{ label: "", price: "3000 RON" }],
+              offer: {
+                original: "3000 RON",
+                discounted: "2400 RON",
+                discountLabel: "-20%",
+                validity: "Offer valid until July 15, 2026",
+              },
               description:
                 "Brainmapping is an advanced assessment of brain activity performed using high-precision EEG technology, providing a clear and objective overview of how the brain functions. This detailed analysis identifies neural imbalances, dysfunctional patterns, and areas that require support or optimization.\n\nBy integrating artificial intelligence and advanced brain analysis algorithms, brainmapping transforms complex EEG data into clear, actionable insights. These insights form the foundation for a fully personalized therapy plan, precisely tailored to the individual’s unique brain profile.\n\nBrainmapping can be used both at the beginning of the therapeutic journey, to guide targeted neurotherapy, and at later stages, to objectively measure progress and results. It is an essential tool for individuals seeking clarity, accuracy, and a science-based approach to cognitive, emotional, and neurological optimization.",
               benefits: [
@@ -1257,6 +1263,12 @@ export const translations = {
             {
               label: "Brainmapping",
               price: [{ label: "", price: "3000 RON" }],
+              offer: {
+                original: "3000 RON",
+                discounted: "2400 RON",
+                discountLabel: "-20%",
+                validity: "Ofertă valabilă până pe 15 iulie 2026",
+              },
               description:
                 "Brainmapping-ul este o evaluare avansată a activității cerebrale, realizată cu ajutorul tehnologiei EEG de înaltă precizie, care oferă o imagine detaliată și obiectivă a modului în care funcționează creierul. Această analiză permite identificarea dezechilibrelor neuronale, a tiparelor disfuncționale și a zonelor care necesită susținere sau optimizare.\n\nPrin integrarea inteligenței artificiale și a algoritmilor de analiză cerebrală, brainmapping-ul transformă datele brute în informații clare și ușor de interpretat, constituind baza unui plan terapeutic personalizat. Evaluarea poate fi utilizată atât înainte de terapie, pentru a ghida intervenția, cât și ulterior, pentru a măsura obiectiv progresul și rezultatele obținute.\n\nBrainmapping-ul este un instrument esențial pentru persoanele care își doresc claritate, precizie și o abordare științifică în optimizarea performanței cognitive, emoționale și neurologice.",
               benefits: [

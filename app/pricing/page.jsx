@@ -1,7 +1,7 @@
 "use client";
 
 import { useI18n } from "../providers";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Clock } from "lucide-react";
 import Link from "next/link";
 import QuickAnswersGrid from "../components/QuickAnswersGrid";
 import PricingPageIntro from "../components/PricingPageIntro";
@@ -39,7 +39,24 @@ export default function PreturiPage() {
                     <p className="text-xl font-bold text-slate-900">{item.label}</p>
                     {/* <p className="text-2xl font-bold text-[#817e32]">{item.price}</p> */}
 
-                    {item.price &&
+                    {item.offer ? (
+                      <div className="space-y-1.5">
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <span className="text-lg font-semibold text-slate-400 line-through decoration-slate-400/70 decoration-2">
+                            {item.offer.original}
+                          </span>
+                          <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white shadow-sm shadow-[#cdb360]/40">
+                            {item.offer.discountLabel}
+                          </span>
+                        </div>
+                        <p className="text-3xl font-bold text-[#817e32]">{item.offer.discounted}</p>
+                        <p className="mt-1 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cdb360]/45 bg-[#f6f0de]/60 px-3 py-1 text-xs font-semibold text-[#817e32]">
+                          <Clock size={13} strokeWidth={2.2} aria-hidden />
+                          {item.offer.validity}
+                        </p>
+                      </div>
+                    ) : (
+                      item.price &&
                       item.price.map((price, idx) => (
                         <div key={`${item.label}-price-${idx}`} className="">
                           <p className="mb-0 text-2xl font-bold text-[#817e32]">
@@ -52,7 +69,8 @@ export default function PreturiPage() {
                           </p>
                           {/* <span className="ml-2 text-sm font-medium text-slate-700">{extra.label}</span> */}
                         </div>
-                      ))}
+                      ))
+                    )}
 
                     {item.extraPrices &&
                       item.extraPrices.map((extra, idx) => (
