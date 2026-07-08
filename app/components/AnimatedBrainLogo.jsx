@@ -6,9 +6,9 @@ import { useEffect, useRef } from "react";
 // Portat din animația-sursă (framework Stage/useTime) pe canvas + requestAnimationFrame,
 // în același stil ca BrainSlider.jsx. Spațiu logic 400×350, buclă seamless de 6s
 // (toate frecvențele sunt multipli întregi ai lui w → continuitate perfectă la reluare).
-const LINE = "#c7a648";
-const NODE = "#ead06a";
-const DOT = "#e2c85e";
+const LINE = "#b0974a";
+const NODE = "#7c7930";
+const DOT = "#9a8636";
 const W = 400;
 const H = 350;
 const TAU = Math.PI * 2;

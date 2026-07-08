@@ -57,62 +57,59 @@ export default function OfferBanner() {
     >
       <button
         type="button"
-        aria-label={t("offerBanner.close")}
+        aria-hidden="true"
+        tabIndex={-1}
         onClick={dismiss}
         className="absolute inset-0 h-full w-full cursor-default bg-[#060a14]/75 backdrop-blur-sm"
       />
 
-      <div className="relative flex max-h-[92dvh] w-full max-w-lg flex-col overflow-y-auto rounded-3xl border border-[#cdb360]/30 bg-gradient-to-br from-[#0b1527] via-[#0e1d33] to-[#070d18] shadow-2xl shadow-black/60 sm:flex-row sm:items-center">
+      <div className="relative max-h-[92dvh] w-full max-w-md overflow-x-hidden overflow-y-auto rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 shadow-2xl shadow-slate-900/30">
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div className="absolute right-[12%] top-[-12%] h-72 w-72 rounded-full bg-[#cdb360]/40 blur-3xl" />
+          <div className="absolute left-[-6%] bottom-[-14%] h-64 w-64 rounded-full bg-[#9f8a3f]/20 blur-3xl" />
+        </div>
+
         <button
           type="button"
           onClick={dismiss}
           aria-label={t("offerBanner.close")}
-          className="absolute right-3 top-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-slate-300 transition hover:border-[#cdb360]/50 hover:text-white"
+          className="absolute right-3 top-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 transition hover:border-slate-300 hover:text-slate-900"
         >
           <X size={16} strokeWidth={2} />
         </button>
 
-        <div className="relative flex shrink-0 items-center justify-center px-8 pt-8 sm:w-[42%] sm:px-5 sm:py-8">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#cdb360]/20 blur-3xl"
-          />
+        <div className="relative px-6 pb-7 pt-9 text-center sm:px-9 sm:pt-10">
           <AnimatedBrainLogo
             alt={t("offerBanner.logoAlt")}
-            className="relative w-40 max-w-[200px] sm:w-full"
+            className="mx-auto w-40 drop-shadow-[0_4px_11px_rgba(129,126,50,0.32)] sm:w-44"
           />
-        </div>
 
-        <div className="flex-1 px-6 pb-7 pt-4 text-center sm:py-8 sm:pr-8 sm:text-left">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#cdb360]/90">
-            Synaptica Cluj
-          </p>
-          <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-[#cdb360]/35 bg-[#cdb360]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#e7dcb4]">
+          <span className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
             {t("offerBanner.badge")}
           </span>
-          <h2 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-[26px]">
+          <h2 className="mt-3 text-2xl font-bold leading-tight text-slate-900 sm:text-[26px]">
             {t("offerBanner.title")}
           </h2>
 
-          <div className="mt-3 flex items-baseline justify-center gap-3 sm:justify-start">
-            <span className="text-lg font-semibold text-slate-400 line-through">
+          <div className="mt-3 flex flex-wrap items-baseline justify-center gap-3">
+            <span className="text-lg font-semibold text-slate-400 line-through decoration-slate-400/70 decoration-2">
               {t("offerBanner.priceOld")}
             </span>
-            <span className="text-3xl font-bold text-[#cdb360]">
+            <span className="text-3xl font-bold text-[#817e32]">
               {t("offerBanner.priceNew")}
             </span>
           </div>
 
-          <p className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-slate-300/90">
-            <Clock size={14} strokeWidth={2} className="text-[#cdb360]" />
+          <p className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cdb360]/45 bg-[#f6f0de]/60 px-3 py-1 text-xs font-semibold text-[#817e32]">
+            <Clock size={13} strokeWidth={2.2} aria-hidden />
             {t("offerBanner.validity")}
           </p>
 
-          <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
+          <div className="mt-5 flex flex-col gap-3">
             <a
               href={`tel:${phone}`}
               onClick={dismiss}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/40 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
             >
               <Phone size={16} strokeWidth={2} />
               {t("offerBanner.callCta")}
@@ -120,7 +117,7 @@ export default function OfferBanner() {
             <Link
               href="/pricing#isync"
               onClick={dismiss}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cdb360]/45 px-5 py-3 text-sm font-semibold text-[#e7dcb4] transition hover:border-[#cdb360] hover:bg-[#cdb360]/10 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
             >
               {t("offerBanner.offerCta")}
               <ArrowRight size={15} strokeWidth={2} />
