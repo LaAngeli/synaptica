@@ -29,6 +29,12 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  // Culoarea barei de browser pe mobil — tonul crem/alb predominant al pilulei din NavBar
+  // (gradient from-[#f6f0de]/30 via-white/90 to-[#f6f0de]/60).
+  themeColor: "#f6f3ea",
+};
+
 export default function RootLayout({ children }) {
   const siteStructuredData = buildSiteJsonLd();
 
