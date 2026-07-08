@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import WhatsAppFloatingCta from "./components/WhatsAppFloatingCta";
+import OfferBanner from "./components/OfferBanner";
 import { I18nProvider } from "./providers";
 import { rootMetadataBase } from "../lib/seo";
 import { buildSiteJsonLd } from "../lib/schema-jsonld";
@@ -124,6 +125,7 @@ fbq('init','816358718204231');fbq('track','PageView');
             <Footer />
             <CookieConsentBanner />
             <WhatsAppFloatingCta />
+            <OfferBanner />
           </div>
         </I18nProvider>
       </body>
