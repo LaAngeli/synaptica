@@ -64,7 +64,7 @@ export default function OfferBanner() {
       />
 
       <div className="relative max-h-[92dvh] w-full max-w-md overflow-x-hidden overflow-y-auto rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 shadow-2xl shadow-slate-900/30">
-        <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl" aria-hidden>
           <div className="absolute right-[12%] top-[-12%] h-72 w-72 rounded-full bg-[#cdb360]/40 blur-3xl" />
           <div className="absolute left-[-6%] bottom-[-14%] h-64 w-64 rounded-full bg-[#9f8a3f]/20 blur-3xl" />
         </div>
@@ -79,10 +79,9 @@ export default function OfferBanner() {
         </button>
 
         <div className="relative px-6 pb-7 pt-9 text-center sm:px-9 sm:pt-10">
-          <AnimatedBrainLogo
-            alt={t("offerBanner.logoAlt")}
-            className="mx-auto w-40 drop-shadow-[0_4px_11px_rgba(129,126,50,0.32)] sm:w-44"
-          />
+          <div className="mx-auto w-36 drop-shadow-[0_4px_11px_rgba(129,126,50,0.32)] sm:w-40">
+            <AnimatedBrainLogo alt={t("offerBanner.logoAlt")} />
+          </div>
 
           <span className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
             {t("offerBanner.badge")}
