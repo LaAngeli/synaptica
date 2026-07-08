@@ -43,6 +43,9 @@ export default function BrainSlider() {
       H: 0,
       dpr: 1,
       dragging: false,
+      pending: false,
+      startX: 0,
+      startY: 0,
       last: 0,
       raf: 0,
     };
@@ -161,14 +164,38 @@ export default function BrainSlider() {
     }
 
     const onDown = (e) => {
-      S.dragging = true;
-      setSplitFromEvent(e);
+      if (e.pointerType === "mouse") {
+        // Desktop: mouse-ul nu are gest de scroll pe element — activăm imediat.
+        S.dragging = true;
+        setSplitFromEvent(e);
+      } else {
+        // Touch/pen: nu mutăm bara încă. Decidem la primul move dacă gestul e orizontal
+        // (mișcă slider-ul) sau vertical (lăsăm pagina să scrolleze).
+        S.pending = true;
+        S.startX = e.clientX;
+        S.startY = e.clientY;
+      }
     };
     const onMove = (e) => {
-      if (S.dragging) setSplitFromEvent(e);
+      if (S.dragging) {
+        setSplitFromEvent(e);
+        return;
+      }
+      if (S.pending) {
+        const dx = e.clientX - S.startX;
+        const dy = e.clientY - S.startY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 6) {
+          S.dragging = true;
+          S.pending = false;
+          setSplitFromEvent(e);
+        } else if (Math.abs(dy) > 8) {
+          S.pending = false; // gest vertical clar → lăsăm scroll-ul paginii
+        }
+      }
     };
     const onUp = () => {
       S.dragging = false;
+      S.pending = false;
     };
 
     function loop(now) {
@@ -316,6 +343,7 @@ export default function BrainSlider() {
     window.addEventListener("resize", onWinResize);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     container.addEventListener("pointerdown", onDown);
     applyAspect();
 
@@ -326,6 +354,7 @@ export default function BrainSlider() {
       window.removeEventListener("resize", onWinResize);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
       container.removeEventListener("pointerdown", onDown);
     };
   }, []);
@@ -350,7 +379,7 @@ export default function BrainSlider() {
       <div
         ref={containerRef}
         className="relative w-full select-none overflow-hidden rounded-2xl border border-[#cdb360]/20 bg-gradient-to-br from-[#0b1527] via-[#0e1d33] to-[#070d18] shadow-xl shadow-slate-300/50"
-        style={{ cursor: "ew-resize", touchAction: "none" }}
+        style={{ cursor: "ew-resize", touchAction: "pan-y" }}
       >
         {/* mix-blend-screen: fundalul negru al imaginii devine transparent, doar rețeaua
             aurie rămâne — apare peste gradientul navy. scale-[1.2] mărește creierul pe mobil
