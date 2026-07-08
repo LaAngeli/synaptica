@@ -1,10 +1,10 @@
 import { getServiceImageSrc } from "../../lib/service-images";
 
 const RIGHT_MASK =
-  "linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_8%,rgba(0,0,0,0.28)_18%,rgba(0,0,0,0.55)_30%,rgba(0,0,0,0.82)_42%,black_52%,black_100%)";
+  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.03) 12%, rgba(0,0,0,0.14) 23%, rgba(0,0,0,0.34) 33%, rgba(0,0,0,0.6) 43%, rgba(0,0,0,0.84) 52%, black 60%, black 100%)";
 
 const LEFT_MASK =
-  "linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.82)_58%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.28)_82%,rgba(0,0,0,0.08)_92%,transparent_100%)";
+  "linear-gradient(to right, black 0%, black 40%, rgba(0,0,0,0.84) 48%, rgba(0,0,0,0.6) 57%, rgba(0,0,0,0.34) 67%, rgba(0,0,0,0.14) 77%, rgba(0,0,0,0.03) 88%, transparent 100%)";
 
 /**
  * Responsive service imagery — clean on mobile, blended into section bg on desktop.
@@ -48,15 +48,10 @@ export default function ServiceSectionMedia({
   }
 
   const mask = position === "right" ? RIGHT_MASK : LEFT_MASK;
-  const objectPosition = position === "right" ? "object-right" : "object-left";
   const roundedClass =
     position === "right"
       ? "rounded-tr-[1.75rem] rounded-br-[1.75rem]"
       : "rounded-tl-[1.75rem] rounded-bl-[1.75rem]";
-  const overlayClass =
-    position === "right"
-      ? "absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-white/95 from-0% via-white/85 via-35% to-transparent to-100%"
-      : "absolute inset-y-0 right-0 w-[46%] bg-gradient-to-l from-white/95 from-0% via-white/85 via-35% to-transparent to-100%";
 
   return (
     <div
@@ -77,10 +72,9 @@ export default function ServiceSectionMedia({
             height={Math.round((1024 / width) * height)}
             loading="lazy"
             decoding="async"
-            className={`h-auto w-full object-contain ${maxHeightClass} ${objectPosition}`}
+            className={`h-auto w-full object-cover ${maxHeightClass}`}
           />
         </picture>
-        <div className={`pointer-events-none ${overlayClass}`} aria-hidden />
       </div>
     </div>
   );
