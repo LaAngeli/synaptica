@@ -10,7 +10,7 @@ import AnimatedBrainLogo from "./AnimatedBrainLogo";
 const STORAGE_KEY = "synaptica-brainmapping-offer";
 // Oferta rulează 14 zile (8–22 iulie 2026). După 22 iulie bannerul nu mai apare, automat.
 const DEADLINE = new Date(2026, 6, 23, 0, 0, 0).getTime();
-const DELAY_MS = 30000;
+const DELAY_MS = 15000;
 
 export default function OfferBanner() {
   const { t } = useI18n();
