@@ -116,7 +116,7 @@ export default function OfferBanner() {
             <Link
               href="/pricing#isync"
               onClick={dismiss}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-400 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm shadow-slate-400/30 transition hover:border-slate-500 hover:bg-white"
             >
               {t("offerBanner.offerCta")}
               <ArrowRight size={15} strokeWidth={2} />
