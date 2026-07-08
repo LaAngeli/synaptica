@@ -102,77 +102,6 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
-        </div>
-
-        <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-          <div className="space-y-7">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
-              {t("home.badge")}
-            </span>
-            <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-              {t("home.titleStart")}{" "}
-              <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
-                {t("home.titleHighlight")}
-              </span>
-              {t("home.titleEnd")}
-            </h1>
-            <p className="max-w-2xl text-lg text-slate-700">
-              {t("home.description")}
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
-              >
-                {t("home.primaryCta")}
-              </Link>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
-              >
-                {t("home.secondaryCta")}
-              </Link>
-            </div>
-
-            <div className="grid gap-4 sm:max-w-[690px] sm:grid-cols-[1fr_1.05fr]">
-              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-inner shadow-slate-200/80 backdrop-blur">
-                <p className="text-sm text-slate-600">{t("home.statSpeedLabel")}</p>
-                <p className="mt-1 text-3xl font-semibold text-slate-900">{t("home.statSpeedValue")}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.20em] text-slate-500">
-                  {t("home.statSpeedNote")}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-inner shadow-slate-200/80 backdrop-blur">
-                <p className="text-sm text-slate-600">{t("home.statQualityLabel")}</p>
-                <p className="mt-1 text-[26px] font-semibold text-slate-900 sm:text-[28px]">
-                  {t("home.statQualityValue")}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <div className="pb-0">
-                    {statTags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-[#817e32]">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href="/conditions"
-                    aria-label={t("home.statMoreLabel")}
-                    className="mt-1 items-center justify-center text-[#817e32] rounded-full font-bold border transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
-                  >
-                    <ChevronRight size={18} strokeWidth={2} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
-        <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/3 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
           <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-[#aa995a]/30 blur-3xl" />
         </div>
@@ -250,6 +179,77 @@ export default function HomePage() {
                 >
                   {t("home.neuro.primaryCta")}
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
+        </div>
+
+        <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
+          <div className="space-y-7">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#817e32]">
+              {t("home.badge")}
+            </span>
+            <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+              {t("home.titleStart")}{" "}
+              <span className="bg-gradient-to-r from-[#9f8a3f] via-[#aa995a] to-[#817e32] bg-clip-text text-transparent">
+                {t("home.titleHighlight")}
+              </span>
+              {t("home.titleEnd")}
+            </h1>
+            <p className="max-w-2xl text-lg text-slate-700">
+              {t("home.description")}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#9f8a3f] to-[#cdb360] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#cdb360]/50 transition hover:from-[#aa995a] hover:to-[#9f8a3f]"
+              >
+                {t("home.primaryCta")}
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white/80"
+              >
+                {t("home.secondaryCta")}
+              </Link>
+            </div>
+
+            <div className="grid gap-4 sm:max-w-[690px] sm:grid-cols-[1fr_1.05fr]">
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-inner shadow-slate-200/80 backdrop-blur">
+                <p className="text-sm text-slate-600">{t("home.statSpeedLabel")}</p>
+                <p className="mt-1 text-3xl font-semibold text-slate-900">{t("home.statSpeedValue")}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.20em] text-slate-500">
+                  {t("home.statSpeedNote")}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-inner shadow-slate-200/80 backdrop-blur">
+                <p className="text-sm text-slate-600">{t("home.statQualityLabel")}</p>
+                <p className="mt-1 text-[26px] font-semibold text-slate-900 sm:text-[28px]">
+                  {t("home.statQualityValue")}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="pb-0">
+                    {statTags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-[#817e32]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <Link
+                    href="/conditions"
+                    aria-label={t("home.statMoreLabel")}
+                    className="mt-1 items-center justify-center text-[#817e32] rounded-full font-bold border transition hover:border-[#9f8a3f] hover:text-[#9f8a3f]"
+                  >
+                    <ChevronRight size={18} strokeWidth={2} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
