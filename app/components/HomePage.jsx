@@ -186,6 +186,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <VideoTestimonials />
+
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/90 px-6 py-12 shadow-2xl shadow-slate-200 sm:px-10 lg:px-12">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute right-1/5 top-[-10%] h-72 w-72 rounded-full bg-[#cdb360]/45 blur-3xl" />
@@ -257,8 +259,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <VideoTestimonials />
-
       <section className="space-y-5 rounded-3xl border border-slate-200 bg-white/85 px-6 py-8 shadow-lg shadow-slate-200 sm:px-8">
         <h2 className="text-2xl font-semibold text-slate-900">{t("home.aeoTitle")}</h2>
         <QuickAnswersGrid items={aeoItems} gridClassName="grid gap-4 md:grid-cols-3" />
@@ -278,24 +278,24 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6">
           {quickLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-[#cdb360]/60"
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-lg shadow-slate-200 transition hover:-translate-y-1 hover:border-[#cdb360]/60 sm:p-5"
             >
               <div
                 className={`absolute inset-0 opacity-0 blur-3xl transition duration-300 group-hover:opacity-30 bg-gradient-to-br ${item.accent}`}
                 aria-hidden
               />
-              <div className="relative flex h-full flex-col gap-3">
+              <div className="relative flex h-full flex-col gap-2 sm:gap-3">
 
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-900">
                   {item.title}
                   <span className="text-slate-500">→</span>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-700">{item.description}</p>
+                <p className="line-clamp-2 text-sm leading-relaxed text-slate-700 sm:line-clamp-none">{item.description}</p>
                 <span className="mt-auto text-sm font-semibold text-[#817e32] group-hover:text-[#9f8a3f]">
                   {item.buttonName}
                 </span>

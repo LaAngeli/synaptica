@@ -75,7 +75,7 @@ export default function VideoTestimonials() {
                 {playing ? (
                   <iframe
                     key={active}
-                    src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+                    src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                     title={`${t("home.testimonials.playLabel")} — ${current.name}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
