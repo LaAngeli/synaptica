@@ -43,10 +43,9 @@ export const translations = {
         rosterLabel: "More stories",
         playLabel: "Play testimonial",
         items: [
-          { name: "Andreea M.", condition: "Anxiety", quote: "I learned to quiet my mind without fighting it." },
-          { name: "Mihai D.", condition: "Sleep", quote: "First time in years I sleep through the night." },
-          { name: "Elena R.", condition: "ADHD (child)", quote: "My child focuses on homework — calmly, no arguments." },
-          { name: "Radu T.", condition: "Burnout", quote: "I got back the energy and clarity I used to have." },
+          { name: "Cristina", condition: "Anxiety", quote: "I came just to confirm that I'm doing well…" },
+          { name: "Mihaela", condition: "Burnout", quote: "I already wake up rested" },
+          { name: "Gabriela", condition: "Lack of sleep", quote: "I felt the difference after the first session" },
         ],
       },
       brainSlider: {
@@ -925,10 +924,9 @@ export const translations = {
         rosterLabel: "Mai multe povești",
         playLabel: "Redă testimonialul",
         items: [
-          { name: "Andreea M.", condition: "Anxietate", quote: "Am învățat să-mi liniștesc mintea fără să lupt cu ea." },
-          { name: "Mihai D.", condition: "Somn", quote: "Prima dată în ani de zile când dorm toată noaptea." },
-          { name: "Elena R.", condition: "ADHD (copil)", quote: "Copilul meu se concentrează la teme — calm, fără certuri." },
-          { name: "Radu T.", condition: "Burnout", quote: "Mi-am recăpătat energia și claritatea de dinainte." },
+          { name: "Cristina", condition: "Anxietate", quote: "Am venit doar să confirm că sunt bine…" },
+          { name: "Mihaela", condition: "Burnout", quote: "Deja mă trezesc odihnită" },
+          { name: "Gabriela", condition: "Lipsa somnului", quote: "Am simțit diferența după prima ședință" },
         ],
       },
       brainSlider: {

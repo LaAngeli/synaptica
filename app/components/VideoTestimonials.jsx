@@ -4,11 +4,10 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import { useI18n } from "../providers";
 
-// Video de test (Big Buck Bunny — embeddable public). Se înlocuiește cu ID-urile reale
-// YouTube, în aceeași ordine ca `home.testimonials.items` din translations.js.
-// Lasă string gol ca să folosească videoclipul de test.
-const TEST_VIDEO_ID = "aqz-KE-bpKQ";
-const VIDEO_IDS = ["", "", "", ""];
+// ID-urile YouTube ale testimonialelor, în aceeași ordine ca `home.testimonials.items`
+// din translations.js. Un testimonial fără ID aici nu se afișează deloc — așa nu poate
+// ajunge din greșeală un videoclip greșit pe site.
+const VIDEO_IDS = ["2E2ZvZAth2Y", "-rF-G-n6Bog", "r-IXDRw1u0w"];
 
 // Semnătura secțiunii: un traseu de undă cerebrală (EEG). Cel „viu" derulează
 // continuu — marchează testimonialul activ. Restul stau liniștite.
@@ -36,10 +35,15 @@ export default function VideoTestimonials() {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
 
-  if (items.length === 0) return null;
+  // Fiecare testimonial e perecheat cu videoclipul lui după poziție.
+  const stories = items
+    .map((item, index) => ({ ...item, videoId: VIDEO_IDS[index] }))
+    .filter((story) => story.videoId);
 
-  const current = items[active] || items[0];
-  const videoId = VIDEO_IDS[active] || TEST_VIDEO_ID;
+  if (stories.length === 0) return null;
+
+  const current = stories[active] || stories[0];
+  const videoId = current.videoId;
 
   const select = (index) => {
     setActive(index);
@@ -122,7 +126,7 @@ export default function VideoTestimonials() {
               {t("home.testimonials.rosterLabel")}
             </p>
             <div className="space-y-1">
-              {items.map((item, index) => {
+              {stories.map((item, index) => {
                 const isActive = index === active;
                 return (
                   <button
