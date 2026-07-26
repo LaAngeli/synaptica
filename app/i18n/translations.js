@@ -676,7 +676,7 @@ export const translations = {
         conditions: "Conditions",
         contact: "Contact",
         rights: "All rights reserved.",
-        maintainedBy: "Maintained by",
+        maintainedBy: "Created by",
       },
     },
     reviews: {
@@ -703,7 +703,7 @@ export const translations = {
         conditions: "Conditions",
         contact: "Contact",
         rights: "All rights reserved.",
-        maintainedBy: "Maintained by",
+        maintainedBy: "Created by",
       },
       gdpr: {
         badge: "GDPR",
@@ -1549,7 +1549,7 @@ export const translations = {
         conditions: "Afecțiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
-        maintainedBy: "Maintained by",
+        maintainedBy: "Creat de",
       },
     },
     reviews: {
@@ -1576,7 +1576,7 @@ export const translations = {
         conditions: "Afecțiuni",
         contact: "Contact",
         rights: "Toate drepturile rezervate.",
-        maintainedBy: "Maintained by",
+        maintainedBy: "Creat de",
       },
       gdpr: {
         badge: "GDPR",
