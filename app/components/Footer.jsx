@@ -150,7 +150,10 @@ export default function Footer() {
                 <p className="w-full text-pretty text-xs leading-relaxed text-[#7f733c]/80 lg:max-w-sm">
                   Serenity Zen SRL · CUI 51778830 ·
                 </p>
-                <p className="w-full text-pretty text-xs leading-relaxed text-[#7f733c]/90 lg:max-w-sm">
+                <p
+                  data-footer-credit
+                  className="w-full text-pretty text-xs leading-relaxed text-[#7f733c]/90 lg:max-w-sm"
+                >
                   {t("legal.links.maintainedBy")}{" "}
                   <Link
                     href="https://advista.marketing/"
