@@ -7,9 +7,10 @@ import { useI18n } from "../providers";
 /**
  * Buton flotant WhatsApp care se deformează „fluid": când, la scroll spre subsol,
  * ajunge peste linia „Created by AdVista", muchia de sus crește un golf concav
- * neted (cu fund plat mai lat decât textul, ca textul să rămână complet vizibil),
- * iar conținutul alunecă elastic în banda de jos. Forma rămâne una singură și
- * continuă; totul e reversibil.
+ * neted (cu fund plat mai lat decât textul), iar conținutul alunecă în banda de jos.
+ * `clip-path` scoate zona golfului din aria de click, ca link-ul din credit să fie
+ * accesibil; umbra e un strat separat (box-shadow), deci morph-ul nu recalculează
+ * niciun filtru — animația rămâne fluidă. Reversibil și elastic.
  */
 
 const BAY_HEIGHT = 46; // înălțimea pill-ului (constantă)
@@ -52,12 +53,22 @@ export default function WhatsAppFloatingCta() {
     let running = false;
     let near = false;
 
-    const textMetrics = () => {
-      if (!credit) return { w: 110, cx: null };
-      const range = document.createRange();
-      range.selectNodeContents(credit);
-      const r = range.getBoundingClientRect();
-      return { w: r.width, cx: r.left + r.width / 2 };
+    // Metrici cache-uite (se schimbă doar la resize / limbă) — NU la fiecare frame.
+    let btnW = link.getBoundingClientRect().width;
+    let textW = 110;
+    let textCxRel = null;
+
+    const remeasure = () => {
+      const rect = link.getBoundingClientRect();
+      btnW = rect.width;
+      if (credit) {
+        const range = document.createRange();
+        range.selectNodeContents(credit);
+        const r = range.getBoundingClientRect();
+        textW = r.width;
+        textCxRel = r.left + r.width / 2 - rect.left;
+      }
+      svg.setAttribute("viewBox", `0 0 ${btnW} ${BAY_HEIGHT}`);
     };
 
     const pillPath = (W, H) => {
@@ -88,24 +99,21 @@ export default function WhatsAppFloatingCta() {
 
     const apply = () => {
       const open = Math.max(0, openRef.current);
-      const rect = link.getBoundingClientRect();
-      const W = rect.width;
+      const W = btnW;
       const H = BAY_HEIGHT;
-      const R = H / 2;
-      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-
+      let d;
       if (open < 0.004) {
-        path.setAttribute("d", pillPath(W, H));
+        d = pillPath(W, H);
       } else {
-        const { w: textW, cx: cxAbs } = textMetrics();
+        const R = H / 2;
         const flatHalf = Math.min(textW / 2 + FLAT_PAD, W / 2 - R - SLOPE - 6);
         const half = flatHalf + SLOPE;
-        const cx =
-          cxAbs == null ? W / 2 : clamp(cxAbs - rect.left, R + half, W - R - half);
-        const d = BAY_DEPTH * Math.min(1.06, open);
-        path.setAttribute("d", bayPath(W, H, d, flatHalf, cx));
+        const cx = textCxRel == null ? W / 2 : clamp(textCxRel, R + half, W - R - half);
+        d = bayPath(W, H, BAY_DEPTH * Math.min(1.06, open), flatHalf, cx);
       }
-
+      path.setAttribute("d", d);
+      // clip-path scoate golful din aria de click a butonului.
+      link.style.clipPath = `path("${d}")`;
       if (content) {
         content.style.transform = `translateY(${(CONTENT_SHIFT * Math.min(1, open)).toFixed(2)}px)`;
       }
@@ -160,16 +168,23 @@ export default function WhatsAppFloatingCta() {
 
     const io = new IntersectionObserver(
       (entries) => {
+        const wasNear = near;
         near = entries.some((e) => e.isIntersecting);
+        if (near && !wasNear) remeasure();
         if (near) start();
       },
       { rootMargin: "140px 0px 80px 0px", threshold: 0 }
     );
     if (credit) io.observe(credit);
 
+    const onResize = () => {
+      remeasure();
+      start();
+    };
+
+    remeasure();
     apply();
     start();
-    const onResize = () => start();
     window.addEventListener("resize", onResize);
 
     return () => {
@@ -182,39 +197,47 @@ export default function WhatsAppFloatingCta() {
   if (!whatsappHref) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-40 flex justify-center sm:inset-x-auto sm:right-6">
-      <a
-        ref={linkRef}
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={ctaLabel}
-        style={{ height: `${BAY_HEIGHT}px` }}
-        className="group relative inline-flex w-full items-center justify-center rounded-full px-5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#cdb360] focus-visible:ring-offset-2 focus-visible:ring-offset-[#eef3f7] sm:w-auto sm:min-w-[300px]"
-      >
-        <svg
-          ref={svgRef}
-          className="pointer-events-none absolute inset-0 h-full w-full overflow-visible transition-[filter] duration-300 [filter:drop-shadow(0_10px_18px_rgba(205,179,96,0.45))] group-hover:[filter:drop-shadow(0_12px_22px_rgba(205,179,96,0.6))]"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient id="wa-fill" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#9f8a3f" />
-              <stop offset="100%" stopColor="#cdb360" />
-            </linearGradient>
-          </defs>
-          <path ref={pathRef} fill="url(#wa-fill)" d="" />
-        </svg>
-
+    <div className="pointer-events-none fixed inset-x-4 bottom-4 z-40 flex justify-center sm:inset-x-auto sm:right-6">
+      <div className="group pointer-events-none relative flex w-full justify-center sm:w-auto sm:min-w-[300px]">
+        {/* Umbra: strat separat (pill static) — nu se recalculează la morph. */}
         <span
-          ref={contentRef}
-          className="relative z-10 inline-flex items-center gap-2 will-change-transform"
+          aria-hidden="true"
+          style={{ height: `${BAY_HEIGHT}px` }}
+          className="pointer-events-none absolute inset-x-0 top-0 rounded-full shadow-lg shadow-[#cdb360]/50 transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-[#cdb360]/60"
+        />
+        <a
+          ref={linkRef}
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={ctaLabel}
+          style={{ height: `${BAY_HEIGHT}px` }}
+          className="pointer-events-auto relative inline-flex w-full items-center justify-center rounded-full px-5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#cdb360] focus-visible:ring-offset-2 focus-visible:ring-offset-[#eef3f7] sm:w-auto sm:min-w-[300px]"
         >
-          <FaWhatsapp size={18} className="shrink-0" />
-          <span>{ctaLabel}</span>
-        </span>
-      </a>
+          <svg
+            ref={svgRef}
+            className="pointer-events-none absolute inset-0 h-full w-full"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="wa-fill" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#9f8a3f" />
+                <stop offset="100%" stopColor="#cdb360" />
+              </linearGradient>
+            </defs>
+            <path ref={pathRef} fill="url(#wa-fill)" d="" />
+          </svg>
+
+          <span
+            ref={contentRef}
+            className="pointer-events-none relative z-10 inline-flex items-center gap-2 will-change-transform"
+          >
+            <FaWhatsapp size={18} className="shrink-0" />
+            <span>{ctaLabel}</span>
+          </span>
+        </a>
+      </div>
     </div>
   );
 }
