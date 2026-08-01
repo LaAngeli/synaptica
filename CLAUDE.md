@@ -62,6 +62,27 @@ brainmapping EEG** din Cluj-Napoca (Str. Robert Koch 7). Producție: https://syn
   Maps Embed API e gratuit necondiționat — expunerea ei publică e sigură DOAR dacă e restricționată
   strict la acel API.
 
+## Promoții (reducere pe prețuri + banner popup)
+Promoția (ex. „−20% Brainmapping") trăiește în **două locuri independente**, ambele reutilizabile —
+se **pornesc/opresc**, nu se șterg:
+
+1. **Reducerea de pe `/pricing#isync`** — obiectul `offer` de pe item-ul Brainmapping din
+   `app/i18n/translations.js` (RO **și** EN). Prezent → preț tăiat + preț redus + valabilitate;
+   absent/comentat → preț normal. Randare: `app/pricing/page.jsx` (`{item.offer ? … : …}`).
+2. **Bannerul popup** — `app/components/OfferBanner.jsx` (montat global în `app/layout.jsx`).
+   Comutator principal: constanta **`OFFER_ACTIVE`** (true/false). Texte: `offerBanner.*` din
+   `translations.js` (RO + EN). Apare la `DELAY_MS` (10s) după intrare, o singură dată per dispozitiv
+   (`localStorage` → `synaptica-brainmapping-offer` = „dismissed").
+
+**`DEADLINE`** (în `OfferBanner.jsx`) = începutul zilei de **DUPĂ** ultima zi validă (valabil până pe
+31 iulie → `new Date(2026, 7, 1)`; **luna e 0-indexată**). Bannerul dispare automat după DEADLINE, chiar
+dacă `OFFER_ACTIVE` e true. Textul de valabilitate (afișat) și DEADLINE (logica) se țin sincron **manual**.
+
+**Pornire promoție nouă:** `OFFER_ACTIVE = true` + setează `DEADLINE`; actualizează `offerBanner.*`
+(RO+EN) și (re)adaugă blocul `offer` pe item-ul din pricing (RO+EN) cu aceeași dată de valabilitate.
+**Oprire (fără ștergere):** `OFFER_ACTIVE = false` + comentează blocul `offer` din pricing (RO+EN).
+Textele `offerBanner.*` rămân, nefolosite până la promoția următoare.
+
 ## Git & deploy (regulă durabilă a userului)
 - **Push = deploy live.** Hostul urmărește repo-ul și lansează deploy automat la fiecare push pe `main`.
   Push-ul e acțiune de producție, nu de sincronizare. **Push doar la cererea explicită a userului**,

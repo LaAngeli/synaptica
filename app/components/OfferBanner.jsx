@@ -7,9 +7,15 @@ import { useI18n } from "../providers";
 import { businessContact } from "../../lib/businessContact";
 import AnimatedBrainLogo from "./AnimatedBrainLogo";
 
+// Comutatorul principal al bannerului. false = nu apare deloc, dar componenta rămâne montată
+// și gata de refolosit la o promoție viitoare (NU se șterge). Pornire promoție nouă: pune true +
+// actualizează DEADLINE și textele `offerBanner.*` din translations.js, plus (re)adaugă oferta de
+// pe pagina de prețuri. Vezi CLAUDE.md → „Promoții".
+const OFFER_ACTIVE = false;
+
 const STORAGE_KEY = "synaptica-brainmapping-offer";
-// Oferta e valabilă până pe 31 iulie 2026 inclusiv. Pragul e începutul zilei de 1 august,
-// deci după 31 iulie bannerul nu mai apare, automat.
+// Data-limită = începutul zilei de DUPĂ ultima zi validă (ex. valabil până pe 31 iulie → 1 aug;
+// luna e 0-indexată). După ea bannerul nu mai apare, automat, chiar dacă OFFER_ACTIVE ar fi true.
 const DEADLINE = new Date(2026, 7, 1, 0, 0, 0).getTime();
 const DELAY_MS = 10000;
 
@@ -19,7 +25,7 @@ export default function OfferBanner() {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    if (Date.now() >= DEADLINE) return;
+    if (!OFFER_ACTIVE || Date.now() >= DEADLINE) return;
     let dismissed = false;
     try {
       dismissed = localStorage.getItem(STORAGE_KEY) === "dismissed";
