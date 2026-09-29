@@ -395,6 +395,16 @@ export const translations = {
           body:
             "For concentration goals, neurofeedback may support sustained attention, clearer mental processing, and better cognitive control.",
         },
+        {
+          title: "Burnout",
+          body:
+            "For emotional and mental exhaustion after prolonged stress, EEG brainmapping and neurofeedback may support self-regulation, stress management, and restoring energy and balance.",
+        },
+        {
+          title: "Addictions",
+          body:
+            "In addiction-related contexts, EEG brainmapping and neurofeedback may be used as complementary support for self-regulation, emotional balance, and better self-control.",
+        },
       ],
     },
     pricing: {
@@ -1264,6 +1274,16 @@ export const translations = {
           title: "Puterea de concentrare",
           body:
             "Pentru obiective de concentrare, neurofeedback-ul poate susține atenția susținută, claritatea mentală și un control cognitiv mai bun.",
+        },
+        {
+          title: "Burnout",
+          body:
+            "Pentru epuizarea emoțională și mentală apărută după stres prelungit, brainmapping-ul EEG și neurofeedback-ul pot susține autoreglarea, gestionarea stresului și refacerea energiei și a echilibrului.",
+        },
+        {
+          title: "Dependențe",
+          body:
+            "În contexte asociate dependențelor, brainmapping-ul EEG și neurofeedback-ul pot fi utilizate ca suport complementar pentru autoreglare, echilibru emoțional și un autocontrol mai bun.",
         },
       ],
     },

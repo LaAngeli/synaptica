@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   Activity,
+  BatteryLow,
   Brain,
   CloudFog,
   HeartPulse,
@@ -10,6 +11,7 @@ import {
   Puzzle,
   Shield,
   Target,
+  Unlink,
 } from "lucide-react";
 import { useI18n } from "../providers";
 import QuickAnswersGrid from "../components/QuickAnswersGrid";
@@ -37,6 +39,9 @@ export default function AfectiuniPage() {
     depresie: CloudFog,
     focus: Target,
     "puterea de concentrare": Target,
+    burnout: BatteryLow,
+    addictions: Unlink,
+    "dependențe": Unlink,
   };
 
   return (
